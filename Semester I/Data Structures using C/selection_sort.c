@@ -1,8 +1,8 @@
 /*--------------------------------------------------------------------------------
-   BubbleSort
+   SelectionSort
 ---------------------------------------------------------------------------
    Clancy
-   22-07-24
+   23-07-24
   -------------------------------------------------------------------------*/
 
 #include<stdio.h>
@@ -10,32 +10,31 @@
 
 void input(int N,int A[20]);
 void output(int N,int A[20]);
-void bubblesort(int N,int A[20]);
+void selectionSort(int N,int A[20]);
 
 void main()
 {
 
     int N,A[20];
 
-    printf("enter size of array:\n");
+    printf("Enter size of array: ");
     scanf("%d",&N);
 
-    printf("enter elements of array:\n");
+    printf("\nEnter elements of array: ");
     input(N,A);
 
-    printf("display elements of array:\n");
+    printf("\nDisplay elements of array: ");
     output(N,A);
 
-    printf("\nDisplay sorted array:\n");
-    bubblesort(N,A);
-
+    printf("\n\nDisplay sorted array: ");
+    selectionSort(N,A);
 }
 
 //-----------------------------------
 void input(int N,int A[20])
 {
    int i;
-   for(i=1;i<=N;i++){
+   for(i=0;i<N;i++){
        scanf("%d",&A[i]);
    }
 }
@@ -44,26 +43,30 @@ void input(int N,int A[20])
 void output(int N,int A[20])
 {
    int i;
-   for(i=1;i<=N;i++){
-       printf("%d\t",A[i]);
+   for(i=0;i<N;i++){
+       printf("%d ",A[i]);
    }
 }
 
 //-----------------------------------
-void bubblesort(int N,int A[30])
+void selectionSort(int N,int A[30])
 {
-    int i,j,temp=0;
-    for(i=1;i<(N-1);i++){
-        for(j=1;j<=(N-i);j++){
-           if(A[j]>A[j+1])
-           {
-               temp=A[j];
-               A[j]=A[j+1];
-               A[j+1]=temp;
-           }
+    int i,j,temp=0,min;
+
+    for(i=0;i<N-1;i++){
+        min=i;
+        for(j=i+1;j<N;j++){
+            if(A[j]<A[min]){
+                min=j;
+            }
         }
+        // if (min != i) {
+            temp=A[min];
+            A[min]=A[i];
+            A[i]=temp;
+        // }
     }
-    for(i=1;i<=N;i++){
-        printf("%d\t",A[i]);
-    }
+
+    output(N,A);
+
 }
