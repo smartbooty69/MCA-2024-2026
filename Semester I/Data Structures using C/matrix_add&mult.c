@@ -23,8 +23,7 @@ int main() {
     printf("Columns: ");
     scanf("%d", &M);
 
-    printf("Enter size of Matrix B (Columns):\n");
-    scanf("%d", &P);
+    P=M;
 
     printf("\nEnter elements of Matrix A:\n");
     inputMat(N, M, A);
