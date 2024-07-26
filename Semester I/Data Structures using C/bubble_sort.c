@@ -35,7 +35,7 @@ void main()
 void input(int N,int A[20])
 {
    int i;
-   for(i=1;i<=N;i++){
+   for(i=0;i<N;i++){
        scanf("%d",&A[i]);
    }
 }
@@ -44,7 +44,7 @@ void input(int N,int A[20])
 void output(int N,int A[20])
 {
    int i;
-   for(i=1;i<=N;i++){
+   for(i=0;i<N;i++){
        printf("%d\t",A[i]);
    }
 }
@@ -53,8 +53,8 @@ void output(int N,int A[20])
 void bubblesort(int N,int A[30])
 {
     int i,j,temp=0;
-    for(i=1;i<(N-1);i++){
-        for(j=1;j<=(N-i);j++){
+    for(i=0;i<N-1;i++){
+        for(j=1;j<N-i-1;j++){
            if(A[j]>A[j+1])
            {
                temp=A[j];
@@ -63,7 +63,7 @@ void bubblesort(int N,int A[30])
            }
         }
     }
-    for(i=1;i<=N;i++){
+    for(i=0;i<=N;i++){
         printf("%d\t",A[i]);
     }
 }

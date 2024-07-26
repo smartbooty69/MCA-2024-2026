@@ -17,7 +17,7 @@ int main() {
     int N, M, P;
     int A[20][20], B[20][20], C[20][20], D[20][20];
 
-    printf("Enter size of Matrix A (Rows and Columns):\n");
+    printf("Enter size of Matrix:\n");
     printf("Rows: ");
     scanf("%d", &N);
     printf("Columns: ");

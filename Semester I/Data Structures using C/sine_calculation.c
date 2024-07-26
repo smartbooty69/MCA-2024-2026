@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------------
    Sine Calculation using Taylor Series Expansion
 ---------------------------------------------------------------------------
-   clancy
+   Clancy
    18-07-24
   -------------------------------------------------------------------------*/
 
@@ -29,15 +29,15 @@ float sinx(float theta) {
     float x, term, sin;
     int i;
 
-    x = (22.0 / 7.0) * (theta / 180.0); // Convert degrees to radians
+    x = theta * (22.0 / 7.0) / 180.0;
     
-    sin = x;  // Initialize with the first term
+    sin = x;  
     term = x;
     i = 1;
 
     while (fabs(term) >= 0.0001) {
-        term = (-term * x * x) / ((2 * i) * (2 * i + 1));
-        sin = sin + term;
+        term = (-term * x * x) / ((2 * i + 1) * (2 * i));
+        sin += term;
         i++;
     }
 

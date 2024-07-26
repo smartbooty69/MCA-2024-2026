@@ -10,7 +10,6 @@
 
 void inputArray(int N, int A[]);
 void outputArray(int N, int A[]);
-float calculateVariance(int N, int A[]);
 float calculateStdDev(int N, int A[]);
 
 int main() {
@@ -19,18 +18,11 @@ int main() {
     printf("Enter the number of elements (max 20): ");
     scanf("%d", &N);
 
-    if (N > 20) {
-        printf("The number of elements should not exceed 20.\n");
-        return 1;
-    }
-
     inputArray(N, A);
     outputArray(N, A);
 
-    float variance = calculateVariance(N, A);
     float stdDev = calculateStdDev(N, A);
 
-    printf("Variance: %.2f\n", variance);
     printf("Standard Deviation: %.2f\n", stdDev);
 
     return 0;
@@ -54,7 +46,7 @@ void outputArray(int N, int A[]) {
 }
 
 //-----------------------------------
-float calculateVariance(int N, int A[]) {
+float calculateStdDev(int N, int A[]) {
     float sum = 0.0, mean, variance = 0.0;
 
     for (int i = 0; i < N; ++i) {
@@ -67,10 +59,5 @@ float calculateVariance(int N, int A[]) {
         variance += pow(A[i] - mean, 2);
     }
 
-    return variance / N;
-}
-
-//-----------------------------------
-float calculateStdDev(int N, int A[]) {
-    return sqrt(calculateVariance(N, A));
+    return sqrt(variance / N);
 }
