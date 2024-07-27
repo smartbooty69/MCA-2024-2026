@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-void StrCpy(char D[], const char S[]);
+void StrCpy(char D[], char S[]);
 
 int main() {
     char S[100], D[100];
@@ -23,7 +23,7 @@ int main() {
 }
 
 //-----------------------------------
-void StrCpy(char D[], const char S[]) {
+void StrCpy(char D[], char S[]) {
     int i = 0;
 
     while (S[i] != '\0') {
