@@ -54,7 +54,7 @@ void bubblesort(int N,int A[30])
 {
     int i,j,temp=0;
     for(i=0;i<N-1;i++){
-        for(j=1;j<N-i-1;j++){
+        for(j=0;j<N-i-1;j++){
            if(A[j]>A[j+1])
            {
                temp=A[j];
@@ -63,7 +63,7 @@ void bubblesort(int N,int A[30])
            }
         }
     }
-    for(i=0;i<=N;i++){
+    for(i=0;i<N;i++){
         printf("%d\t",A[i]);
     }
 }

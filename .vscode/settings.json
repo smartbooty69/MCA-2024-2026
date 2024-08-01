@@ -1,5 +1,6 @@
 {
     "dataworkspace.excludedProjects": [
         "Semester I/Data Base Management System/unversity/unversity.sqlproj"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
