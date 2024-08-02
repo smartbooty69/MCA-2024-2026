@@ -1,5 +1,5 @@
 /*------------------------------------------------------------
-   Program to find the maximum number in an array
+   Program to create a Linked List
 ----------------------------------------------------------------------
    Clancy
    18-07-24
