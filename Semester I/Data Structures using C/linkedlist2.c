@@ -5,13 +5,6 @@
    18-07-24
 -----------------------------------------------------------------*/
 
-/*------------------------------------------------------------
-   Program to create a Linked List
-----------------------------------------------------------------------
-   Clancy
-   18-07-24
------------------------------------------------------------------*/
-
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -78,8 +71,42 @@ void PrintList(LISTNODE *Head)
 {
     LISTNODE *Curr;
     Curr=Head;
+    char ch;
     while(Curr!=NULL){
         printf("%d\t",Curr->Num);
         Curr=Curr->Next;
     }
+    while (1)
+    {
+        printf("Enter your choice:\n1) Delete First Node\n2)Delete Last Node\n3) Delete Specific Node\n4) Count the number of Node\n5)");
+        switch (ch)
+        {
+        case 1:
+            DeleteFirstNode();
+            break;
+        
+        case 2:
+            DeleteLastNode();
+            break;
+
+        case 3:
+            DeleteSpecificNode();
+            break;
+        case 4:
+            CountNode();
+            break;
+        case 5:
+            SearchNode();
+            break;
+        default:
+            printf("Write proper input Man");
+            break;
+        }
+    }
+    
+}
+
+DeleteFirstNode(){
+    int Num;
+    LISTNODE *curr;
 }
