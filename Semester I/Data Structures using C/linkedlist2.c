@@ -78,7 +78,7 @@ void PrintList(LISTNODE *Head)
     }
     while (1)
     {
-        printf("Enter your choice:\n1) Delete First Node\n2)Delete Last Node\n3) Delete Specific Node\n4) Count the number of Node\n5)");
+        printf("");
         switch (ch)
         {
         case 1:
