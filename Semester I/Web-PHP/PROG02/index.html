@@ -8,75 +8,76 @@
 </head>
 <body>
 
-<div class="container">
-    <h2>Student Application Form</h2>
-    <form action="/submit" method="post">
-        <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" name="firstName" required>
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" name="lastName" required>
-        </div>
-        <div class="form-group">
-            <label for="dob">Date of Birth</label>
-            <input type="date" id="dob" name="dob" required>
-        </div>
-        <div class="form-group">
-            <label>Gender</label>
-            <div class="gender-options">
-                <label>
-                    <input type="radio" name="gender" value="male" required> Male
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="female" required> Female
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="other" required> Other
-                </label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <div class="form-group">
-            <label for="address">Address</label>
-            <textarea id="address" name="address" rows="4" required></textarea>
-        </div>
-
-        <div class="form-group">
-            <label for="course">Course Applying For</label>
-            <select id="course" name="course" required>
-                <option value="" disabled selected>Select your course</option>
-                <option value="bca">BCA</option>
-                <option value="bcom">B.Com</option>
-                <option value="bsc_cs">B.Sc Computer Science</option>
-                <option value="bba">BBA</option>
-                <option value="mca">MCA</option>
-                <option value="mba">MBA</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="highSchool">High School Name</label>
-            <input type="text" id="highSchool" name="highSchool" required>
-        </div>
-        <div class="form-group">
-            <label for="percentage">Percentage in High School</label>
-            <input type="number" id="percentage" name="percentage" step="0.01" required>
-        </div>
-
-        <div class="form-group">
-            <button type="submit">Submit Application</button>
-        </div>
+<table class="container">
+    <tr>
+        <th colspan="2"><h2>Student Application Form</h2></th>
+    </tr>
+    <form action="" >
+        <tr>
+            <td><label for="firstName">First Name</label></td>
+            <td><input type="text" id="firstName" name="firstName" required></td>
+        </tr>
+        <tr>
+            <td><label for="lastName">Last Name</label></td>
+            <td><input type="text" id="lastName" name="lastName" required></td>
+        </tr>
+        <tr>
+            <td><label for="dob">Date of Birth</label></td>
+            <td><input type="date" id="dob" name="dob" required></td>
+        </tr>
+        <tr>
+            <td><label for="gender">Gender</label></td>
+            <td class="gender">
+              <label><input type="radio" name="gender" value="male" required> Male</label>
+              <label><input type="radio" name="gender" value="female" required> Female</label>
+              <label><input type="radio" name="gender" value="other" required> Other</label>
+            </td>
+        </tr>
+              
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="email" id="email" name="email" required></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Phone Number</label></td>
+            <td><input type="tel" id="phone" name="phone" required></td>
+        </tr>
+        <tr>
+            <td><label for="address">Address</label></td>
+            <td><textarea id="address" name="address" rows="4" required></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="course">Course</label></td>
+            <td>
+                <select id="course" name="course" required>
+                    <option value="" disabled selected>Select your course</option>
+                    <option value="bca">BCA</option>
+                    <option value="bcom">B.Com</option>
+                    <option value="bsc_cs">B.Sc Computer Science</option>
+                    <option value="bba">BBA</option>
+                    <option value="mca">MCA</option>
+                    <option value="mba">MBA</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="highSchool">High School Name</label></td>
+            <td><input type="text" id="highSchool" name="highSchool" required></td>
+        </tr>
+        <tr>
+            <td><label for="percentage">Percentage</label></td>
+            <td><input type="number" id="percentage" name="percentage" required></td>
+        </tr>
+        <tr>
+            <td><label for="photo">Upload Photo</label></td>
+            <td><input type="file" id="photo" name="photo"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2"><button type="submit">Submit Application</button></td>
+        </tr>
     </form>
-</div>
+</table>
 
 </body>
 </html>

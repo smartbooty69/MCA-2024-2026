@@ -1,9 +1,9 @@
-/*------------------------------------------------------------
-   Program to create a Linked List
-----------------------------------------------------------------------
+/*--------------------------------------------------------------------------------
+   Linked List
+---------------------------------------------------------------------------
    Clancy
-   18-07-24
------------------------------------------------------------------*/
+   06-08-24
+  -------------------------------------------------------------------------*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,8 +20,10 @@ void InsertListNode(char *str);
 void DisplayList();
 void RemoveFirstNode();
 void RemoveLastNode();
-LISTNODE *SearchListNode(char *str);
+int SearchListNodeIndex(char *str);
 void InitList();
+
+//-----------------------------------
 
 int main() {
     int choice;
@@ -29,10 +31,10 @@ int main() {
 
     while (1) {
         printf("\nMenu:\n");
-        printf("1. Insert a string (into an ordered list)\n");
-        printf("2. Display the contents of the list\n");
+        printf("1. Insert a string\n");
+        printf("2. Display the contents\n");
         printf("3. Remove the first node\n");
-        printf("4. Search for a given string in the list\n");
+        printf("4. Search for a string\n");
         printf("5. Remove the last node\n");
         printf("6. Exit\n");
         printf("Enter your choice: ");
@@ -51,11 +53,12 @@ int main() {
                 RemoveFirstNode();
                 break;
             case 4:
+                int pos;
+                pos = SearchListNodeIndex(str);
                 printf("Enter the string to search: ");
                 scanf("%s", str);
-                LISTNODE *result = SearchListNode(str);
-                if (result) {
-                    printf("String '%s' found in the list.\n", str);
+                if (pos != -1) {
+                    printf("String '%s' found at position %d in the list.\n", str, pos);
                 } else {
                     printf("String '%s' not found in the list.\n", str);
                 }
@@ -66,7 +69,7 @@ int main() {
             case 6:
                 exit(0);
             default:
-                printf("Invalid choice! Please try again.\n");
+                printf("Invalid choice\n");
         }
     }
 
@@ -77,15 +80,22 @@ void InitList() {
     Head = NULL;
 }
 
+//-----------------------------------
+
 void InsertListNode(char *str) {
     LISTNODE *Prev, *Curr, *Node;
     Node = (LISTNODE *)malloc(sizeof(LISTNODE));
     strcpy(Node->data, str);
     Node->next = NULL;
 
-    if (Head == NULL || strcmp(str, Head->data) < 0) {
+    if(Head==NULL){
+        Head=Node;
+        return;
+    }
+
+    if (strcmp(str, Head->data) < 0) {
         Node->next = Head;
-        Head = Node;
+        Head=Node;
         return;
     }
 
@@ -99,8 +109,11 @@ void InsertListNode(char *str) {
     Node->next = Curr;
 }
 
+//-----------------------------------
+
 void DisplayList() {
-    LISTNODE *Curr = Head;
+    LISTNODE *Curr;
+    Curr = Head;
     if (Curr == NULL) {
         printf("List is empty.\n");
         return;
@@ -114,32 +127,42 @@ void DisplayList() {
     printf("NULL\n");
 }
 
+//-----------------------------------
+
 void RemoveFirstNode() {
+
+    LISTNODE *first;
+
     if (Head == NULL) {
-        printf("List is empty. No node to remove.\n");
+        printf("List is empty.\n");
         return;
     }
 
-    LISTNODE *Temp = Head;
+    first = Head;
     Head = Head->next;
-    free(Temp);
+    free(first);
     printf("First node removed.\n");
 }
 
+//-----------------------------------
+
 void RemoveLastNode() {
+    LISTNODE *Prev, *Curr;
     if (Head == NULL) {
-        printf("List is empty. No node to remove.\n");
+        printf("List is empty.\n");
         return;
     }
 
     if (Head->next == NULL) {
         free(Head);
         Head = NULL;
-        printf("Last node removed. List is now empty.\n");
+        printf("List is now empty.\n");
         return;
     }
 
-    LISTNODE *Prev = NULL, *Curr = Head;
+    Prev = NULL;
+    Curr = Head;
+
     while (Curr->next != NULL) {
         Prev = Curr;
         Curr = Curr->next;
@@ -150,13 +173,19 @@ void RemoveLastNode() {
     printf("Last node removed.\n");
 }
 
-LISTNODE *SearchListNode(char *str) {
-    LISTNODE *Curr = Head;
+//-----------------------------------
+
+int SearchListNodeIndex(char *str) {
+    LISTNODE *Curr;
+    Curr = Head;
+    int i = 0;
+
     while (Curr != NULL) {
         if (strcmp(Curr->data, str) == 0) {
-            return Curr;
+            return i; 
         }
         Curr = Curr->next;
+        i++;
     }
-    return NULL;
+    return -1; 
 }

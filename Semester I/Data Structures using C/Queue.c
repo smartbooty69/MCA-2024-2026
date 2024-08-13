@@ -16,7 +16,7 @@ QUEUENODE *FRONT, *REAR;
 
 void InitQueue();
 void EnQueue(int NUM);
-void PrintQueue(QUEUENODE *FRONT);
+void PrintQueue();
 void DeQueue();
 
 int main()
@@ -42,7 +42,7 @@ int main()
                 }
                 break;
             case 2:
-                PrintQueue(FRONT);
+                PrintQueue();
                 break;
             case 3:
                 DeQueue();
@@ -78,7 +78,7 @@ void EnQueue(int NUM)
     REAR=NODE;
 }
 
-void PrintQueue(QUEUENODE *FRONT)
+void PrintQueue()
 {
     QUEUENODE *CURR;
     CURR=FRONT;
@@ -111,3 +111,4 @@ void DeQueue()
     free(CURR);
     
 }
+ 
