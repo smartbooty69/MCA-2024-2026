@@ -8,8 +8,8 @@
 #include<stdlib.h>
 
 typedef struct QueueType{
-        int NUM;
-        struct QueueType *NEXT;
+    int NUM;
+    struct QueueType *NEXT;
 }QUEUENODE;
 
 QUEUENODE *FRONT, *REAR;
@@ -63,7 +63,7 @@ void InitQueue()
 
 void EnQueue(int NUM)
 {
-    QUEUENODE *CURR, *NODE;
+    QUEUENODE *NODE;
     NODE=(QUEUENODE*)malloc(sizeof(QUEUENODE));
     NODE->NUM=NUM;
     NODE->NEXT=NULL;
@@ -82,7 +82,6 @@ void PrintQueue(QUEUENODE *FRONT)
 {
     QUEUENODE *CURR;
     CURR=FRONT;
-    char ch;
     while(CURR!=NULL){
         printf("%d\t",CURR->NUM);
         CURR=CURR->NEXT;
@@ -108,6 +107,7 @@ void DeQueue()
         REAR = NULL;
     }
 
+    printf("Dequeued element: %d\n", CURR->NUM);
     free(CURR);
-    printf("Element dequeued\n");
+    
 }
