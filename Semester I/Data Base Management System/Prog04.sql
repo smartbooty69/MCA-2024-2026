@@ -107,8 +107,30 @@ HAVING COUNT(DISTINCT a.branch_name) =
        FROM BRANCH 
        WHERE branch_city = 'New York');
 
+DELETE FROM DEPOSITOR
+WHERE accno IN (
+    SELECT accno FROM ACCOUNT
+    WHERE branch_name IN (
+        SELECT branch_name
+        FROM BRANCH
+        WHERE branch_city = 'New York'
+    )
+);
+
+DELETE FROM CUSTOMER
+WHERE accno IN (
+    SELECT accno FROM ACCOUNT
+    WHERE branch_name IN (
+        SELECT branch_name
+        FROM BRANCH
+        WHERE branch_city = 'New York'
+    )
+);
+
 DELETE FROM ACCOUNT
-WHERE branch_name IN 
-    (SELECT branch_name 
-     FROM BRANCH 
-     WHERE branch_city = 'New York');
+WHERE branch_name IN (
+    SELECT branch_name
+    FROM BRANCH
+    WHERE branch_city = 'New York'
+);
+
