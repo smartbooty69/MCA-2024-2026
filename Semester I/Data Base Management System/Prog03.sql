@@ -65,7 +65,7 @@ INSERT INTO CATEGORY VALUES (4, 'Thriller');
 INSERT INTO CATEGORY VALUES (5, 'Science Fiction');
 
 -- Insert data into CATALOG table
-INSERT INTO BOOK_CATALOG VALUES (101, "Harry Potter and the Philosopher\'s Stone", 1, 1, 1, 1997, 500);
+INSERT INTO BOOK_CATALOG VALUES (101, 'Harry Potter and the Philosopher''s Stone', 1, 1, 1, 1997, 500);
 INSERT INTO BOOK_CATALOG VALUES (102, 'A Game of Thrones', 2, 2, 5, 1996, 700);
 INSERT INTO BOOK_CATALOG VALUES (103, 'The Hobbit', 3, 3, 1, 1937, 400);
 INSERT INTO BOOK_CATALOG VALUES (104, 'Murder on the Orient Express', 4, 4, 2, 1934, 350);
