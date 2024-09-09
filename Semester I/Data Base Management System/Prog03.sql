@@ -21,7 +21,7 @@ CREATE TABLE CATEGORY (
 );
 
 -- Creating CATALOG table
-CREATE TABLE CATALOG (
+CREATE TABLE BOOK_CATALOG (
     book_id INT PRIMARY KEY,
     title VARCHAR2(255),
     author_id INT,
@@ -34,12 +34,13 @@ CREATE TABLE CATALOG (
     FOREIGN KEY (category_id) REFERENCES CATEGORY(category_id)
 );
 
+
 -- Creating ORDER_DETAILS table
 CREATE TABLE ORDER_DETAILS (
     order_no INT PRIMARY KEY,
     book_id INT,
     quantity INT,
-    FOREIGN KEY (book_id) REFERENCES CATALOG(book_id)
+    FOREIGN KEY (book_id) REFERENCES BOOK_CATALOG(book_id)
 );
 
 -- Insert data into AUTHOR table
