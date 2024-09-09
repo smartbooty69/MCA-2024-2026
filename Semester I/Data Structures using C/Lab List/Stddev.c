@@ -42,7 +42,7 @@ float stddev(int N, int A[]) {
     avg = (float)sum / N;
 
     for (i = 0; i < N; i++) {
-        variance += (A[i] - avg) * (A[i] - avg);
+        variance += pow(A[i] - avg, 2);    
     }
 
     variance /= (N - 1);

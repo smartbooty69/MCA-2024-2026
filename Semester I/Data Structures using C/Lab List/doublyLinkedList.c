@@ -47,6 +47,7 @@ int main() {
             case 1:
                 printf("\nEnter a number: ");
                 scanf("%d", &Num);
+
                 insertDblLnkNode(Num);
                 break;
             case 2:
