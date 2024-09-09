@@ -65,11 +65,11 @@ INSERT INTO CATEGORY VALUES (4, 'Thriller');
 INSERT INTO CATEGORY VALUES (5, 'Science Fiction');
 
 -- Insert data into CATALOG table
-INSERT INTO CATALOG VALUES (101, "Harry Potter and the Philosopher\'s Stone", 1, 1, 1, 1997, 500);
-INSERT INTO CATALOG VALUES (102, 'A Game of Thrones', 2, 2, 5, 1996, 700);
-INSERT INTO CATALOG VALUES (103, 'The Hobbit', 3, 3, 1, 1937, 400);
-INSERT INTO CATALOG VALUES (104, 'Murder on the Orient Express', 4, 4, 2, 1934, 350);
-INSERT INTO CATALOG VALUES (105, 'The Shining', 5, 5, 3, 1977, 600);
+INSERT INTO BOOK_CATALOG VALUES (101, "Harry Potter and the Philosopher\'s Stone", 1, 1, 1, 1997, 500);
+INSERT INTO BOOK_CATALOG VALUES (102, 'A Game of Thrones', 2, 2, 5, 1996, 700);
+INSERT INTO BOOK_CATALOG VALUES (103, 'The Hobbit', 3, 3, 1, 1937, 400);
+INSERT INTO BOOK_CATALOG VALUES (104, 'Murder on the Orient Express', 4, 4, 2, 1934, 350);
+INSERT INTO BOOK_CATALOG VALUES (105, 'The Shining', 5, 5, 3, 1977, 600);
 
 -- Insert data into ORDER_DETAILS table
 INSERT INTO ORDER_DETAILS VALUES (1001, 101, 5);
@@ -80,15 +80,15 @@ INSERT INTO ORDER_DETAILS VALUES (1005, 105, 6);
 
 SELECT a.name, a.city, a.country
 FROM AUTHOR a
-JOIN CATALOG c ON a.author_id = c.author_id
+JOIN BOOK_CATALOG c ON a.author_id = c.author_id
 WHERE c.year > 2010
 GROUP BY a.author_id, a.name, a.city, a.country
 HAVING COUNT(c.book_id) >= 2 
-   AND MIN(c.price) > (SELECT AVG(price) FROM CATALOG);
+   AND MIN(c.price) > (SELECT AVG(price) FROM BOOK_CATALOG);
 
 SELECT a.name, a.city, a.country
 FROM AUTHOR a
-JOIN CATALOG c ON a.author_id = c.author_id
+JOIN BOOK_CATALOG c ON a.author_id = c.author_id
 JOIN ORDER_DETAILS o ON c.book_id = o.book_id
 WHERE o.quantity = (
     SELECT MAX(quantity)
@@ -96,7 +96,7 @@ WHERE o.quantity = (
 );
 
 -- Assume the publisher is 'Bloomsbury'
-UPDATE CATALOG
+UPDATE BOOK_CATALOG
 SET price = price * 1.10
 WHERE publisher_id = (
     SELECT publisher_id
