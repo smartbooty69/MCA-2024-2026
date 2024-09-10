@@ -8,14 +8,12 @@
 </head>
 <body>
 
-<%-- Check if the form is submitted --%>
 <%
     String name = request.getParameter("name");
     String age = request.getParameter("age");
     boolean isSubmitted = (name != null && age != null);
 %>
 
-<%-- Display the form if not submitted --%>
 <% if (!isSubmitted) { %>
     <h2>Enter Your Details</h2>
     <form action="userForm.jsp" method="post">
@@ -30,13 +28,11 @@
     <p><strong>Name:</strong> <%= name %></p>
     <p><strong>Age:</strong> <%= age %></p>
 
-    <%-- Display the current date and time --%>
     <p><strong>Current Date and Time:</strong> <%= new Date() %></p>
 
-    <%-- Option to go back to the form --%>
-    <form action="userForm.jsp" method="get">
+    <!-- <form action="userForm.jsp" method="get">
         <input type="submit" value="Go Back">
-    </form>
+    </form> -->
 <% } %>
 
 </body>
