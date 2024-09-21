@@ -253,5 +253,3 @@ BEGIN
   END CASE;
 END;
 /
-
-
