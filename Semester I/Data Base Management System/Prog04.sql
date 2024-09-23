@@ -6,15 +6,15 @@ CREATE TABLE BRANCH (
     ASSETS REAL
 );
 
--- Creating ACCOUNT table
+-- Creating ACCOUNT table 
 CREATE TABLE ACCOUNT (
     ACCNO INT PRIMARY KEY,
-    BRANCH_NAME VARCHAR2(100),
+    IFSC VARCHAR2(11),
     BALANCE REAL,
-    FOREIGN KEY (BRANCH_NAME) REFERENCES BRANCH(BRANCH_NAME)
+    FOREIGN KEY (IFSC) REFERENCES BRANCH(IFSC)
 );
 
--- Creating DEPOSITOR table
+-- Creating DEPOSITOR table 
 CREATE TABLE DEPOSITOR (
     ACCNO INT,
     CUSTOMER_NAME VARCHAR2(100),
@@ -34,9 +34,9 @@ CREATE TABLE CUSTOMER (
 -- Creating LOAN table
 CREATE TABLE LOAN (
     LOAN_NO INT PRIMARY KEY,
-    BRANCH_NAME VARCHAR2(100),
+    IFSC VARCHAR2(11),
     AMOUNT REAL,
-    FOREIGN KEY (BRANCH_NAME) REFERENCES BRANCH(BRANCH_NAME)
+    FOREIGN KEY (IFSC) REFERENCES BRANCH(IFSC)
 );
 
 -- Creating BORROWER table
@@ -86,31 +86,31 @@ INSERT INTO BRANCH VALUES (
 -- Insert data into ACCOUNT table
 INSERT INTO ACCOUNT VALUES (
     101,
-    'Main Branch',
+    'IFSC001',
     5000
 );
 
 INSERT INTO ACCOUNT VALUES (
     102,
-    'City Branch',
+    'IFSC002',
     1500
 );
 
 INSERT INTO ACCOUNT VALUES (
     103,
-    'Main Branch',
+    'IFSC001',
     3000
 );
 
 INSERT INTO ACCOUNT VALUES (
     104,
-    'Suburban Branch',
+    'IFSC003',
     2000
 );
 
 INSERT INTO ACCOUNT VALUES (
     105,
-    'Main Branch',
+    'IFSC001',
     2500
 );
 
@@ -179,31 +179,31 @@ INSERT INTO CUSTOMER VALUES (
 -- Insert data into LOAN table
 INSERT INTO LOAN VALUES (
     201,
-    'Main Branch',
+    'IFSC001',
     10000
 );
 
 INSERT INTO LOAN VALUES (
     202,
-    'City Branch',
+    'IFSC002',
     5000
 );
 
 INSERT INTO LOAN VALUES (
     203,
-    'Main Branch',
+    'IFSC001',
     8000
 );
 
 INSERT INTO LOAN VALUES (
     204,
-    'Suburban Branch',
+    'IFSC003',
     12000
 );
 
 INSERT INTO LOAN VALUES (
     205,
-    'Downtown Branch',
+    'IFSC004',
     6000
 );
 
@@ -239,12 +239,15 @@ FROM
     DEPOSITOR D
     JOIN ACCOUNT A
     ON D.ACCNO = A.ACCNO
+    JOIN BRANCH B
+    ON A.IFSC = B.IFSC
 WHERE
-    A.BRANCH_NAME = 'Main Branch'
+    B.BRANCH_NAME = 'Main Branch'
 GROUP BY
     D.CUSTOMER_NAME
 HAVING
     COUNT(A.ACCNO) >= 2;
+
 
 SELECT
     C.CUSTOMER_NAME
@@ -253,15 +256,15 @@ FROM
     JOIN ACCOUNT A
     ON C.ACCNO = A.ACCNO
     JOIN BRANCH B
-    ON A.BRANCH_NAME = B.BRANCH_NAME
+    ON A.IFSC = B.IFSC
 WHERE
     B.BRANCH_CITY = 'New York'
 GROUP BY
     C.CUSTOMER_NAME
 HAVING
-    COUNT(DISTINCT A.BRANCH_NAME) = (
+    COUNT(DISTINCT A.IFSC) = (
         SELECT
-            COUNT(BRANCH_NAME)
+            COUNT(IFSC)
         FROM
             BRANCH
         WHERE
@@ -269,48 +272,37 @@ HAVING
     );
 
 DELETE FROM DEPOSITOR
-WHERE
-    ACCNO IN (
-        SELECT
-            ACCNO
-        FROM
-            ACCOUNT
-        WHERE
-            BRANCH_NAME IN (
-                SELECT
-                    BRANCH_NAME
-                FROM
-                    BRANCH
-                WHERE
-                    BRANCH_CITY = 'New York'
-            )
-    );
+WHERE ACCNO IN (
+    SELECT ACCNO
+    FROM ACCOUNT
+    WHERE IFSC IN (
+        SELECT IFSC
+        FROM BRANCH
+        WHERE BRANCH_CITY = 'New York'
+    )
+);
 
 DELETE FROM CUSTOMER
-WHERE
-    ACCNO IN (
-        SELECT
-            ACCNO
-        FROM
-            ACCOUNT
-        WHERE
-            BRANCH_NAME IN (
-                SELECT
-                    BRANCH_NAME
-                FROM
-                    BRANCH
-                WHERE
-                    BRANCH_CITY = 'New York'
-            )
-    );
+WHERE ACCNO IN (
+    SELECT ACCNO
+    FROM ACCOUNT
+    WHERE IFSC IN (
+        SELECT IFSC
+        FROM BRANCH
+        WHERE BRANCH_CITY = 'New York'
+    )
+);
 
 DELETE FROM ACCOUNT
-WHERE
-    BRANCH_NAME IN (
-        SELECT
-            BRANCH_NAME
-        FROM
-            BRANCH
-        WHERE
-            BRANCH_CITY = 'New York'
-    );
+WHERE IFSC IN (
+    SELECT IFSC
+    FROM BRANCH
+    WHERE BRANCH_CITY = 'New York'
+);
+
+-- DROP TABLE BRANCH CASCADE CONSTRAINTS;
+-- DROP TABLE ACCOUNT CASCADE CONSTRAINTS;
+-- DROP TABLE DEPOSITOR CASCADE CONSTRAINTS;
+-- DROP TABLE CUSTOMER CASCADE CONSTRAINTS;
+-- DROP TABLE LOAN CASCADE CONSTRAINTS;
+-- DROP TABLE BORROWER CASCADE CONSTRAINTS;
