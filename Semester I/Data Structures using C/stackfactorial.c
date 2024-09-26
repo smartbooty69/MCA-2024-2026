@@ -1,113 +1,78 @@
 /*---------------------------------------------------------------
-   STACKfactorial.C 
+   stackfactorial.C 
 -----------------------------------------------------------------
    Clancy 
    23-09-24
 ----------------------------------------------------------------*/
 
 #include<stdio.h>
+#include<stdlib.h>
 
-#define SIZE 100  
+#define size 100 
 
-typedef struct StackType {
-    double arr[SIZE];
-    int top;
+typedef struct StackType{
+    int A[size];
+    int Top;
 } STACK;
-
-void InitStack();
-void Push(double num);
-double Pop();
-int StackEmpty();
-void Display();
 
 STACK S;
 
+void InitStack();
+void Push(int Num);
+int Pop();
+int Fact();
+
 int main()
 {
-    int n;
-    double fib;
-    
-    InitStack();  
-
-    printf("Enter the n value:\n");
-    scanf("%d", &n);
-
-    
-    if (n == 0) {
-        printf("Fibonacci of %d is 0\n", n);
-        return 0;
-    }
-    if (n == 1) {
-        printf("Fibonacci of %d is 1\n", n);
-        return 0;
-    }
-
-    
-    Push(0);  
-    Push(1);  
-
-    for (int i = 2; i <= n; i++) {
-        double num1 = Pop();  
-        double num2 = Pop();  
+    int N;
+    int Factorial;
         
-        Push(num2);           
-        Push(num1);           
-        
-        fib = num1 + num2;     
-        Push(fib);             
-    }
+    InitStack();
+    
+    printf("\nEnter the number: ");
+    scanf("%d", &N); 
 
-    fib = Pop();  
-    printf("Fibonacci of %d is %.0lf\n", n, fib);  
+    Factorial = Fact(N); 
+    
+    printf("\nThe factorial of %d is: %d\n", N, Factorial);
 
     return 0;
 }
 
-
-void InitStack()
-{
-    S.top = -1;  
+void InitStack(){
+    S.Top = 0; 
 }
 
-
-void Push(double num)
+void Push(int Num)
 {
-    if (S.top == SIZE - 1) {
-        printf("Stack Overflow!\n");
+    if(S.Top == size){
+        printf("\nThe Stack is full\n");
         return;
     }
-    else {
-        S.top++;
-        S.arr[S.top] = num;
-    }
+    S.A[S.Top] = Num;
+    S.Top++; 
 }
 
-
-double Pop()
+int Pop()
 {
-    if (S.top == -1) {  
-        printf("Stack Underflow!\n");
-        return -1;
+    if(S.Top == 0){
+        printf("\nStack is empty\n");
+        return 0;
     }
-    else {
-        double num = S.arr[S.top];
-        S.top--;
-        return num;
-    }
+    S.Top--; 
+    return S.A[S.Top];
 }
 
-
-int StackEmpty()
+int Fact(int N)
 {
-    return (S.top == -1);  
-}
-
-
-void Display()
-{
-    printf("\nStack Values:\n");
-    while (!StackEmpty())
-    {
-        printf("\t%lf\n", Pop());  
+    int i = 1;
+    Push(1); 
+    
+    while(i <= N){
+        int Num = Pop(); 
+        Push(Num * i);   
+        i++;
     }
+    
+    return Pop(); 
 }

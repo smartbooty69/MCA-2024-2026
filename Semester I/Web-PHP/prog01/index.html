@@ -3,39 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Simple Webpage</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background: #35424a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav {
+            background: #e8491d;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+            background: white;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #35424a;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .list {
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Webpage</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Main Content</h2>
-            <p>This is the main content area.</p>
-            <img src="image.jpg" alt="Sample Image">
-        </section>
-        <section>
-            <h2>Ordered List</h2>
-            <ol>
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-            </ol>
-        </section>
-    </main>
 
-    <footer>
-        <p>© 2024 My Website</p>
-    </footer>
+<header>
+    <h1>Welcome to My Simple Webpage</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<main>
+    <section id="home">
+        <h2>Home</h2>
+        <p>This is a simple webpage designed to demonstrate HTML5 and CSS styling.</p>
+    </section>
+    
+    <section id="about">
+        <h2>About</h2>
+        <p>Here are some points about this webpage:</p>
+        <ul class="list">
+            <li>HTML5 structure</li>
+            <li>CSS styling</li>
+            <li>Responsive design</li>
+            <li>Navigation menu</li>
+        </ul>
+    </section>
+    
+    <section id="services">
+        <h2>Services</h2>
+        <p>Our services include:</p>
+        <ol class="list">
+            <li>Web Design</li>
+            <li>Development</li>
+            <li>SEO Optimization</li>
+        </ol>
+    </section>
+
+    <section id="image">
+        <h2>Image Section</h2>
+        <div class="image-container">
+            <img src="https://via.placeholder.com/600x400" alt="Placeholder Image">
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <a href="https://github.com/smartbooty69">smartbooty69</a> All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>

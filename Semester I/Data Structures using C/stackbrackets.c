@@ -1,7 +1,6 @@
 /*------------------------------------------------------------------
 stackbrackets.c
-Program to align brackets using stack.
-
+------------------------------------------------------------------
 Clancy Mendonca
 25-09-24
 -----------------------------------------------------------------*/
@@ -55,7 +54,6 @@ int main() {
 
     if(IsStackEmpty()) {
         printf("Brackets are properly aligned.\n");
-    } else {
         printf("Improper alignment of brackets.\n");
     }
 
@@ -95,3 +93,4 @@ int IsMatchingPair(char open, char close) {
     if(open == '[' && close == ']') return 1;
     return 0;
 }
+

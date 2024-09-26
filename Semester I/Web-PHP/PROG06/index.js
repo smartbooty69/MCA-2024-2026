@@ -1,26 +1,35 @@
 function Student(name, age, grade) {
     this.name = name;
     this.age = age;
-    this.grade = grade;
+    this.grade = grade; 
 }
 
 let students = [
-    new Student("Aryan", 19, 85),
-    new Student("Sita", 20, 92),
-    new Student("John", 18, 75),
-    new Student("Priya", 21, 89)
+    new Student('Aarav', 20, 85),
+    new Student('Vivaan', 22, 92),
+    new Student('Aditya', 19, 78),
+    new Student('Diya', 21, 65),
+    new Student('Sneha', 23, 90)
 ];
 
-function sortByGrade(students) {
+function sortStudentsByGrade(students) {
     return students.sort((a, b) => b.grade - a.grade);
 }
 
-function filterByGrade(students, minGrade) {
-    return students.filter(student => student.grade >= minGrade);
+function filterPassingStudents(students) {
+    return students.filter(student => student.grade >= 75);
+}
+
+function displayStudents(students) {
+    students.forEach(student => {
+        console.log(`Name: ${student.name}, Age: ${student.age}, Grade: ${student.grade}`);
+    });
 }
 
 console.log("Sorted Students by Grade:");
-console.log(sortByGrade(students));
+const sortedStudents = sortStudentsByGrade(students);
+displayStudents(sortedStudents);
 
-console.log("Filtered Students with Grade >= 80:");
-console.log(filterByGrade(students, 80));
+console.log("\nPassing Students:");
+const passingStudents = filterPassingStudents(students);
+displayStudents(passingStudents);

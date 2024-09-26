@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>CALCULATOR</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>CALCULATOR</h1>
+    <div class="container">
+      <form action="" method="POST">
+        <p>CASIO</p>
+        <input type="text" id="screen">
+        <br>
+        <input class="button number" type="button" value="7" onclick="btnclick(this.value)">
+        <input class="button number" type="button" value="8" onclick="btnclick(this.value)">
+        <input class="button number" type="button" value="9" onclick="btnclick(this.value)">
+        <input class="button operator" type="button" value="/" onclick="btnclick(this.value)">
+        <br>
+        <input class="button number" type="button" value="4" onclick="btnclick(this.value)">
+        <input class="button number" type="button" value="5" onclick="btnclick(this.value)">
+        <input class="button number" type="button" value="6" onclick="btnclick(this.value)">
+        <input class="button operator" type="button" value="*" onclick="btnclick(this.value)">
+        <br>
+        <input class="button number" type="button" value="1" onclick="btnclick(this.value)">
+        <input class="button number" type="button" value="2" onclick="btnclick(this.value)">
+        <input class="button number" type="button" value="3" onclick="btnclick(this.value)">
+        <input class="button operator" type="button" value="+" onclick="btnclick(this.value)">
+        <br>
+        <input class="button clear" type="button" value="C" onclick="clearscreen()">
+        <input class="button number" type="button" value="0" onclick="btnclick(this.value)">
+        <input class="button resul" type="button" value="=" onclick="findresult()">
+        <input class="button operator" type="button" value="-" onclick="btnclick(this.value)">
+      </form>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

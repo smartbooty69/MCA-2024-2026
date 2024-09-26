@@ -3,80 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Application Form</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Student Course Registration</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <script src="script.js" defer></script> 
 </head>
 <body>
 
-<form action="">
-    <div class="container">
-        <h2>Student Application Form</h2>
-        <table>
-            <tr>
-                <td><label for="firstName">First Name</label></td>
-                <td><input type="text" id="firstName" name="firstName" required></td>
-            </tr>
-            <tr>
-                <td><label for="lastName">Last Name</label></td>
-                <td><input type="text" id="lastName" name="lastName" required></td>
-            </tr>
-            <tr>
-                <td><label for="dob">Date of Birth</label></td>
-                <td><input type="date" id="dob" name="dob" required></td>
-            </tr>
-            <tr>
-                <td><label for="gender">Gender</label></td>
-                <td class="gender">
-                    <label><input type="radio" name="gender" value="male" required> Male</label>
-                    <label><input type="radio" name="gender" value="female" required> Female</label>
-                    <label><input type="radio" name="gender" value="other" required> Other</label>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="email">Email</label></td>
-                <td><input type="email" id="email" name="email" required></td>
-            </tr>
-            <tr>
-                <td><label for="phone">Phone Number</label></td>
-                <td><input type="number" id="phone" name="phone" required></td>
-            </tr>
-            <tr>
-                <td><label for="address">Address</label></td>
-                <td><textarea id="address" name="address" rows="4" required></textarea></td>
-            </tr>
-            <tr>
-                <td><label for="course">Course</label></td>
-                <td>
-                    <select id="course" name="course" required>
-                        <option value="" disabled selected>Select your course</option>
-                        <option value="bca">BCA</option>
-                        <option value="bcom">B.Com</option>
-                        <option value="bsc_cs">B.Sc Computer Science</option>
-                        <option value="bba">BBA</option>
-                        <option value="mca">MCA</option>
-                        <option value="mba">MBA</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td><label for="highSchool">High School Name</label></td>
-                <td><input type="text" id="highSchool" name="highSchool" required></td>
-            </tr>
-            <tr>
-                <td><label for="percentage">Percentage</label></td>
-                <td><input type="number" id="percentage" name="percentage"  required></td>
-            </tr>
-            <tr>
-                <td><label for="photo">Upload Photo</label></td>
-                <td><input type="file" id="photo" name="photo"  required></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><button type="submit" name="submitApplication">Submit Application</button></td>
-            </tr>
-        </table>
+<header>
+    <h1>Student Course Registration</h1>
+</header>
+
+<main>
+    <div class="form-container">
+        <form id="registrationForm">
+            <section class="personal-info">
+                <h2>Personal Information</h2>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required placeholder="John Doe">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="example@domain.com">
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required placeholder="(123) 456-7890">
+
+                <label for="major">Major:</label>
+                <select id="major" required>
+                    <option value="" disabled selected>Select your major</option>
+                    <option value="cs">Computer Science</option>
+                    <option value="ee">Electrical Engineering</option>
+                    <option value="bio">Biology</option>
+                </select>
+            </section>
+
+            <section class="course-options">
+                <h2>Available Courses</h2>
+                <label>
+                    <input type="checkbox" name="courses" value="cs101"> CS101: Introduction to Computer Science
+                </label>
+                <label>
+                    <input type="checkbox" name="courses" value="ee201"> EE201: Circuit Analysis
+                </label>
+                <label>
+                    <input type="checkbox" name="courses" value="bio202"> BIO202: Genetics
+                </label>
+                <label>
+                    <input type="checkbox" name="courses" value="math301"> MATH301: Calculus III
+                </label>
+            </section>
+
+            <button type="submit">Register</button>
+        </form>
     </div>
-</form>
+</main>
+
+<footer>
+    <p>&copy; <a href="https://github.com/smartbooty69">smartbooty69</a> All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>

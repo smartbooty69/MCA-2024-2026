@@ -54,7 +54,7 @@ int main() {
                 displayStack();
                 break;
             case 4:
-                if (stackEmpty()== -1) {
+                if (stackEmpty() == 1) {
                     printf("Stack is Empty\n");
                 } else {
                     printf("Stack is not Empty\n");
@@ -94,10 +94,8 @@ int pop() {
 }
 
 //-----------------------------------
-int stackEmpty()
-{
-    if (S.Top==0)
-    {
+int stackEmpty() {
+    if (S.Top == -1) {
         return 1;
     } else {
         return -1;
@@ -115,13 +113,11 @@ void displayStack() {
     if (S.Top == -1) {
         printf("Stack is Empty\n");
     } else {
-        i = 0;
-        while (i <= S.Top) {
-            printf("__\n");
+        printf("Top of the Stack ->\n");
+        for (i = S.Top; i >= 0; i--) {
             printf("| %d |\n", S.A[i]);
-            i++;
+            printf(" __\n");
         }
         printf("\n");
     }
 }
-

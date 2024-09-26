@@ -1,39 +1,49 @@
-let a = 5; 
-let b = 3; 
 
-console.log("Bitwise AND: ", a & b);  
-console.log("Bitwise OR: ", a | b);   
-console.log("Bitwise XOR: ", a ^ b);  
+let a = 10;
+let b = 5;
 
-let age = 20;
-let eligibility = (age >= 18) ? "Eligible to vote" : "Not eligible to vote";
-console.log(eligibility);
+let andResult = a & b;  
+let orResult = a | b;   
+let xorResult = a ^ b;  
+let notResult = ~a;      
 
-let num = 10;
-if (num > 0) {
-    console.log(num + " is positive.");
-} else if (num < 0) {
-    console.log(num + " is negative.");
+let firstName = "Aarav";
+let lastName = "Sharma";
+let fullName = firstName + " " + lastName; 
+
+let isAdult = (a >= 18) ? "Adult" : "Minor";
+
+let increment = ++a; 
+let decrement = --b; 
+
+let x = (1, 2, 3); 
+
+if (a > b) {
+    console.log(`${fullName} has a higher value: ${a}`);
 } else {
-    console.log("Number is zero.");
+    console.log(`${fullName} has a lower or equal value: ${b}`);
 }
 
-let day = 3;
-switch (day) {
-    case 1:
-        console.log("Monday");
+switch (b) {
+    case 0:
+        console.log("b is zero.");
         break;
-    case 2:
-        console.log("Tuesday");
+    case 5:
+        console.log("b is five.");
         break;
-    case 3:
-        console.log("Wednesday");
+    case 10:
+        console.log("b is ten.");
         break;
     default:
-        console.log("Invalid day");
+        console.log("b is neither zero, five, nor ten.");
 }
 
-
-for (let i = 1; i <= 5; i++) {
-    console.log("Iteration: " + i);
-}
+console.log("Bitwise AND:", andResult);
+console.log("Bitwise OR:", orResult);
+console.log("Bitwise XOR:", xorResult);
+console.log("Bitwise NOT of a:", notResult);
+console.log("Full Name:", fullName);
+console.log("Is Adult:", isAdult);
+console.log("Incremented a:", increment);
+console.log("Decremented b:", decrement);
+console.log("Value of x using comma operator:", x);
