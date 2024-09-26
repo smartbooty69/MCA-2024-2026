@@ -1,5 +1,14 @@
 /*--------------------------------------------------------------------------------
-   Linked List
+    Write a menu driven program in C to show the working of a
+    LIKNED LIST having nodes containing a character string (array) as
+    the data item and a link to the next node. CHOICES:
+        1. Insert a string ( into an ordered list)
+        2. Display the contents of the list
+        3. Remove the first node
+        4. Search for a given string in the list.
+        5. Remove the last node
+    ( use string functions strcpy() & strcmp() to assign and
+    compare strings )
 ---------------------------------------------------------------------------
    Clancy
    06-08-24

@@ -1,5 +1,9 @@
 /*-------------------------------------------------------------------------
-   Queue.c
+    Write a menu driven program in C to show the working of a CIRCULAR QUEUE with options: 
+    a) Enter a data item (ENQUEUE)
+    b) Display the Queue 
+    c) remove a data item ( DEQUEUE)
+
 ---------------------------------------------------------------------------
    Clancy
    05-08-24
@@ -24,7 +28,7 @@ int main()
 {
     int NUM, choice;
 
-    InitQueue(); // Initialize the queue
+    InitQueue(); 
 
     while (1) {
         printf("\nMenu:\n");

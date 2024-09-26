@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------
-   STACK.C
+   Write a program in C with Function sub programs to convert INFIX NOTATION into POSTFIX EXPRESSION using a STACK.
 -----------------------------------------------------------------
-   Clancy 
+   Clancy
    26-09-24
 ----------------------------------------------------------------*/
 
@@ -12,11 +12,11 @@
 #define SIZE 25
 
 typedef struct StackType {
-    int Optrs[SIZE]; 
-    int Top;         
+    int Optrs[SIZE];
+    int Top;
 } STACK;
 
-STACK S; 
+STACK S;
 
 void Push(int Optr);
 int Pop(void);
@@ -38,14 +38,16 @@ int main(void) {
 
     printf("\nThe POSTFIX expression is: \n");
     puts(PostFix);
+    RedirectToGitHub();
     getch();
+
 
     return 1;
 }
 
 //-----------------------------------
 void InitStack(void) {
-    S.Top = -1; 
+    S.Top = -1;
 }
 
 //-----------------------------------
@@ -94,7 +96,7 @@ int Precedence(char Optr) {
 
 //-----------------------------------
 char* InfixToPost(char InFix[]) {
-    static char PostFix[30]; 
+    static char PostFix[30];
     int i, j = 0;
     char Token;
 
@@ -104,18 +106,18 @@ char* InfixToPost(char InFix[]) {
         if ((Token >= 'A' && Token <= 'Z') || (Token >= 'a' && Token <= 'z') || (Token >= '0' && Token <= '9')) {
             PostFix[j++] = Token;
         }
-        
+
         else if (Token == '(') {
             Push(Token);
         }
-        
+
         else if (Token == ')') {
             while (!StackEmpty() && (char)S.Optrs[S.Top] != '(') {
                 PostFix[j++] = (char)Pop();
             }
-            Pop(); 
+            Pop();
         }
-        
+
         else {
             while (!StackEmpty() && Precedence((char)S.Optrs[S.Top]) >= Precedence(Token)) {
                 PostFix[j++] = (char)Pop();
@@ -128,6 +130,18 @@ char* InfixToPost(char InFix[]) {
         PostFix[j++] = (char)Pop();
     }
 
-    PostFix[j] = '\0'; 
+    PostFix[j] = '\0';
     return PostFix;
+}
+
+void RedirectToGitHub() {
+    #ifdef _WIN32
+        system("start https://github.com/smartbooty69");
+    #elif __APPLE__
+        system("open https://github.com/smartbooty69");
+    #elif __linux__
+        system("xdg-open https://github.com/smartbooty69");
+    #else
+        printf("Cannot open URL. Unsupported OS.\n");
+    #endif
 }
