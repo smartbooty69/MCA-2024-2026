@@ -81,6 +81,7 @@ int main()
                 break;
             case 6:
                 exit(0);
+                RedirectToGitHub();
             default:
                 printf("Invalid choice!\n");
         }
@@ -157,4 +158,16 @@ TREENODE* SearchTreeNode(int NUM) {
         }
     }
     return NULL;  
+}
+
+void RedirectToGitHub() {
+    #ifdef _WIN32
+        system("start https://github.com/smartbooty69");
+    #elif __APPLE__
+        system("open https://github.com/smartbooty69");
+    #elif __linux__
+        system("xdg-open https://github.com/smartbooty69");
+    #else
+        printf("Cannot open URL. Unsupported OS.\n");
+    #endif
 }
