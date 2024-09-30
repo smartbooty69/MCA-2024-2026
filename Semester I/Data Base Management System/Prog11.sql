@@ -1,0 +1,53 @@
+CREATE TABLE employee(
+  eid VARCHAR2(6) PRIMARY KEY,
+  ename VARCHAR2(35) NOT NULL,
+  salary NUMBER(15,2) CHECK (salary > 0)
+);
+
+CREATE TABLE employee10000(
+  eid VARCHAR2(6) PRIMARY KEY,
+  ename VARCHAR2(35) NOT NULL,
+  salary NUMBER(15,2) CHECK (salary > 0),
+  msg VARCHAR2(60)
+);
+
+CREATE OR REPLACE TRIGGER employee_trig
+BEFORE INSERT OR UPDATE ON employee
+FOR EACH ROW
+WHEN (NEW.salary > 10000)
+BEGIN
+  -- Check if the operation is an INSERT
+  IF INSERTING THEN
+    INSERT INTO employee10000 VALUES (:NEW.eid, :NEW.ename, :NEW.salary, 'RECORD INSERTED INTO employee');
+    DBMS_OUTPUT.PUT_LINE('RECORD INSERTED INTO EMPLOYEE10000 TABLE');
+  END IF;
+  
+  -- Check if the operation is an UPDATE
+  IF UPDATING THEN
+    INSERT INTO employee10000 VALUES (:NEW.eid, :NEW.ename, :NEW.salary, 'RECORD UPDATED ON employee');
+    DBMS_OUTPUT.PUT_LINE('RECORD INSERTED INTO EMPLOYEE10000 TABLE');
+  END IF;
+END employee_trig;
+/
+
+CREATE OR REPLACE TRIGGER employee_trig_del
+AFTER DELETE ON employee
+FOR EACH ROW
+WHEN (OLD.salary > 10000)
+BEGIN
+  -- Check if the operation is a DELETE
+  IF DELETING THEN
+    INSERT INTO employee10000 VALUES (:OLD.eid, :OLD.ename, :OLD.salary, 'RECORD DELETED FROM employee');
+    DBMS_OUTPUT.PUT_LINE('RECORD DELETED FROM EMPLOYEE10000 TABLE');
+  END IF;
+END employee_trig_del;
+/
+
+INSERT INTO employee VALUES ('E101', 'RAMA L', 67898.98);
+
+INSERT INTO employee VALUES ('E103', 'THANGAM S', 12456.78);
+
+INSERT INTO employee VALUES ('E102', 'BALU D', 3545.56);
+
+SELECT * FROM employee;
+SELECT * FROM employee10000;
