@@ -38,10 +38,8 @@ int main(void) {
 
     printf("\nThe POSTFIX expression is: \n");
     puts(PostFix);
-    RedirectToGitHub();
     getch();
-
-
+    
     return 1;
 }
 
@@ -134,14 +132,3 @@ char* InfixToPost(char InFix[]) {
     return PostFix;
 }
 
-void RedirectToGitHub() {
-    #ifdef _WIN32
-        system("start https://github.com/smartbooty69");
-    #elif __APPLE__
-        system("open https://github.com/smartbooty69");
-    #elif __linux__
-        system("xdg-open https://github.com/smartbooty69");
-    #else
-        printf("Cannot open URL. Unsupported OS.\n");
-    #endif
-}

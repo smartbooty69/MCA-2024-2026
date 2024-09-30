@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------
-1. Write function sub programs in C to input some numbers into an
+Write function sub programs in C to input some numbers into an
 array, print the content of the array and SORT them using Bubble
 SORT TECHNIQUE.
 -------------------------------------------------------------------

@@ -42,7 +42,6 @@ int main() {
         printf("\nElement %d not found in the array.\n", key);
     }
 
-    RedirectToGitHub();
     return 0;
 }
 
@@ -90,16 +89,4 @@ int binarySearch(int N, int A[], int key) {
         }
     }
     return -1; 
-}
-
-void RedirectToGitHub() {
-    #ifdef _WIN32
-        system("start https://github.com/smartbooty69");
-    #elif __APPLE__
-        system("open https://github.com/smartbooty69");
-    #elif __linux__
-        system("xdg-open https://github.com/smartbooty69");
-    #else
-        printf("Cannot open URL. Unsupported OS.\n");
-    #endif
 }
