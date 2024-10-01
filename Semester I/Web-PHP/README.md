@@ -1,5 +1,3 @@
----
-
 ### **1. Basic Webpage Design with CSS**
 **Objective:** 
 - Create a simple webpage using HTML5.
