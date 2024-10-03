@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------------
-   Write a program in C to search for a data item using LINEAR SEARCH method.
+   Write a program in C to search for a data item using Binary SEARCH method.
 ---------------------------------------------------------------------------
    Clancy 
    23-07-24
