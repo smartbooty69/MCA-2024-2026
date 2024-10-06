@@ -44,39 +44,24 @@ CREATE TABLE ORDER_DETAILS (
 );
 
 -- Insert data into AUTHOR table
-INSERT INTO AUTHOR VALUES (1, 'J.K. Rowling', 'London', 'UK');
-INSERT INTO AUTHOR VALUES (2, 'George R.R. Martin', 'Santa Fe', 'USA');
-INSERT INTO AUTHOR VALUES (3, 'J.R.R. Tolkien', 'Bournemouth', 'UK');
-INSERT INTO AUTHOR VALUES (4, 'Agatha Christie', 'Wallingford', 'UK');
-INSERT INTO AUTHOR VALUES (5, 'Stephen King', 'Portland', 'USA');
+INSERT INTO AUTHOR (AUTHOR_ID, AUTHOR_NAME, AUTHOR_CITY, AUTHOR_COUNTRY) 
+    VALUES (:author_id, :author_name, :author_city, :author_country);
 
 -- Insert data into PUBLISHER table
-INSERT INTO PUBLISHER VALUES (1, 'Bloomsbury', 'London', 'UK');
-INSERT INTO PUBLISHER VALUES (2, 'Bantam Books', 'New York', 'USA');
-INSERT INTO PUBLISHER VALUES (3, 'HarperCollins', 'London', 'UK');
-INSERT INTO PUBLISHER VALUES (4, 'Penguin', 'New York', 'USA');
-INSERT INTO PUBLISHER VALUES (5, 'Scribner', 'New York', 'USA');
+INSERT INTO PUBLISHER (PUBLISHER_ID, PUBLISHER_NAME, PUBLISHER_CITY, PUBLISHER_COUNTRY)
+    VALUES (:publisher_id, :publisher_name, :publisher_city, :publisher_country);
 
 -- Insert data into CATEGORY table
-INSERT INTO CATEGORY VALUES (1, 'Fantasy');
-INSERT INTO CATEGORY VALUES (2, 'Mystery');
-INSERT INTO CATEGORY VALUES (3, 'Horror');
-INSERT INTO CATEGORY VALUES (4, 'Thriller');
-INSERT INTO CATEGORY VALUES (5, 'Science Fiction');
+INSERT INTO CATEGORY (CATEGORY_ID, CATEGORY_NAME) 
+    VALUES (:category_id, :category_name);
 
 -- Insert data into CATALOG table
-INSERT INTO BOOK_CATALOG VALUES (101, 'Harry Potter and the Philosopher''s Stone', 1, 1, 1, 1997, 500);
-INSERT INTO BOOK_CATALOG VALUES (102, 'A Game of Thrones', 2, 2, 5, 1996, 700);
-INSERT INTO BOOK_CATALOG VALUES (103, 'The Hobbit', 3, 3, 1, 1937, 400);
-INSERT INTO BOOK_CATALOG VALUES (104, 'Murder on the Orient Express', 4, 4, 2, 1934, 350);
-INSERT INTO BOOK_CATALOG VALUES (105, 'The Shining', 5, 5, 3, 1977, 600);
+INSERT INTO BOOK_CATALOG (BOOK_ID, BOOK_TITLE, AUTHOR_ID, PUBLISHER_ID, CATEGORY_ID, PUBLISH_YEAR, PRICE) 
+    VALUES (:book_id, :book_title, :author_id, :publisher_id, :category_id, :publish_year, :price);
 
 -- Insert data into ORDER_DETAILS table
-INSERT INTO ORDER_DETAILS VALUES (1001, 101, 5);
-INSERT INTO ORDER_DETAILS VALUES (1002, 102, 2);
-INSERT INTO ORDER_DETAILS VALUES (1003, 103, 3);
-INSERT INTO ORDER_DETAILS VALUES (1004, 104, 4);
-INSERT INTO ORDER_DETAILS VALUES (1005, 105, 6);
+ INSERT INTO ORDER_DETAILS (ORDER_ID, BOOK_ID, QUANTITY) 
+    VALUES (:order_id, :book_id, :quantity);
 
 SELECT a.name, a.city, a.country
 FROM AUTHOR a
@@ -101,6 +86,11 @@ SET price = price * 1.10
 WHERE publisher_id = (
     SELECT publisher_id
     FROM PUBLISHER
-    WHERE name = 'Bloomsbury'
+    WHERE name = 'Bloomsbury' 
 );
 
+-- DROP TABLE ORDER_DETAILS CASCADE CONSTRAINTS;
+-- DROP TABLE BOOK_CATALOG CASCADE CONSTRAINTS;
+-- DROP TABLE AUTHOR CASCADE CONSTRAINTS;
+-- DROP TABLE PUBLISHER CASCADE CONSTRAINTS;
+-- DROP TABLE CATEGORY CASCADE CONSTRAINTS;

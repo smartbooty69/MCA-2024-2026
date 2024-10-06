@@ -2,11 +2,11 @@
 CREATE TABLE tab1 (data NUMBER(7,2));
 
 -- Insert values into the table
-INSERT INTO tab1 VALUES (10);
-INSERT INTO tab1 VALUES (20);
-INSERT INTO tab1 VALUES (30);
-INSERT INTO tab1 VALUES (40);
-INSERT INTO tab1 VALUES (50);
+INSERT INTO tab1 VALUES ('&data');
+INSERT INTO tab1 VALUES ('&data');
+INSERT INTO tab1 VALUES ('&data');
+INSERT INTO tab1 VALUES ('&data');
+INSERT INTO tab1 VALUES ('&data');
 
 -- Number Functions
 SELECT AVG(data) AS avg_data FROM tab1;
@@ -54,9 +54,9 @@ SELECT MONTHS_BETWEEN('15-MAR-04', '01-DEC-03') AS months_between_dates FROM dua
 -- Count Functions
 -- Note: Assumes an 'emp' table exists with 'deptcode' column
 SELECT * FROM emp;
-SELECT COUNT(*) AS total_count FROM emp;
-SELECT COUNT(deptcode) AS count_deptcode FROM emp;
-SELECT COUNT(DISTINCT deptcode) AS count_distinct_deptcode FROM emp;
+SELECT COUNT(*) FROM emp;
+SELECT COUNT(deptcode) FROM emp;
+SELECT COUNT(DISTINCT deptcode) FROM emp;
 
 -- Character Functions
 SELECT INITCAP('hello') AS initcap_value FROM dual;

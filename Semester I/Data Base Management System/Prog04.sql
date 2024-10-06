@@ -1,303 +1,90 @@
--- Creating BRANCH table
 CREATE TABLE BRANCH (
-    IFSC VARCHAR2(11) PRIMARY KEY,
-    BRANCH_NAME VARCHAR2(100) UNIQUE,
-    BRANCH_CITY VARCHAR2(50),
-    ASSETS REAL
+    ifsc VARCHAR(11) PRIMARY KEY,
+    branch_name VARCHAR(100),
+    branch_city VARCHAR(50),
+    assets REAL
 );
 
--- Creating ACCOUNT table 
 CREATE TABLE ACCOUNT (
-    ACCNO INT PRIMARY KEY,
-    IFSC VARCHAR2(11),
-    BALANCE REAL,
-    FOREIGN KEY (IFSC) REFERENCES BRANCH(IFSC)
+    accno INT PRIMARY KEY,
+    ifsc VARCHAR(11),  
+    balance REAL,
+    FOREIGN KEY (ifsc) REFERENCES BRANCH(ifsc)
 );
 
--- Creating DEPOSITOR table 
 CREATE TABLE DEPOSITOR (
-    ACCNO INT,
-    CUSTOMER_NAME VARCHAR2(100),
-    PRIMARY KEY (ACCNO, CUSTOMER_NAME),
-    FOREIGN KEY (ACCNO) REFERENCES ACCOUNT(ACCNO)
+    accno INT,
+    customer_name VARCHAR(100),
+    PRIMARY KEY (accno, customer_name),
+    FOREIGN KEY (accno) REFERENCES ACCOUNT(accno)
 );
 
--- Creating CUSTOMER table
 CREATE TABLE CUSTOMER (
-    ACCNO INT PRIMARY KEY,
-    CUSTOMER_NAME VARCHAR2(100),
-    CUSTOMER_STREET VARCHAR2(100),
-    CUSTOMER_CITY VARCHAR2(50),
-    FOREIGN KEY (ACCNO) REFERENCES ACCOUNT(ACCNO)
+    accno INT PRIMARY KEY,
+    customer_name VARCHAR(100),
+    customer_street VARCHAR(100),
+    customer_city VARCHAR(50),
+    FOREIGN KEY (accno) REFERENCES ACCOUNT(accno)
 );
 
--- Creating LOAN table
 CREATE TABLE LOAN (
-    LOAN_NO INT PRIMARY KEY,
-    IFSC VARCHAR2(11),
-    AMOUNT REAL,
-    FOREIGN KEY (IFSC) REFERENCES BRANCH(IFSC)
+    loan_no INT PRIMARY KEY,
+    ifsc VARCHAR(11),  
+    amount REAL,
+    FOREIGN KEY (ifsc) REFERENCES BRANCH(ifsc) 
 );
 
--- Creating BORROWER table
 CREATE TABLE BORROWER (
-    LOAN_NO INT,
-    CUSTOMER_NAME VARCHAR2(100),
-    PRIMARY KEY (LOAN_NO, CUSTOMER_NAME),
-    FOREIGN KEY (LOAN_NO) REFERENCES LOAN(LOAN_NO)
+    loan_no INT,
+    customer_name VARCHAR(100),
+    PRIMARY KEY (loan_no, customer_name),
+    FOREIGN KEY (loan_no) REFERENCES LOAN(loan_no) 
 );
 
--- Insert data into BRANCH table
-INSERT INTO BRANCH VALUES (
-    'IFSC001',
-    'Main Branch',
-    'New York',
-    5000000
-);
+INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
+VALUES (:ifsc, :branch_name, :branch_city, :assets);
 
-INSERT INTO BRANCH VALUES (
-    'IFSC002',
-    'City Branch',
-    'Chicago',
-    2000000
-);
+INSERT INTO ACCOUNT (accno, branch_name, balance)
+VALUES (:accno, :branch_name, :balance);
 
-INSERT INTO BRANCH VALUES (
-    'IFSC003',
-    'Suburban Branch',
-    'San Francisco',
-    1500000
-);
+INSERT INTO CUSTOMER (accno, customer_name, customer_street, customer_city)
+VALUES (:accno, :customer_name, :customer_street, :customer_city);
 
-INSERT INTO BRANCH VALUES (
-    'IFSC004',
-    'Downtown Branch',
-    'Boston',
-    3000000
-);
+INSERT INTO DEPOSITOR (accno, customer_name)
+VALUES (:accno, :customer_name);
 
-INSERT INTO BRANCH VALUES (
-    'IFSC005',
-    'Rural Branch',
-    'Austin',
-    1000000
-);
+INSERT INTO LOAN (loan_no, branch_name, amount)
+VALUES (:loan_no, :branch_name, :amount);
 
--- Insert data into ACCOUNT table
-INSERT INTO ACCOUNT VALUES (
-    101,
-    'IFSC001',
-    5000
-);
+INSERT INTO BORROWER (loan_no, customer_name)
+VALUES (:loan_no, :customer_name);
 
-INSERT INTO ACCOUNT VALUES (
-    102,
-    'IFSC002',
-    1500
-);
+SELECT c.customer_name
+FROM CUSTOMER c
+JOIN DEPOSITOR d ON c.accno = d.accno
+JOIN ACCOUNT a ON d.accno = a.accno
+JOIN BRANCH b ON a.ifsc = b.ifsc
+WHERE b.branch_name = 'Main Branch'
+GROUP BY c.customer_name
+HAVING COUNT(a.accno) >= 2;
 
-INSERT INTO ACCOUNT VALUES (
-    103,
-    'IFSC001',
-    3000
-);
-
-INSERT INTO ACCOUNT VALUES (
-    104,
-    'IFSC003',
-    2000
-);
-
-INSERT INTO ACCOUNT VALUES (
-    105,
-    'IFSC001',
-    2500
-);
-
--- Insert data into DEPOSITOR table
-INSERT INTO DEPOSITOR VALUES (
-    101,
-    'John Doe'
-);
-
-INSERT INTO DEPOSITOR VALUES (
-    102,
-    'Jane Smith'
-);
-
-INSERT INTO DEPOSITOR VALUES (
-    103,
-    'John Doe'
-);
-
-INSERT INTO DEPOSITOR VALUES (
-    104,
-    'Alice Johnson'
-);
-
-INSERT INTO DEPOSITOR VALUES (
-    105,
-    'Robert Brown'
-);
-
--- Insert data into CUSTOMER table
-INSERT INTO CUSTOMER VALUES (
-    101,
-    'John Doe',
-    '5th Avenue',
-    'New York'
-);
-
-INSERT INTO CUSTOMER VALUES (
-    102,
-    'Jane Smith',
-    'Lake Shore Drive',
-    'Chicago'
-);
-
-INSERT INTO CUSTOMER VALUES (
-    103,
-    'John Doe',
-    '5th Avenue',
-    'New York'
-);
-
-INSERT INTO CUSTOMER VALUES (
-    104,
-    'Alice Johnson',
-    'Market Street',
-    'San Francisco'
-);
-
-INSERT INTO CUSTOMER VALUES (
-    105,
-    'Robert Brown',
-    '6th Avenue',
-    'New York'
-);
-
--- Insert data into LOAN table
-INSERT INTO LOAN VALUES (
-    201,
-    'IFSC001',
-    10000
-);
-
-INSERT INTO LOAN VALUES (
-    202,
-    'IFSC002',
-    5000
-);
-
-INSERT INTO LOAN VALUES (
-    203,
-    'IFSC001',
-    8000
-);
-
-INSERT INTO LOAN VALUES (
-    204,
-    'IFSC003',
-    12000
-);
-
-INSERT INTO LOAN VALUES (
-    205,
-    'IFSC004',
-    6000
-);
-
--- Insert data into BORROWER table
-INSERT INTO BORROWER VALUES (
-    201,
-    'John Doe'
-);
-
-INSERT INTO BORROWER VALUES (
-    202,
-    'Jane Smith'
-);
-
-INSERT INTO BORROWER VALUES (
-    203,
-    'John Doe'
-);
-
-INSERT INTO BORROWER VALUES (
-    204,
-    'Alice Johnson'
-);
-
-INSERT INTO BORROWER VALUES (
-    205,
-    'Robert Brown'
-);
-
-SELECT
-    D.CUSTOMER_NAME
-FROM
-    DEPOSITOR D
-    JOIN ACCOUNT A
-    ON D.ACCNO = A.ACCNO
-    JOIN BRANCH B
-    ON A.IFSC = B.IFSC
-WHERE
-    B.BRANCH_NAME = 'Main Branch'
-GROUP BY
-    D.CUSTOMER_NAME
-HAVING
-    COUNT(A.ACCNO) >= 2;
-
-
-SELECT
-    C.CUSTOMER_NAME
-FROM
-    CUSTOMER C
-    JOIN ACCOUNT A
-    ON C.ACCNO = A.ACCNO
-    JOIN BRANCH B
-    ON A.IFSC = B.IFSC
-WHERE
-    B.BRANCH_CITY = 'New York'
-GROUP BY
-    C.CUSTOMER_NAME
-HAVING
-    COUNT(DISTINCT A.IFSC) = (
-        SELECT
-            COUNT(IFSC)
-        FROM
-            BRANCH
-        WHERE
-            BRANCH_CITY = 'New York'
-    );
-
-DELETE FROM DEPOSITOR
-WHERE ACCNO IN (
-    SELECT ACCNO
-    FROM ACCOUNT
-    WHERE IFSC IN (
-        SELECT IFSC
-        FROM BRANCH
-        WHERE BRANCH_CITY = 'New York'
-    )
-);
-
-DELETE FROM CUSTOMER
-WHERE ACCNO IN (
-    SELECT ACCNO
-    FROM ACCOUNT
-    WHERE IFSC IN (
-        SELECT IFSC
-        FROM BRANCH
-        WHERE BRANCH_CITY = 'New York'
-    )
-);
+SELECT c.customer_name
+FROM CUSTOMER c
+JOIN DEPOSITOR d ON c.accno = d.accno
+JOIN ACCOUNT a ON d.accno = a.accno
+JOIN BRANCH b ON a.ifsc = b.ifsc
+WHERE b.branch_city = 'Chicago'  
+GROUP BY c.customer_name
+HAVING COUNT(DISTINCT b.ifsc) = 
+    (SELECT COUNT(DISTINCT ifsc)
+     FROM BRANCH
+     WHERE branch_city = 'Chicago');
 
 DELETE FROM ACCOUNT
-WHERE IFSC IN (
-    SELECT IFSC
+WHERE ifsc IN (
+    SELECT ifsc
     FROM BRANCH
-    WHERE BRANCH_CITY = 'New York'
+    WHERE branch_city = 'Chicago'  
 );
 
 -- DROP TABLE BRANCH CASCADE CONSTRAINTS;
@@ -306,3 +93,93 @@ WHERE IFSC IN (
 -- DROP TABLE CUSTOMER CASCADE CONSTRAINTS;
 -- DROP TABLE LOAN CASCADE CONSTRAINTS;
 -- DROP TABLE BORROWER CASCADE CONSTRAINTS;
+
+-- INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
+-- VALUES ('IFC0001', 'Main Branch', 'New York', 500000);
+
+-- INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
+-- VALUES ('IFC0002', 'City Branch', 'Chicago', 200000);
+
+-- INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
+-- VALUES ('IFC0003', 'Suburban Branch', 'Santa Clara', 100000);
+
+-- INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
+-- VALUES ('IFC0004', 'Downtown Branch', 'San Francisco', 300000);
+
+-- INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
+-- VALUES ('IFC0005', 'Rural Branch', 'Austin', 100000);
+
+-- INSERT INTO ACCOUNT (accno, ifsc, balance)
+-- VALUES (101, 'IFC0001', 5000.00);  -- Main Branch
+
+-- INSERT INTO ACCOUNT (accno, ifsc, balance)
+-- VALUES (102, 'IFC0002', 1500.00);  -- City Branch
+
+-- INSERT INTO ACCOUNT (accno, ifsc, balance)
+-- VALUES (103, 'IFC0001', 3000.00);  -- Main Branch
+
+-- INSERT INTO ACCOUNT (accno, ifsc, balance)
+-- VALUES (104, 'IFC0003', 2000.00);  -- Suburban Branch
+
+-- INSERT INTO ACCOUNT (accno, ifsc, balance)
+-- VALUES (105, 'IFC0001', 2500.00);  -- Main Branch
+
+-- INSERT INTO DEPOSITOR (accno, customer_name)
+-- VALUES (101, 'John Doe');
+
+-- INSERT INTO DEPOSITOR (accno, customer_name)
+-- VALUES (102, 'Jane Smith');
+
+-- INSERT INTO DEPOSITOR (accno, customer_name)
+-- VALUES (103, 'John Doe');
+
+-- INSERT INTO DEPOSITOR (accno, customer_name)
+-- VALUES (104, 'Alice Johnson');
+
+-- INSERT INTO DEPOSITOR (accno, customer_name)
+-- VALUES (105, 'Robert Brown');
+
+-- INSERT INTO CUSTOMER (accno, customer_name, customer_street, customer_city)
+-- VALUES (101, 'John Doe', '123 Main St', 'New York');
+
+-- INSERT INTO CUSTOMER (accno, customer_name, customer_street, customer_city)
+-- VALUES (102, 'Jane Smith', '456 Lake Ave', 'Chicago');
+
+-- INSERT INTO CUSTOMER (accno, customer_name, customer_street, customer_city)
+-- VALUES (103, 'John Doe', '789 State St', 'New York');
+
+-- INSERT INTO CUSTOMER (accno, customer_name, customer_street, customer_city)
+-- VALUES (104, 'Alice Johnson', '1011 Main St', 'Santa Clara');
+
+-- INSERT INTO CUSTOMER (accno, customer_name, customer_street, customer_city)
+-- VALUES (105, 'Robert Brown', '1212 Ave', 'New York');
+
+-- INSERT INTO LOAN (loan_no, ifsc, amount)
+-- VALUES (201, 'IFC0001', 1000.00);  -- Main Branch
+
+-- INSERT INTO LOAN (loan_no, ifsc, amount)
+-- VALUES (202, 'IFC0002', 5000.00);  -- City Branch
+
+-- INSERT INTO LOAN (loan_no, ifsc, amount)
+-- VALUES (203, 'IFC0001', 2000.00);  -- Main Branch
+
+-- INSERT INTO LOAN (loan_no, ifsc, amount)
+-- VALUES (204, 'IFC0003', 12000.00); -- Suburban Branch
+
+-- INSERT INTO LOAN (loan_no, ifsc, amount)
+-- VALUES (205, 'IFC0004', 6000.00);  -- Downtown Branch
+
+-- INSERT INTO BORROWER (loan_no, customer_name)
+-- VALUES (201, 'John Doe');
+
+-- INSERT INTO BORROWER (loan_no, customer_name)
+-- VALUES (202, 'Jane Smith');
+
+-- INSERT INTO BORROWER (loan_no, customer_name)
+-- VALUES (203, 'John Doe');
+
+-- INSERT INTO BORROWER (loan_no, customer_name)
+-- VALUES (204, 'Alice Johnson');
+
+-- INSERT INTO BORROWER (loan_no, customer_name)
+-- VALUES (205, 'Robert Brown');
