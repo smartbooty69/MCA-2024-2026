@@ -1,87 +1,139 @@
-create table salesmen (
-    smno varchar2(6) primary key,  
-    name varchar2(50) not null,    
-    act_sales_amt number(16,2),   
-    tgt_sales_amt number(16,2)     
+CREATE TABLE SALESMEN (
+    SMNO VARCHAR2(6) PRIMARY KEY,
+    NAME VARCHAR2(50) NOT NULL,
+    ACT_SALES_AMT NUMBER(16, 2),
+    TGT_SALES_AMT NUMBER(16, 2)
 );
 
-create table salescommission (
-    smno varchar2(6),             
-    name varchar2(50) not null,  
-    dos date,                     
-    comm number(14,2)             
+CREATE TABLE SALESCOMMISSION (
+    SMNO VARCHAR2(6),
+    NAME VARCHAR2(50) NOT NULL,
+    DOS DATE,
+    COMM NUMBER(14, 2)
 );
 
 -- drop trigger salesman_trig;
 -- drop trigger salesman_trig_del;
 
-create or replace trigger salesmen_trig
-before insert or update on salesmen
-for each row
-when (new.act_sales_amt > new.tgt_sales_amt) 
-begin
-    declare
-        comm salescommission.comm%type;
-        less_than_fixed exception;
-        na salesmen.name%type;
-    begin
-        if :new.act_sales_amt > 25000 then
-            comm := :new.act_sales_amt * 0.35;
-        elsif :new.act_sales_amt > 20000 and :new.act_sales_amt <= 25000 then
-            comm := :new.act_sales_amt * 0.25;
-        elsif :new.act_sales_amt > 15000 and :new.act_sales_amt <= 20000 then
-            comm := :new.act_sales_amt * 0.15;
-        elsif :new.act_sales_amt > 10000 and :new.act_sales_amt <= 15000 then
-            comm := :new.act_sales_amt * 0.10;
-        else
-            raise less_than_fixed; 
-        end if;
+CREATE OR REPLACE TRIGGER SALESMEN_TRIG BEFORE
+    INSERT OR
+        UPDATE ON SALESMEN FOR EACH ROW WHEN (NEW.ACT_SALES_AMT > NEW.TGT_SALES_AMT)
+    BEGIN
+        DECLARE
+            COMM            SALESCOMMISSION.COMM%TYPE;
+            LESS_THAN_FIXED EXCEPTION;
+            NA              SALESMEN.NAME%TYPE;
+        BEGIN
+            IF :NEW.ACT_SALES_AMT > 25000 THEN
+                COMM := :NEW.ACT_SALES_AMT * 0.35;
+            ELSIF :NEW.ACT_SALES_AMT > 20000 AND :NEW.ACT_SALES_AMT <= 25000 THEN
+                COMM := :NEW.ACT_SALES_AMT * 0.25;
+            ELSIF :NEW.ACT_SALES_AMT > 15000 AND :NEW.ACT_SALES_AMT <= 20000 THEN
+                COMM := :NEW.ACT_SALES_AMT * 0.15;
+            ELSIF :NEW.ACT_SALES_AMT > 10000 AND :NEW.ACT_SALES_AMT <= 15000 THEN
+                COMM := :NEW.ACT_SALES_AMT * 0.10;
+            ELSE
+                RAISE LESS_THAN_FIXED;
+            END IF;
 
-        if inserting then
-            insert into salescommission values (:new.smno, :new.name, sysdate, comm);
-            dbms_output.put_line('RECORD INSERTED INTO SALESCOMMISSION TABLE');
-        end if;
+            IF INSERTING THEN
+                INSERT INTO SALESCOMMISSION VALUES (
+                    :NEW.SMNO,
+                    :NEW.NAME,
+                    SYSDATE,
+                    COMM
+                );
+                DBMS_OUTPUT.PUT_LINE('RECORD INSERTED INTO SALESCOMMISSION TABLE');
+            END IF;
 
-        if updating then
-            select name into na from salescommission where smno = :new.smno;
-            delete from salescommission where smno = :new.smno; 
-            insert into salescommission values (:new.smno, :new.name, sysdate, comm); 
-            dbms_output.put_line('RECORD UPDATED IN SALESCOMMISSION TABLE');
-        end if;
-    exception
-        when less_than_fixed then
-            dbms_output.put_line('Salesman no.: ' || :new.smno || ' is not entitled to get commission');
-        when no_data_found then
-            dbms_output.put_line('The Salesman ' || na || ' is not found in the salescommission table');
-    end;
-end salesmen_trig;
+            IF UPDATING THEN
+                SELECT
+                    NAME INTO NA
+                FROM
+                    SALESCOMMISSION
+                WHERE
+                    SMNO = :NEW.SMNO;
+                DELETE FROM SALESCOMMISSION
+                WHERE
+                    SMNO = :NEW.SMNO;
+                INSERT INTO SALESCOMMISSION VALUES (
+                    :NEW.SMNO,
+                    :NEW.NAME,
+                    SYSDATE,
+                    COMM
+                );
+                DBMS_OUTPUT.PUT_LINE('RECORD UPDATED IN SALESCOMMISSION TABLE');
+            END IF;
+        EXCEPTION
+            WHEN LESS_THAN_FIXED THEN
+                DBMS_OUTPUT.PUT_LINE('Salesman no.: '
+                                     || :NEW.SMNO
+                                     || ' is not entitled to get commission');
+            WHEN NO_DATA_FOUND THEN
+                DBMS_OUTPUT.PUT_LINE('The Salesman '
+                                     || NA
+                                     || ' is not found in the salescommission table');
+        END;
+    END SALESMEN_TRIG;
 /
 
-create or replace trigger salesmen_trig_del
-after delete on salesmen
-for each row
-begin
-    declare
-        na salesmen.name%type;
-    begin
-        if deleting then
-            select name into na from salescommission where smno = :old.smno;
-            delete from salescommission where smno = :old.smno;
-            dbms_output.put_line('RECORD DELETED FROM SALESCOMMISSION TABLE');
-        end if;
-    exception
-        when no_data_found then
-            dbms_output.put_line('Salesman no.: ' || :old.smno || ' is not found in the salescommission table');
-    end;
-end salesmen_trig_del;
+CREATE OR REPLACE TRIGGER SALESMEN_TRIG_DEL AFTER
+    DELETE ON SALESMEN FOR EACH ROW
+BEGIN
+    DECLARE
+        NA SALESMEN.NAME%TYPE;
+    BEGIN
+        IF DELETING THEN
+            SELECT
+                NAME INTO NA
+            FROM
+                SALESCOMMISSION
+            WHERE
+                SMNO = :OLD.SMNO;
+            DELETE FROM SALESCOMMISSION
+            WHERE
+                SMNO = :OLD.SMNO;
+            DBMS_OUTPUT.PUT_LINE('RECORD DELETED FROM SALESCOMMISSION TABLE');
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('Salesman no.: '
+                                 || :OLD.SMNO
+                                 || ' is not found in the salescommission table');
+    END;
+END SALESMEN_TRIG_DEL;
 /
 
-insert into salesmen values('SM01', 'Rajesh', 18900, 10000);
+INSERT INTO SALESMEN VALUES(
+    'SM01',
+    'Rajesh',
+    18900,
+    10000
+);
 
-select * from salesmen;
-select * from salescommission;
+SELECT
+    *
+FROM
+    SALESMEN;
 
-update salesmen set act_sales_amt = 18900, tgt_sales_amt = 10000 where smno = 'SM01';
-update salesmen set act_sales_amt = 18900 where smno = 'SM01';
+SELECT
+    *
+FROM
+    SALESCOMMISSION;
 
-delete from salesmen where smno = 'SM02';
+UPDATE SALESMEN
+SET
+    ACT_SALES_AMT = 18900,
+    TGT_SALES_AMT = 10000
+WHERE
+    SMNO = 'SM01';
+
+UPDATE SALESMEN
+SET
+    ACT_SALES_AMT = 18900
+WHERE
+    SMNO = 'SM01';
+
+DELETE FROM SALESMEN
+WHERE
+    SMNO = 'SM02';

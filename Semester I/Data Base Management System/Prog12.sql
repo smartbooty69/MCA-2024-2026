@@ -1,103 +1,141 @@
-create table student2 (
-    Rno varchar2(10),
-    Name varchar2(35) not null,
-    Sub1 number(3),
-    Sub2 number(3),
-    Sub3 number(3),
-    Sub4 number(3),
-    Sub5 number(3),
-    Average number(6,2),
-    Result varchar2(10),
-    Grade varchar2(30),
-    constraint pk_student primary key (Rno)
+CREATE TABLE STUDENT2 (
+    RNO VARCHAR2(10),
+    NAME VARCHAR2(35) NOT NULL,
+    SUB1 NUMBER(3),
+    SUB2 NUMBER(3),
+    SUB3 NUMBER(3),
+    SUB4 NUMBER(3),
+    SUB5 NUMBER(3),
+    AVERAGE NUMBER(6, 2),
+    RESULT VARCHAR2(10),
+    GRADE VARCHAR2(30),
+    CONSTRAINT PK_STUDENT PRIMARY KEY (RNO)
 );
 
-create table student2pass (
-    Rno varchar2(10),
-    Name varchar2(35) not null,
-    Sub1 number(3),
-    Sub2 number(3),
-    Sub3 number(3),
-    Sub4 number(3),
-    Sub5 number(3),
-    Average number(6,2),
-    Result varchar2(10),
-    Grade varchar2(30),
-    constraint pk_student_pass primary key (Rno)
+CREATE TABLE STUDENT2PASS (
+    RNO VARCHAR2(10),
+    NAME VARCHAR2(35) NOT NULL,
+    SUB1 NUMBER(3),
+    SUB2 NUMBER(3),
+    SUB3 NUMBER(3),
+    SUB4 NUMBER(3),
+    SUB5 NUMBER(3),
+    AVERAGE NUMBER(6, 2),
+    RESULT VARCHAR2(10),
+    GRADE VARCHAR2(30),
+    CONSTRAINT PK_STUDENT_PASS PRIMARY KEY (RNO)
 );
 
-create table student2fail (
-    Rno varchar2(10),
-    Name varchar2(35) not null,
-    Sub1 number(3),
-    Sub2 number(3),
-    Sub3 number(3),
-    Sub4 number(3),
-    Sub5 number(3),
-    Average number(6,2),
-    Result varchar2(10),
-    Grade varchar2(30),
-    constraint pk_student_fail primary key (Rno)
+CREATE TABLE STUDENT2FAIL (
+    RNO VARCHAR2(10),
+    NAME VARCHAR2(35) NOT NULL,
+    SUB1 NUMBER(3),
+    SUB2 NUMBER(3),
+    SUB3 NUMBER(3),
+    SUB4 NUMBER(3),
+    SUB5 NUMBER(3),
+    AVERAGE NUMBER(6, 2),
+    RESULT VARCHAR2(10),
+    GRADE VARCHAR2(30),
+    CONSTRAINT PK_STUDENT_FAIL PRIMARY KEY (RNO)
 );
 
-create or replace trigger student_trig 
-before insert or update on student2 
-for each row 
-begin 
-    declare 
-        res student2.result%type;
-        per student2.average%type;
-        gra student2.grade%type;
-    begin
-        delete from student2pass where rno = :new.rno;
-        delete from student2fail where rno = :new.rno;
-
-        if inserting or updating then
-            if (:new.sub1 >= 40 and :new.sub2 >= 40 and :new.sub3 >= 40 and :new.sub4 >= 40 and :new.sub5 >= 40) then
-                res := 'PASS';
-                per := (:new.sub1 + :new.sub2 + :new.sub3 + :new.sub4 + :new.sub5) / 5;
-
-                if per >= 75 then
-                    gra := 'FIRST CLASS WITH DISTINCTION';
-                elsif per < 75 and per >= 60 then
-                    gra := 'FIRST CLASS';
-                elsif per < 60 and per >= 50 then
-                    gra := 'SECOND CLASS';
-                else
-                    gra := 'THIRD CLASS';
-                end if;
-
-                update student2 set result = res, average = per, grade = gra where rno = :new.rno;
-
-                insert into student2pass values (:new.rno, :new.name, :new.sub1, :new.sub2, :new.sub3, :new.sub4, :new.sub5, per, res, gra);
-                dbms_output.put_line('RECORD UPDATED AND INSERTED INTO STUDENT2PASS');
-            else
-                res := 'FAIL';
-                update student2 set result = res where rno = :new.rno;
-
-                insert into student2fail values (:new.rno, :new.name, :new.sub1, :new.sub2, :new.sub3, :new.sub4, :new.sub5, per, res, gra);
-                dbms_output.put_line('RECORD UPDATED AND INSERTED INTO STUDENT2FAIL');
-            end if;
-        end if;
-    exception
-        when no_data_found then
-            dbms_output.put_line('No records found!');
-    end;
-end student_trig;
+CREATE OR REPLACE TRIGGER STUDENT_TRIG BEFORE
+    INSERT OR
+        UPDATE ON STUDENT2 FOR EACH ROW
+    BEGIN
+        DECLARE
+            RES STUDENT2.RESULT%TYPE;
+            PER STUDENT2.AVERAGE%TYPE;
+            GRA STUDENT2.GRADE%TYPE;
+        BEGIN
+            DELETE FROM STUDENT2PASS
+            WHERE
+                RNO = :NEW.RNO;
+            DELETE FROM STUDENT2FAIL
+            WHERE
+                RNO = :NEW.RNO;
+            IF INSERTING OR UPDATING THEN
+                IF (:NEW.SUB1 >= 40
+                AND :NEW.SUB2 >= 40
+                AND :NEW.SUB3 >= 40
+                AND :NEW.SUB4 >= 40
+                AND :NEW.SUB5 >= 40) THEN
+                    RES := 'PASS';
+                    PER := (:NEW.SUB1 + :NEW.SUB2 + :NEW.SUB3 + :NEW.SUB4 + :NEW.SUB5) / 5;
+                    IF PER >= 75 THEN
+                        GRA := 'FIRST CLASS WITH DISTINCTION';
+                    ELSIF PER < 75 AND PER >= 60 THEN
+                        GRA := 'FIRST CLASS';
+                    ELSIF PER < 60 AND PER >= 50 THEN
+                        GRA := 'SECOND CLASS';
+                    ELSE
+                        GRA := 'THIRD CLASS';
+                    END IF;
+                    UPDATE STUDENT2
+                    SET
+                        RESULT = RES,
+                        AVERAGE = PER,
+                        GRADE = GRA
+                    WHERE
+                        RNO = :NEW.RNO;
+                    INSERT INTO STUDENT2PASS VALUES (
+                        :NEW.RNO,
+                        :NEW.NAME,
+                        :NEW.SUB1,
+                        :NEW.SUB2,
+                        :NEW.SUB3,
+                        :NEW.SUB4,
+                        :NEW.SUB5,
+                        PER,
+                        RES,
+                        GRA
+                    );
+                    DBMS_OUTPUT.PUT_LINE('RECORD UPDATED AND INSERTED INTO STUDENT2PASS');
+                ELSE
+                    RES := 'FAIL';
+                    UPDATE STUDENT2
+                    SET
+                        RESULT = RES
+                    WHERE
+                        RNO = :NEW.RNO;
+                    INSERT INTO STUDENT2FAIL VALUES (
+                        :NEW.RNO,
+                        :NEW.NAME,
+                        :NEW.SUB1,
+                        :NEW.SUB2,
+                        :NEW.SUB3,
+                        :NEW.SUB4,
+                        :NEW.SUB5,
+                        PER,
+                        RES,
+                        GRA
+                    );
+                    DBMS_OUTPUT.PUT_LINE('RECORD UPDATED AND INSERTED INTO STUDENT2FAIL');
+                END IF;
+            END IF;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                DBMS_OUTPUT.PUT_LINE('No records found!');
+        END;
+    END STUDENT_TRIG;
 /
 
-create or replace trigger student_trig_del 
-after delete on student2 
-for each row 
-begin
-    delete from student2pass where rno = :old.rno;
-    delete from student2fail where rno = :old.rno;
-    dbms_output.put_line('RECORD DELETED FROM STUDENT2PASS AND STUDENT2FAIL');
-end student_trig_del;
+CREATE OR REPLACE TRIGGER STUDENT_TRIG_DEL AFTER
+    DELETE ON STUDENT2 FOR EACH ROW
+BEGIN
+    DELETE FROM STUDENT2PASS
+    WHERE
+        RNO = :OLD.RNO;
+    DELETE FROM STUDENT2FAIL
+    WHERE
+        RNO = :OLD.RNO;
+    DBMS_OUTPUT.PUT_LINE('RECORD DELETED FROM STUDENT2PASS AND STUDENT2FAIL');
+END STUDENT_TRIG_DEL;
 /
 
 -- -- Insert a student record (prompting for input values)
--- insert into student2(Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5) 
+-- insert into student2(Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 -- values ('&Rno', '&Name', &Sub1, &Sub2, &Sub3, &Sub4, &Sub5);
 
 -- -- View the student2 table
@@ -109,4 +147,3 @@ end student_trig_del;
 
 -- -- View the student2fail table (students who failed)
 -- select * from student2fail;
-
