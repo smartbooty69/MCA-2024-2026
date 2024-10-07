@@ -155,19 +155,19 @@ WHERE ifsc IN (
 -- VALUES (105, 'Robert Brown', '1212 Ave', 'New York');
 
 -- INSERT INTO LOAN (loan_no, ifsc, amount)
--- VALUES (201, 'IFC0001', 1000.00);  -- Main Branch
+-- VALUES (201, 'IFC0001', 1000.00);  
 
 -- INSERT INTO LOAN (loan_no, ifsc, amount)
--- VALUES (202, 'IFC0002', 5000.00);  -- City Branch
+-- VALUES (202, 'IFC0002', 5000.00);  
 
 -- INSERT INTO LOAN (loan_no, ifsc, amount)
--- VALUES (203, 'IFC0001', 2000.00);  -- Main Branch
+-- VALUES (203, 'IFC0001', 2000.00);  
 
 -- INSERT INTO LOAN (loan_no, ifsc, amount)
--- VALUES (204, 'IFC0003', 12000.00); -- Suburban Branch
+-- VALUES (204, 'IFC0003', 12000.00); 
 
 -- INSERT INTO LOAN (loan_no, ifsc, amount)
--- VALUES (205, 'IFC0004', 6000.00);  -- Downtown Branch
+-- VALUES (205, 'IFC0004', 6000.00);  
 
 -- INSERT INTO BORROWER (loan_no, customer_name)
 -- VALUES (201, 'John Doe');

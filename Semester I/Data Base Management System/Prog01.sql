@@ -53,10 +53,10 @@ SELECT MONTHS_BETWEEN('15-MAR-04', '01-DEC-03') AS months_between_dates FROM dua
 
 -- Count Functions
 -- Note: Assumes an 'emp' table exists with 'deptcode' column
-SELECT * FROM emp;
-SELECT COUNT(*) FROM emp;
-SELECT COUNT(deptcode) FROM emp;
-SELECT COUNT(DISTINCT deptcode) FROM emp;
+SELECT * FROM tab1;
+SELECT COUNT(*) FROM tab1;
+SELECT COUNT(data) FROM tab1;
+SELECT COUNT(DISTINCT data) FROM tab1;
 
 -- Character Functions
 SELECT INITCAP('hello') AS initcap_value FROM dual;

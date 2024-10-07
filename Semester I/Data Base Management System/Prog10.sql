@@ -1,3 +1,5 @@
+SET SERVEROUTPUT ON;
+
 CREATE OR REPLACE PACKAGE mypkg AS 
     PROCEDURE area_circum_of_circle (r IN NUMBER, a OUT NUMBER, c OUT NUMBER); 
     
@@ -27,7 +29,6 @@ CREATE OR REPLACE PACKAGE BODY mypkg AS
 END mypkg;
 /
 
-SET SERVEROUTPUT ON;
 DECLARE 
     r NUMBER;   
     a NUMBER;   

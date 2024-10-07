@@ -1,4 +1,3 @@
--- Creating AUTHOR table
 CREATE TABLE AUTHOR (
     author_id INT PRIMARY KEY,
     name VARCHAR2(100),
@@ -6,7 +5,6 @@ CREATE TABLE AUTHOR (
     country VARCHAR2(50)
 );
 
--- Creating PUBLISHER table
 CREATE TABLE PUBLISHER (
     publisher_id INT PRIMARY KEY,
     name VARCHAR2(100),
@@ -14,13 +12,11 @@ CREATE TABLE PUBLISHER (
     country VARCHAR2(50)
 );
 
--- Creating CATEGORY table
 CREATE TABLE CATEGORY (
     category_id INT PRIMARY KEY,
     description VARCHAR2(255)
 );
 
--- Creating CATALOG table
 CREATE TABLE BOOK_CATALOG (
     book_id INT PRIMARY KEY,
     title VARCHAR2(255),
@@ -35,7 +31,6 @@ CREATE TABLE BOOK_CATALOG (
 );
 
 
--- Creating ORDER_DETAILS table
 CREATE TABLE ORDER_DETAILS (
     order_no INT PRIMARY KEY,
     book_id INT,
@@ -43,23 +38,18 @@ CREATE TABLE ORDER_DETAILS (
     FOREIGN KEY (book_id) REFERENCES BOOK_CATALOG(book_id)
 );
 
--- Insert data into AUTHOR table
 INSERT INTO AUTHOR (AUTHOR_ID, AUTHOR_NAME, AUTHOR_CITY, AUTHOR_COUNTRY) 
     VALUES (:author_id, :author_name, :author_city, :author_country);
 
--- Insert data into PUBLISHER table
 INSERT INTO PUBLISHER (PUBLISHER_ID, PUBLISHER_NAME, PUBLISHER_CITY, PUBLISHER_COUNTRY)
     VALUES (:publisher_id, :publisher_name, :publisher_city, :publisher_country);
 
--- Insert data into CATEGORY table
 INSERT INTO CATEGORY (CATEGORY_ID, CATEGORY_NAME) 
     VALUES (:category_id, :category_name);
 
--- Insert data into CATALOG table
 INSERT INTO BOOK_CATALOG (BOOK_ID, BOOK_TITLE, AUTHOR_ID, PUBLISHER_ID, CATEGORY_ID, PUBLISH_YEAR, PRICE) 
     VALUES (:book_id, :book_title, :author_id, :publisher_id, :category_id, :publish_year, :price);
 
--- Insert data into ORDER_DETAILS table
  INSERT INTO ORDER_DETAILS (ORDER_ID, BOOK_ID, QUANTITY) 
     VALUES (:order_id, :book_id, :quantity);
 
@@ -80,7 +70,6 @@ WHERE o.quantity = (
     FROM ORDER_DETAILS
 );
 
--- Assume the publisher is 'Bloomsbury'
 UPDATE BOOK_CATALOG
 SET price = price * 1.10
 WHERE publisher_id = (

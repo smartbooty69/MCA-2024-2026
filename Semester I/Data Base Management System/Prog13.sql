@@ -1,15 +1,15 @@
 create table salesmen (
-    smno varchar2(6) primary key,  -- Salesman number as primary key
-    name varchar2(50) not null,    -- Name of the salesman (not null)
-    act_sales_amt number(16,2),    -- Actual sales amount
-    tgt_sales_amt number(16,2)     -- Target sales amount
+    smno varchar2(6) primary key,  
+    name varchar2(50) not null,    
+    act_sales_amt number(16,2),   
+    tgt_sales_amt number(16,2)     
 );
 
 create table salescommission (
-    smno varchar2(6),             -- Salesman number (foreign key reference to salesmen.smno)
-    name varchar2(50) not null,   -- Name of the salesman (not null)
-    dos date,                     -- Date of sale (or the date when commission was calculated)
-    comm number(14,2)             -- Commission amount
+    smno varchar2(6),             
+    name varchar2(50) not null,  
+    dos date,                     
+    comm number(14,2)             
 );
 
 -- drop trigger salesman_trig;
@@ -18,14 +18,13 @@ create table salescommission (
 create or replace trigger salesmen_trig
 before insert or update on salesmen
 for each row
-when (new.act_sales_amt > new.tgt_sales_amt) -- Trigger only if actual sales > target sales
+when (new.act_sales_amt > new.tgt_sales_amt) 
 begin
     declare
         comm salescommission.comm%type;
         less_than_fixed exception;
         na salesmen.name%type;
     begin
-        -- Determine commission based on actual sales amount
         if :new.act_sales_amt > 25000 then
             comm := :new.act_sales_amt * 0.35;
         elsif :new.act_sales_amt > 20000 and :new.act_sales_amt <= 25000 then
@@ -35,20 +34,18 @@ begin
         elsif :new.act_sales_amt > 10000 and :new.act_sales_amt <= 15000 then
             comm := :new.act_sales_amt * 0.10;
         else
-            raise less_than_fixed;  -- Raise an exception if actual sales is too low
+            raise less_than_fixed; 
         end if;
 
-        -- Insert commission details if inserting a new record
         if inserting then
             insert into salescommission values (:new.smno, :new.name, sysdate, comm);
             dbms_output.put_line('RECORD INSERTED INTO SALESCOMMISSION TABLE');
         end if;
 
-        -- Handle updates to existing records
         if updating then
             select name into na from salescommission where smno = :new.smno;
-            delete from salescommission where smno = :new.smno; -- Remove old commission
-            insert into salescommission values (:new.smno, :new.name, sysdate, comm); -- Insert updated commission
+            delete from salescommission where smno = :new.smno; 
+            insert into salescommission values (:new.smno, :new.name, sysdate, comm); 
             dbms_output.put_line('RECORD UPDATED IN SALESCOMMISSION TABLE');
         end if;
     exception
@@ -67,7 +64,6 @@ begin
     declare
         na salesmen.name%type;
     begin
-        -- Delete the related commission record when a salesman is deleted
         if deleting then
             select name into na from salescommission where smno = :old.smno;
             delete from salescommission where smno = :old.smno;
