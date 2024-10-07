@@ -1,14 +1,11 @@
--- Create a table for number functions
 CREATE TABLE tab1 (data NUMBER(7,2));
 
--- Insert values into the table
 INSERT INTO tab1 VALUES ('&data');
 INSERT INTO tab1 VALUES ('&data');
 INSERT INTO tab1 VALUES ('&data');
 INSERT INTO tab1 VALUES ('&data');
 INSERT INTO tab1 VALUES ('&data');
 
--- Number Functions
 SELECT AVG(data) AS avg_data FROM tab1;
 SELECT COUNT(data) AS count_data FROM tab1;
 SELECT MAX(data) AS max_data FROM tab1;
@@ -39,7 +36,6 @@ SELECT COSH(30 * (3.142857 / 180)) AS cosh_value FROM dual;
 SELECT TAN(30 * (3.142857 / 180)) AS tan_value FROM dual;
 SELECT TANH(30 * (3.142857 / 180)) AS tanh_value FROM dual;
 
--- Date Functions
 SELECT SYSDATE FROM dual;
 SELECT ADD_MONTHS(SYSDATE, 3) AS date_plus_three_months FROM dual;
 SELECT LAST_DAY(SYSDATE) AS last_day_of_month FROM dual;
@@ -51,14 +47,11 @@ SELECT TRUNC(TO_DATE('8/8/96', 'DD/MM/YY'), 'MONTH') AS truncated_month FROM dua
 SELECT TO_DATE('8/8/96', 'DD/MM/YY') AS original_date FROM dual;
 SELECT MONTHS_BETWEEN('15-MAR-04', '01-DEC-03') AS months_between_dates FROM dual;
 
--- Count Functions
--- Note: Assumes an 'emp' table exists with 'deptcode' column
 SELECT * FROM tab1;
 SELECT COUNT(*) FROM tab1;
 SELECT COUNT(data) FROM tab1;
 SELECT COUNT(DISTINCT data) FROM tab1;
 
--- Character Functions
 SELECT INITCAP('hello') AS initcap_value FROM dual;
 SELECT LOWER('FUN') AS lower_value FROM dual;
 SELECT UPPER('fun') AS upper_value FROM dual;
@@ -67,4 +60,4 @@ SELECT RTRIM('Hello ') AS rtrim_value FROM dual;
 SELECT TRANSLATE('jack', 'j', 'b') AS translate_value FROM dual;
 SELECT SUBSTR('abcdefgh', 6, 3) AS substr_value FROM dual;
 
--- Stop OCI (this is generally done outside of SQL, e.g., by closing your SQL client)
+-- DROP TABLE tab1 CASCADE CONSTRAINTS;
