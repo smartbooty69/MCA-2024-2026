@@ -30,7 +30,6 @@ CREATE TABLE BOOK_CATALOG (
     FOREIGN KEY (category_id) REFERENCES CATEGORY(category_id)
 );
 
-
 CREATE TABLE ORDER_DETAILS (
     order_no INT PRIMARY KEY,
     book_id INT,
@@ -78,8 +77,64 @@ WHERE publisher_id = (
     WHERE name = 'Bloomsbury' 
 );
 
+
 -- DROP TABLE ORDER_DETAILS CASCADE CONSTRAINTS;
 -- DROP TABLE BOOK_CATALOG CASCADE CONSTRAINTS;
 -- DROP TABLE AUTHOR CASCADE CONSTRAINTS;
 -- DROP TABLE PUBLISHER CASCADE CONSTRAINTS;
 -- DROP TABLE CATEGORY CASCADE CONSTRAINTS;
+
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (1, 'Arundhati Roy', 'Shillong', 'India');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (2, 'Chinua Achebe', 'Ogidi', 'Nigeria');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (3, 'Gabriel Garcia Marquez', 'Aracataca', 'Colombia');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (4, 'J.K. Rowling', 'Yate', 'United Kingdom');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (5, 'Haruki Murakami', 'Kyoto', 'Japan');
+
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (1, 'Penguin Random House', 'New York', 'USA');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (2, 'HarperCollins', 'London', 'United Kingdom');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (3, 'Bloomsbury', 'London', 'United Kingdom');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (4, 'Vintage Books', 'New York', 'USA');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (5, 'Kodansha', 'Tokyo', 'Japan');
+
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (1, 'Fiction');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (2, 'Non-fiction');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (3, 'Science Fiction');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (4, 'Historical');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (5, 'Fantasy');
+
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (1, 'The God of Small Things', 1, 1, 1, 1997, 350);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (2, 'Things Fall Apart', 2, 2, 4, 1958, 300);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (3, 'One Hundred Years of Solitude', 3, 4, 1, 1967, 400);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (4, 'Harry Potter and the Sorcerer''s Stone', 4, 3, 5, 1997, 450);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (5, 'Norwegian Wood', 5, 5, 1, 1987, 375);
+
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (1, 1, 10);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (2, 2, 5);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (3, 3, 15);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (4, 4, 20);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (5, 5, 7);
