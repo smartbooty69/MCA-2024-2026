@@ -37,7 +37,7 @@ This repository contains a collection of Java programming exercises aimed at dem
 
 5. **Model View Controller (MVC)**  
    Write a program in Java to implement the Model View Controller architecture used in J2EE.  
-   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Collection%20Framework/Prog05/prog05.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Collection%20Framework/Prog05/)
 
 ---
 
