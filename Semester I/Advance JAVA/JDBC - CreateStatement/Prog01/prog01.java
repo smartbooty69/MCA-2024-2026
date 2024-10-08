@@ -7,22 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class MenuDrivenStudentRecords {
-
-    static final String DB_URL = "jdbc:mysql:";
-    static final String USER = "root";
-    static final String PASS = "clan1234";  
+public class MenuDrivenStudentRecords { 
 
     public static void main(String[] args) {
-        Connection conn = null;
-        Statement stmt = null;
         Scanner scanner = new Scanner(System.in);
         int choice;
 
         try {
             
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
-            stmt = conn.createStatement();
+            Connection conn = DriverManager.getConnection("jdbc:mysql:", "root", "clan1234");
+            Statement stmt = conn.createStatement();
             System.out.println("Connected to the database!");
 
             String createTableSQL = "CREATE TABLE IF NOT EXISTS students (" +

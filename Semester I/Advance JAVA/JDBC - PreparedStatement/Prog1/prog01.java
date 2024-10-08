@@ -4,16 +4,21 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class BookManager {
-    static final String DB_URL = "jdbc:mysql:";
-    static final String USER = "root"; 
-    static final String PASS = "your_password"; 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choice;
 
-        try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
+        try (Connection conn = DriverManager.getConnection("jdbc:mysql:","root", "clan1234")) {
             System.out.println("Connected to the database.");
+
+            String createTableSQL = "CREATE TABLE IF NOT EXISTS books (" +
+                                    "book_id INT PRIMARY KEY AUTO_INCREMENT, " +
+                                    "title TEXT NOT NULL, " +
+                                    "author TEXT NOT NULL, " +
+                                    "published_year INT NOT NULL)";
+            stmt.executeUpdate(createTableSQL);
+            System.out.println("Table 'students' is ready.");
 
             do {
                 System.out.println("\nBook Management System:");

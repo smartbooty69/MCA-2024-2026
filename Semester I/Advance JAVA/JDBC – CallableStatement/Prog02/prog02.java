@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class EmployeeManager {
 
-    static final String DB_URL = "jdbc:mysql:
+    static final String DB_URL = "jdbc:mysql:";
     static final String USER = "root"; 
     static final String PASS = "your_password"; 
 
