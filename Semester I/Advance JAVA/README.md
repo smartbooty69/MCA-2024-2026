@@ -45,19 +45,19 @@ This repository contains a collection of Java programming exercises aimed at dem
 
 6. **Servlet Lifecycle**  
    Write a program in Java to demonstrate the various stages of a servlet lifecycle.  
-   [View Code](path/to/ServletLifecycle.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Java%20Servlet%20and%20JSP/Prog06/prog06.java)
 
 7. **User Input with JSP**  
    Create a Java Server Page that displays a form to input the username and age. When submitted, the page will display the entered information and provide the current date and time using JSP elements.  
-   [View Code](path/to/UserInputJSP.jsp)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Java%20Servlet%20and%20JSP/Prog07/prog07.java)
 
 8. **Form Handling in JSP**  
    Create a Java Server Page to display a form. When submitted, handle the request using both GET and POST methods. The form will accept the username, and based on the request method, the page will display a message.  
-   [View Code](path/to/FormHandlingJSP.jsp)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Java%20Servlet%20and%20JSP/Prog08/prog08.java)
 
 9. **Session Handling with Cookies**  
    Write a program to handle sessions using cookies. It should print the username and email and implement various methods associated with it.  
-   [View Code](path/to/CookieSessionHandling.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Java%20Servlet%20and%20JSP/Prog09/prog09.java)
 
 ---
 
@@ -74,7 +74,7 @@ This repository contains a collection of Java programming exercises aimed at dem
    - **Insert Records**: Use the `createStatement()` method to insert at least three student records into the `students` table.
    - **Retrieve Records**: Use the same method to retrieve and display all records from the `students` table.
    - **Drop Table**: Write a statement to drop the `students` table to clean up.  
-   [View Code](path/to/StudentRecordsManagement.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/JDBC%20-%20CreateStatement/Prog01/prog01.java)
 
 ---
 
@@ -92,7 +92,7 @@ This repository contains a collection of Java programming exercises aimed at dem
    - **Retrieve Records**: Implement a method to retrieve and display all books in the `books` table.
    - **Update Records**: Implement a method to update the details of a book by its `book_id`. The user should be prompted for the `book_id` and the new details.
    - **Delete Records**: Implement a method to delete a book record based on its `book_id`.  
-   [View Code](path/to/BookManagementSystem.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/JDBC%20-%20PreparedStatement/Prog1/prog01.java)
 
 ---
 
@@ -108,14 +108,14 @@ This repository contains a collection of Java programming exercises aimed at dem
      - `salary` (DECIMAL)
    - **Insert Records**: Write stored procedures in SQL to insert records.
    - **Retrieve Records**: Write stored procedures in SQL to retrieve records.  
-   [View Code](path/to/EmployeeManagementSystem.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/JDBC%20%E2%80%93%20CallableStatement/Prog01/prog01.java)
 
 2. **CRUD Operations on Employees**  
    Create a Java program that connects to a MySQL database and performs CRUD operations on the `employees` table using `CallableStatement`:
    - **Create Database**: Create a database named `company_db`.
    - **Update Records**: Write stored procedures in SQL to update records.
    - **Delete Records**: Write stored procedures in SQL to delete records.  
-   [View Code](path/to/EmployeeCRUDOperations.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/JDBC%20%E2%80%93%20CallableStatement/Prog02/prog02.java)
 
 ---
 
