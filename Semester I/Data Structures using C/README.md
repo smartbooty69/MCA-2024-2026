@@ -1,6 +1,9 @@
-## MCA Advanced Data Structures
+# Data Structures Programming Lab
+## Master of Computer Applications (MCA)
 
-### LIST OF EXERCISES for LAB
+This repository contains a collection of programming exercises focused on Data Structures using the C programming language. The exercises aim to enhance understanding and implementation of various data structures concepts, including arrays, linked lists, stacks, queues, trees, graphs, and sorting algorithms. Each program is designed to provide hands-on experience and reinforce fundamental data structure principles essential for computer science and software development.
+
+---
 
 #### MCA LAB EXS-1
 
