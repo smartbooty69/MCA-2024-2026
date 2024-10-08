@@ -1,7 +1,0 @@
-import tensorflow as tf
-
-tensor_zero_d = tf.constant(4)
-print(tensor_zero_d)
-
-tensor_one_d = tf.constant([2,0,-3])
-print(tensor_one_d)
