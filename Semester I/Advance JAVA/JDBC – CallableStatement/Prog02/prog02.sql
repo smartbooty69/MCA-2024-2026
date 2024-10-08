@@ -1,10 +1,7 @@
--- Create the database
 CREATE DATABASE company_db;
 
--- Switch to the database
 USE company_db;
 
--- Create the employees table
 CREATE TABLE employees (
     emp_id INT PRIMARY KEY AUTO_INCREMENT,
     name TEXT NOT NULL,
@@ -12,7 +9,6 @@ CREATE TABLE employees (
     salary DECIMAL(10, 2) NOT NULL
 );
 
--- Create stored procedure to update an employee record
 DELIMITER $$
 
 CREATE PROCEDURE UpdateEmployee(
@@ -29,7 +25,6 @@ END $$
 
 DELIMITER ;
 
--- Create stored procedure to delete an employee record
 DELIMITER $$
 
 CREATE PROCEDURE DeleteEmployee(IN emp_id INT)

@@ -43,7 +43,19 @@ CREATE TABLE StudentFail (
 );
 
 INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
-VALUES (:rno, :name, :sub1, :sub2, :sub3, :sub4, :sub5);
+VALUES (&rno1, '&name1', &sub1_1, &sub2_1, &sub3_1, &sub4_1, &sub5_1);
+
+INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+VALUES (&rno2, '&name2', &sub1_2, &sub2_2, &sub3_2, &sub4_2, &sub5_2);
+
+INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+VALUES (&rno3, '&name3', &sub1_3, &sub2_3, &sub3_3, &sub4_3, &sub5_3);
+
+INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+VALUES (&rno4, '&name4', &sub1_4, &sub2_4, &sub3_4, &sub4_4, &sub5_4);
+
+INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+VALUES (&rno5, '&name5', &sub1_5, &sub2_5, &sub3_5, &sub4_5, &sub5_5);
 
 DECLARE
     CURSOR student_cur IS

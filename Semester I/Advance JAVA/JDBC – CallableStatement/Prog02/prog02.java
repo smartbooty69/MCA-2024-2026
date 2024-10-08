@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class EmployeeManager {
 
-    static final String DB_URL = "jdbc:mysql://localhost:3306/company_db";
-    static final String USER = "root"; // Change to your MySQL username
-    static final String PASS = "your_password"; // Change to your MySQL password
+    static final String DB_URL = "jdbc:mysql:
+    static final String USER = "root"; 
+    static final String PASS = "your_password"; 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -16,7 +16,6 @@ public class EmployeeManager {
         try (Connection conn = DriverManager.getConnection(DB_URL, USER, PASS)) {
             System.out.println("Connected to the database.");
 
-            // Menu for employee management
             do {
                 System.out.println("\nEmployee Management System:");
                 System.out.println("1. Update Employee");
@@ -24,7 +23,7 @@ public class EmployeeManager {
                 System.out.println("3. Exit");
                 System.out.print("Enter your choice: ");
                 choice = scanner.nextInt();
-                scanner.nextLine(); // Consume newline
+                scanner.nextLine(); 
 
                 switch (choice) {
                     case 1:
@@ -45,13 +44,12 @@ public class EmployeeManager {
             e.printStackTrace();
         }
     }
-
-    // Method to update an employee record
+    
     public static void updateEmployee(Connection conn, Scanner scanner) {
         try {
             System.out.print("Enter employee ID to update: ");
             int empId = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             System.out.print("Enter new employee name: ");
             String name = scanner.nextLine();
@@ -59,7 +57,7 @@ public class EmployeeManager {
             String position = scanner.nextLine();
             System.out.print("Enter new employee salary: ");
             double salary = scanner.nextDouble();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             String sql = "{CALL UpdateEmployee(?, ?, ?, ?)}";
             CallableStatement stmt = conn.prepareCall(sql);
@@ -79,12 +77,11 @@ public class EmployeeManager {
         }
     }
 
-    // Method to delete an employee record
     public static void deleteEmployee(Connection conn, Scanner scanner) {
         try {
             System.out.print("Enter employee ID to delete: ");
             int empId = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             String sql = "{CALL DeleteEmployee(?)}";
             CallableStatement stmt = conn.prepareCall(sql);
