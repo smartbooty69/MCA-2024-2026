@@ -21,11 +21,11 @@ This repository contains a collection of Java programming exercises aimed at dem
 
 2. **LinkedList Operations**  
    Write a Java program that demonstrates the use of a linked list by performing linked list specific operations.  
-   [View Code](path/to/LinkedListOperations.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Collection%20Framework/Prog02/prog02.java)
 
 3. **Unique Student IDs Management**  
    Write a program in Java to manage a set of unique student IDs for a university. Ensure that no duplicate IDs are present and perform various operations on this set of student IDs using the `HashSet` class.  
-   [View Code](path/to/UniqueStudentIdsManagement.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Collection%20Framework/Prog03/prog03.java)
 
 4. **Course Management**  
    Write a Java program to:
@@ -33,11 +33,11 @@ This repository contains a collection of Java programming exercises aimed at dem
    - Use `get()` and `set()` to store and retrieve data.
    - Display using `printCourseDetails(String courseName, String courseID, String courseCategory)`.
    - Update the `courseName` to "Computing in Java".  
-   [View Code](path/to/CourseManagement.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Collection%20Framework/Prog04/prog04.java)
 
 5. **Model View Controller (MVC)**  
    Write a program in Java to implement the Model View Controller architecture used in J2EE.  
-   [View Code](path/to/MVCExample.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Collection%20Framework/Prog05/prog05.java)
 
 ---
 
@@ -102,4 +102,31 @@ This repository contains a collection of Java programming exercises aimed at dem
    Create a Java program that connects to a MySQL database and performs operations on an `employees` table using `CallableStatement`:
    - **Create Database**: Create a database named `company_db`.
    - **Create Table**: Create a table named `employees` with the following structure:
-     - `
+     - `emp_id` (INTEGER, Primary Key, Auto Increment)
+     - `name` (TEXT)
+     - `position` (TEXT)
+     - `salary` (DECIMAL)
+   - **Insert Records**: Write stored procedures in SQL to insert records.
+   - **Retrieve Records**: Write stored procedures in SQL to retrieve records.  
+   [View Code](path/to/EmployeeManagementSystem.java)
+
+2. **CRUD Operations on Employees**  
+   Create a Java program that connects to a MySQL database and performs CRUD operations on the `employees` table using `CallableStatement`:
+   - **Create Database**: Create a database named `company_db`.
+   - **Update Records**: Write stored procedures in SQL to update records.
+   - **Delete Records**: Write stored procedures in SQL to delete records.  
+   [View Code](path/to/EmployeeCRUDOperations.java)
+
+---
+
+### Getting Started
+
+1. **Prerequisites**: 
+   - Java Development Kit (JDK)
+   - MySQL Server
+   - IDE (Eclipse, IntelliJ IDEA, etc.)
+
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/smartbooty69/MCA-2024-2026.git
+   cd MCA-2024-2026
