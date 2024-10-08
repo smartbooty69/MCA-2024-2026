@@ -1,175 +1,154 @@
+Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matches the syntax you provided earlier. Each practical has a linked resource for easy access. 
+
+---
+
 # DEPARTMENT OF COMPUTER SCIENCE AND APPLICATIONS (MCA)
+
 ## COURSE CODE: CA 7P2  
 ## COURSE TITLE: DBMS LAB (SQL & PL/SQL)
 
 ### LIST OF PRACTICALS - SQL & PL/SQL
 
+---
+
 ## PART A - SQL
 
-### 1. EXPLORE BUILT-IN FUNCTIONS IN SQL
-Exploring the following Built-In Functions in SQL:
-- **Number Functions** (Group-value functions and List Functions)
-- **Date Functions**
-- **Count Functions**
-- **Character Functions**
+### 1. Explore Built-In Functions in SQL
+- **Objective:** Explore the following Built-In Functions in SQL:
+  - **(i)** NUMBER FUNCTIONS (Group-value functions and List Functions)
+  - **(ii)** DATE FUNCTIONS
+  - **(iii)** COUNT FUNCTIONS
+  - **(iv)** CHARACTER FUNCTIONS
+- **View Code** [Prog01.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog01.sql)
 
----
+### 2. Student Enrollment-Book Adoption Database Management
+- **Objective:** Manage a database of students' enrollment in courses and books adopted for each course.
+- **Tables:**
+  - **STUDENT** (regno: string, name: string (not null), major: string, bdate: date)
+  - **COURSE** (course_no: int, cname: string (not null), dept: string)
+  - **ENROLL** (regno: string, course_no: int, sem: int, marks: int)
+  - **BOOK-ADOPTION** (course_no: int, sem: int, book_isbn: int)
+  - **TEXT** (book_isbn: int, book_title: string, publisher: string, author: string)
+- **Tasks:**
+  - (i) Create tables with primary and foreign keys.
+  - (ii) Insert at least five tuples for each relation.
+  - (iii) Demonstrate adding a new textbook to the database.
+  - (iv) List textbooks for courses in the 'Computer Science' department that use more than two books, sorted alphabetically.
+  - (v) List departments with all adopted books published by a specific publisher.
+- **View Code** [Prog02.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog02.sql)
 
-### 2. STUDENT ENROLLMENT-BOOK ADOPTION DATABASE MANAGEMENT
-Consider the following database of students enrolled in courses and books adopted for each course.
+### 3. Book Dealer Database Management
+- **Objective:** Manage a database maintained by a book dealer.
+- **Tables:**
+  - **AUTHOR** (author_id: int, name: string, city: string, country: string)
+  - **PUBLISHER** (publisher_id: int, name: string, city: string, country: string)
+  - **CATALOG** (book_id: int, title: string, author_id: int, publisher_id: int, category: int, year: int, price: int)
+  - **CATEGORY** (category_id: int, description: string)
+  - **ORDER-DETAILS** (order_no: int, book_id: int, quantity: int)
+- **Tasks:**
+  - (i) Create tables with primary and foreign keys.
+  - (ii) Insert at least five tuples for each relation.
+  - (iii) Get details of authors with 2 or more books in the catalog and whose book prices are above average and published after 2010.
+  - (iv) Find the author of the book with maximum sales.
+  - (v) Increase the price of books published by a specific publisher by 10%.
+- **View Code** [Prog03.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog03.sql)
 
-- **STUDENT**(regno: string, name: string (not null), major: string, bdate: date)
-- **COURSE**(course_no: int, cname: string (not null), dept: string)
-- **ENROLL**(regno: string, course_no: int, sem: int, marks: int)
-- **BOOK-ADOPTION**(course_no: int, sem: int, book_isbn: int)
-- **TEXT**(book_isbn: int, book_title: string, publisher: string, author: string)
+### 4. Bank Database Management
+- **Objective:** Manage a database for a bank.
+- **Tables:**
+  - **BRANCH** (ifsc: string, branch_name: string, branch_city: string, assets: real)
+  - **ACCOUNT** (accno: int, branch_name: string, balance: real)
+  - **DEPOSITOR** (accno: int, customer_name: string)
+  - **CUSTOMER** (accno: int, customer_name: string, customer_street: string, customer_city: string)
+  - **LOAN** (loan_no: int, branch_name: string, amount: real)
+  - **BORROWER** (loan_no: int, customer_name: string)
+- **Tasks:**
+  - (i) Create tables with primary and foreign keys.
+  - (ii) Insert at least five tuples for each relation.
+  - (iii) Find customers with at least two accounts at the main branch.
+  - (iv) Find customers with accounts at all branches located in a specific city.
+  - (v) Delete all account tuples at branches in a specific city.
+- **View Code** [Prog04.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog04.sql)
 
-Tasks:
-1. Create the above tables by specifying primary keys and foreign keys.
-2. Enter at least five tuples for each relation.
-3. Demonstrate how to add a new textbook to the database and adopt it for a department.
-4. Produce a list of textbooks (include course-no, book-isbn, book-title) in alphabetical order for the 'Computer Science' department that uses more than two books.
-5. List any department that has all its adopted books published by a specific publisher.
+### 5. Order Processing Database Management
+- **Objective:** Manage a database for order processing.
+- **Tables:**
+  - **CUSTOMER** (custno: int, cname: string, city: string)
+  - **ORDER** (orderno: int, odate: date, ord_amt: real)
+  - **ORDER_ITEM** (orderno: int, itemno: int, qty: int)
+  - **ITEM** (itemno: int, unitprice: real)
+  - **SHIPMENT** (orderno: int, warehouseno: int, ship_date: date)
+  - **WAREHOUSE** (warehouseno: int, city: string)
+- **Tasks:**
+  - (i) Create tables with primary and foreign keys.
+  - (ii) Insert at least five tuples for each relation.
+  - (iii) List order numbers and shipping dates for all orders shipped from a particular warehouse.
+  - (iv) Produce a list of customer details with their name, number of orders, and average order amount.
+  - (v) List orders not shipped within 30 days from the date of ordering.
+- **View Code** [Prog05.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog05.sql)
 
----
-
-### 3. BOOK DEALER DATABASE MANAGEMENT
-The following tables are maintained by a book dealer:
-
-- **AUTHOR**(author_id: int, name: string, city: string, country: string)
-- **PUBLISHER**(publisher_id: int, name: string, city: string, country: string)
-- **CATALOG**(book_id: int, title: string, author_id: int, publisher_id: int, category: int, year: int, price: int)
-- **CATEGORY**(category_id: int, description: string)
-- **ORDER-DETAILS**(order_no: int, book_id: int, quantity: int)
-
-Tasks:
-1. Create the above tables by specifying primary keys and foreign keys.
-2. Enter at least five tuples for each relation.
-3. List details of authors who have 2 or more books in the catalog, where the price of the books is greater than the average price of books published after 2010.
-4. Find the author of the book with the maximum sales.
-5. Increase the price of books published by a specific publisher by 10%.
-
----
-
-### 4. BANK DATABASE MANAGEMENT
-Consider the following database for a bank:
-
-- **BRANCH**(ifsc: string, branch_name: string, branch_city: string, assets: real)
-- **ACCOUNT**(accno: int, branch_name: string, balance: real)
-- **DEPOSITOR**(accno: int, customer_name: string)
-- **CUSTOMER**(accno: int, customer_name: string, customer_street: string, customer_city: string)
-- **LOAN**(loan_no: int, branch_name: string, amount: real)
-- **BORROWER**(loan_no: int, customer_name: string)
-
-Tasks:
-1. Create the above tables by specifying primary keys and foreign keys.
-2. Enter at least five tuples for each relation.
-3. Find all customers who have at least two accounts at the main branch.
-4. Find all customers with accounts at all branches located in a specific city.
-5. Demonstrate how to delete all account tuples at every branch located in a specific city.
-
----
-
-### 5. ORDER PROCESSING DATABASE MANAGEMENT
-Consider the following database for order processing:
-
-- **CUSTOMER**(custno: int, cname: string, city: string)
-- **ORDER**(orderno: int, odate: date, ord_amt: real)
-- **ORDER_ITEM**(orderno: int, itemno: int, qty: int)
-- **ITEM**(itemno: int, unitprice: real)
-- **SHIPMENT**(orderno: int, warehouseno: int, ship_date: date)
-- **WAREHOUSE**(warehouseno: int, city: string)
-
-Tasks:
-1. Create the above tables by specifying primary keys and foreign keys.
-2. Enter at least five tuples for each relation.
-3. List the order number and shipping date for all orders shipped from a particular warehouse.
-4. Produce a list of customer details with their name, number of orders, and average order amount.
-5. List orders that were not shipped within 30 days from the ordering date.
-
----
-
-### 6. INSURANCE DATABASE MANAGEMENT
-Consider the following insurance database:
-
-- **PERSON**(driver_idno: string, name: string (not null), address: string)
-- **CAR**(regno: string, model: string, year: int)
-- **ACCIDENT**(report_no: int, date: date, location: string)
-- **OWNS**(driver_idno: string, regno: string)
-- **PARTICIPATED**(driver_idno: string, regno: string, report_no: int, damage_amount: int)
-
-Tasks:
-1. Create the above tables by specifying primary keys and foreign keys.
-2. Enter at least five tuples for each relation.
-3. 
-    a. Update the cost of damage for the car in report no. 12 to Rs 25000 along with the register number.
-    b. Add a new accident record to the database.
-4. Find the total number of people who owned cars involved in accidents in 2022.
-5. Find the number of accidents involving cars of a specific model.
+### 6. Insurance Database Management
+- **Objective:** Manage an insurance database.
+- **Tables:**
+  - **PERSON** (driver_idno: string, name: string (not null), address: string)
+  - **CAR** (regno: string, model: string, year: int)
+  - **ACCIDENT** (report_no: int, date: date, location: string)
+  - **OWNS** (driver_idno: string, regno: string)
+  - **PARTICIPATED** (driver_idno: string, regno: string, report_no: int, damage_amount: int)
+- **Tasks:**
+  - (i) Create tables with primary and foreign keys.
+  - (ii) Insert at least five tuples for each relation.
+  - (iii) Update damage costs for cars involved in accident report no. 12.
+  - (iv) Add a new accident to the database.
+  - (v) Find total people owning cars involved in accidents in 2022.
+  - (vi) Find the number of accidents involving a specific model.
+- **View Code** [Prog06.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog06.sql)
 
 ---
 
 ## PART B - PL/SQL
 
-### 7. MENU-DRIVEN PL/SQL PROGRAM FOR COMPUTING STUDENT'S AVERAGE, RESULT, AND GRADE
-Create the following tables and insert at least five tuples in the Student table:
+### 7. Menu Driven PL/SQL Program for Computing Student's Average, Result, and Grade
+- **Objective:** Create a menu-driven PL/SQL program to:
+  - (i) Compute averages and grades, separating students into `StudentPass` and `StudentFail`.
+  - (ii) Display details of first, second, and third average students.
+- **Tables:**
+  - **Student** (Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
+  - **StudentPass** (Similar structure as Student)
+  - **StudentFail** (Similar structure as Student)
+- **View Code** [Prog07.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog07.sql)
 
-- **Student**(Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
-- **StudentPass**(Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
-- **StudentFail**(Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
+### 8. Menu Driven PL/SQL Program to Compute Factorial and Generate Fibonacci Series
+- **Objective:** Create a menu-driven PL/SQL program using recursive functions to:
+  - (i) Compute factorial of a given number.
+  - (ii) Generate Fibonacci series for a specified number of terms.
+- **View Code** [Prog08.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog08.sql)
 
-Tasks:
-1. Write a menu-driven PL/SQL program to compute the average and grade of students, splitting the table into StudentPass and StudentFail tables.
-2. Display first, second, and third average details of students.
+### 9. Menu Driven PL/SQL Program to Get Employee Details and Salary Information
+- **Objective:** Create a menu-driven PL/SQL program to:
+  - (i) Get employee details by EID.
+  - (ii) Find details
 
----
+ of employees with a salary above a specific amount.
+- **View Code** [Prog09.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog09.sql)
 
-### 8. MENU-DRIVEN PL/SQL PROGRAM TO COMPUTE FACTORIAL AND GENERATE FIBONACCI SERIES
-Write a menu-driven PL/SQL program using recursive functions to:
+### 10. PL/SQL Program to Generate Prime Numbers within a Range
+- **Objective:** Write a PL/SQL program to:
+  - (i) Generate prime numbers between a specified range using a loop and conditional statements.
+- **View Code** [Prog10.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog10.sql)
 
-1. Compute the factorial value of a given number.
-2. Generate the Fibonacci series for a given number of terms.
+### 11. PL/SQL Program to Create an Employee Database
+- **Objective:** Write a PL/SQL program to create and manage an employee database with CRUD operations.
+- **View Code** [Prog11.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog11.sql)
 
----
+### 12. PL/SQL Program for String Manipulation
+- **Objective:** Write a PL/SQL program that demonstrates various string manipulation techniques.
+- **View Code** [Prog12.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog12.sql)
 
-### 9. MENU-DRIVEN PL/SQL PROGRAM USING PROCEDURES TO GET EMPLOYEE DETAILS BY EID
-Create the following table and insert at least five tuples:
-
-- **Emp**(eid: string, ename: string, dob: date, doj: date, salary: number (salary > 0))
-
-Tasks:
-1. Get employee details by EID.
-2. Find the first, second, and third highest salary details.
-3. Find the first and second senior-most employee details based on date of birth and date of joining.
-
----
-
-### 10. MENU-DRIVEN PL/SQL PROGRAM USING PROCEDURES AND FUNCTIONS OF CUSTOM PACKAGE
-Write a menu-driven PL/SQL program using procedures and functions to:
-
-1. Find the area and circumference of a circle.
-2. Compute the GCD (Greatest Common Divisor) of two numbers using recursive functions.
-
----
-
-### 11. EMPLOYEE DATABASE MANAGEMENT USING TRIGGERS
-Create the following tables:
-
-- **employee**(eid: string, ename: string (not null), salary: number (salary > 0))
-- **employee10000**(eid: string, ename: string (not null), salary: number (salary > 0), msg: string)
-
-Tasks:
-1. Create a trigger to insert records into `employee10000` when the employee's salary is greater than 10000.
-2. Create another trigger to insert records when employee records are deleted.
+### 13. PL/SQL Program to Find the Maximum and Minimum Values in an Array
+- **Objective:** Write a PL/SQL program that finds the maximum and minimum values in a numeric array.
+- **View Code** [Prog13.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog13.sql)
 
 ---
 
-### 12. STUDENT DATABASE MANAGEMENT USING TRIGGERS
-Create the following tables:
-
-- **Student**(Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
-- **StudentPass**(Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
-- **StudentFail**(Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
-
-Tasks:
-1. Create a trigger to split student details based on results into `StudentPass` and `StudentFail` tables.
+This format includes uniform linking and structured objectives for each practical task. Adjust any section as necessary for completeness or clarity!

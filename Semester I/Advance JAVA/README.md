@@ -53,7 +53,7 @@ This repository contains a collection of Java programming exercises aimed at dem
 
 8. **Form Handling in JSP**  
    Create a Java Server Page to display a form. When submitted, handle the request using both GET and POST methods. The form will accept the username, and based on the request method, the page will display a message.  
-   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Java%20Servlet%20and%20JSP/Prog08/prog08.java)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Advance%20JAVA/Java%20Servlet%20and%20JSP/Prog08/)
 
 9. **Session Handling with Cookies**  
    Write a program to handle sessions using cookies. It should print the username and email and implement various methods associated with it.  
