@@ -1,175 +1,107 @@
-### **1. Basic Webpage Design with CSS**
-**Objective:** 
-- Create a simple webpage using HTML5.
-- Apply different types of CSS (inline, embedded, and external).
-- Implement CSS box model properties for spacing, borders, and backgrounds.
-
-**Key Concepts:**
-- HTML5 structure: Header, footer, navigation, lists, images, hyperlinks.
-- CSS: Styling basics, box model (margin, padding, borders), background styling.
+Here's the uniform structure for the web development lab tasks, incorporating the links and formatting as requested:
 
 ---
 
-### **2. Student Course Registration Form**
-**Objective:**
-- Design and implement a student course registration form using HTML, CSS, and JavaScript.
-- Use advanced CSS techniques for layout (e.g., multi-column layout, pseudo-classes, and pseudo-elements).
-- Validate form inputs with JavaScript.
-
-**Key Concepts:**
-- Forms: Input fields, radio buttons, checkboxes, dropdowns.
-- Advanced CSS: Multi-column layouts, pseudo-classes (`:hover`, `:focus`), and pseudo-elements (`::before`, `::after`).
-- JavaScript: Client-side form validation.
+### ST. JOSEPH’S UNIVERSITY  
+**Master of Computer Applications**  
+**WEB DEVELOPMENT LAB**  
+**Academic Year 2024-25**
 
 ---
 
-### **3. JavaScript Operators and Control Statements**
-**Objective:**
-- Understand and demonstrate JavaScript syntax, operators, and control statements.
-
-**Key Concepts:**
-- JavaScript operators: Assignment, bitwise, string, ternary, unary, comma.
-- Control statements: `if-else`, `switch-case`.
+### 1. Basic HTML5 Page & CSS Styling Basics
+- **Objective:** Create a simple webpage using HTML5 and apply CSS to style a webpage. Design a webpage with a header, footer, main content area, and navigation menu. Include ordered and unordered lists, hyperlinks, and an image. Use CSS to style the webpage from Lab 1, including external, embedded, and inline styles. Implement CSS box model properties for spacing, borders, and backgrounds.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG01)
 
 ---
 
-### **4. JavaScript Functions and Error Handling**
-**Objective:**
-- Write a JavaScript function for tasks like factorial calculation or prime number generation.
-- Handle potential errors using `try-catch-finally`.
-
-**Key Concepts:**
-- JavaScript functions.
-- Error handling with `try-catch-finally`.
+### 2. Form Elements and Advanced CSS Layout
+- **Objective:** Implement a student course registration page using HTML, CSS, and JavaScript. The webpage should feature a multi-column layout for displaying course options and personal information. Use advanced CSS techniques, including pseudo-classes and pseudo-elements, to style the form and enhance the user experience.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG02)
 
 ---
 
-### **5. Simple Calculator**
-**Objective:**
-- Create a calculator that performs basic arithmetic operations using HTML, CSS, and JavaScript.
-- Implement error handling for division by zero or invalid inputs.
-
-**Key Concepts:**
-- Basic arithmetic operations (+, -, *, /).
-- JavaScript error handling (`try-catch-finally`).
+### 3. JavaScript Basics and Operators
+- **Objective:** Understand JavaScript syntax and operators. Write a JavaScript program that demonstrates various operators (assignment, bitwise, string, ternary, unary, and comma) and control statements (if-else, switch-case).
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG03)
 
 ---
 
-### **6. JavaScript Objects and Arrays**
-**Objective:**
-- Create and manipulate JavaScript objects (e.g., student) and arrays of objects.
-- Perform operations like sorting and filtering on the array.
-
-**Key Concepts:**
-- JavaScript objects and arrays.
-- Array methods like `sort()`, `filter()`.
+### 4. JavaScript Functions and Error Handling
+- **Objective:** Use JavaScript functions and error handling. Create a JavaScript function that performs a specific task (e.g., calculate factorial / Prime Numbers between M and N) and handle any potential errors using `try-catch-finally`.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG04)
 
 ---
 
-### **7. Book Object Representation in JavaScript**
-**Objective:**
-- Create a JavaScript object representing a book (title, author, year).
-- Write functions to display book details and output information using `console.log`.
-
-**Key Concepts:**
-- JavaScript objects.
-- Object methods to manipulate data.
+### 5. JavaScript Functions and Error Handling
+- **Objective:** Design a simple calculator using HTML, CSS, and JavaScript that performs basic arithmetic operations. Additionally, handle potential errors such as division by zero or invalid input using JavaScript’s `try-catch-finally` blocks.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG05)
 
 ---
 
-### **8. Browser Information using JavaScript**
-**Objective:**
-- Write a script that displays browser information using `window`, `history`, `navigator`, and `screen` objects.
-
-**Key Concepts:**
-- JavaScript browser objects: `window`, `history`, `navigator`, `screen`.
+### 6. JavaScript Objects and Arrays
+- **Objective:** Create and manipulate JavaScript objects and arrays. Develop a script that defines and manipulates a JavaScript object representing a student and an array of students. Perform operations like sorting and filtering.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG06)
 
 ---
 
-### **9. DOM Manipulation with jQuery**
-**Objective:**
-- Use jQuery to manipulate DOM elements.
-- Use jQuery UI to implement interactive widgets like sliders and accordions.
-
-**Key Concepts:**
-- jQuery DOM manipulation.
-- jQuery UI widgets (sliders, accordions).
+### 7. JavaScript Objects and Super Global Objects
+- **Objective:** Work with JavaScript objects and super global objects. Create a JavaScript object representing a book (with properties like title, author, and year) and write functions to display the book's details. Use `console.log` to output the information.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG07)
 
 ---
 
-### **10. Draggable Element and Date Picker with jQuery UI**
-**Objective:**
-- Create a draggable element and a date picker widget using jQuery UI.
-- Apply CSS to style the widgets.
-
-**Key Concepts:**
-- jQuery UI interactions (drag-and-drop).
-- Date picker widget styling with CSS.
+### 8. JavaScript Browser Objects
+- **Objective:** Utilize JavaScript browser objects. Write a script that displays browser information using `window`, `history`, `navigator`, and `screen` objects.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG08)
 
 ---
 
-### **11. jQuery UI Interactions and Effects**
-**Objective:**
-- Create a webpage with draggable and droppable elements using jQuery UI.
-- Implement effects like hide/show and fade in/out.
-
-**Key Concepts:**
-- jQuery UI interactions (drag-drop).
-- jQuery effects (`hide()`, `show()`, `fadeIn()`, `fadeOut()`).
+### 9. jQuery Basics and UI Widgets
+- **Objective:** Use jQuery and jQuery UI. Create a webpage that uses jQuery to manipulate DOM elements and jQuery UI to implement interactive widgets such as sliders and accordions.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG09)
 
 ---
 
-### **12. PHP Form Handling**
-**Objective:**
-- Write a PHP script to handle form submission using `$_POST` and `$_GET`.
-- Validate and sanitize the form data.
-
-**Key Concepts:**
-- PHP form handling.
-- Data validation and sanitization.
+### 10. jQuery UI Basics
+- **Objective:** Incorporate jQuery UI into a webpage. Create an interactive webpage with a draggable element and a date picker widget using jQuery UI. Style the widgets using CSS.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG10)
 
 ---
 
-### **13. PHP Arrays, Strings, and Regular Expressions**
-**Objective:**
-- Work with arrays, strings, and regular expressions in PHP.
-
-**Key Concepts:**
-- Array manipulation in PHP.
-- String functions.
-- Regular expression matching and validation.
+### 11. jQuery UI Interactions and Effects
+- **Objective:** Implement jQuery UI interactions and effects. Create a webpage with draggable and droppable elements using jQuery UI, and apply various effects like hide/show and fade in/out.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG11)
 
 ---
 
-### **14. Error Handling in PHP**
-**Objective:**
-- Write PHP code demonstrating error handling with `try-catch`.
-- Log errors to a file and handle exceptions properly.
-
-**Key Concepts:**
-- Error handling in PHP.
-- Exception handling and logging.
+### 12. PHP Basics and Form Handling
+- **Objective:** Learn PHP basics and handle web forms. Write a PHP script that handles form submission using `$_POST` and `$_GET`. Validate and sanitize the form data.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG12)
 
 ---
 
-### **15. PHP Object-Oriented Programming (OOP)**
-**Objective:**
-- Write PHP classes demonstrating OOP principles like constructors, destructors, inheritance, and polymorphism.
-
-**Key Concepts:**
-- PHP OOP (Classes, inheritance, constructors, destructors).
+### 13. PHP Arrays, Strings, and Regular Expressions
+- **Objective:** Work with PHP arrays, strings, and regular expressions. Develop a PHP script that processes arrays, performs string manipulation, and validates input using regular expressions.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG13)
 
 ---
 
-### **16. PHP-MySQL Integration (CRUD)**
-**Objective:**
-- Create a PHP script that connects to a MySQL database.
-- Perform CRUD operations (Create, Read, Update, Delete).
-- Handle file uploads and sessions.
-
-**Key Concepts:**
-- PHP-MySQL integration.
-- CRUD operations in databases.
-- Handling file uploads and managing sessions.
+### 14. Error Handling and Exceptions in PHP
+- **Objective:** Implement error handling in PHP. Create a PHP script that demonstrates error handling with `try-catch` blocks. Log errors to a file and handle exceptions properly.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG14)
 
 ---
+
+### 15. PHP Classes and Object-Oriented Programming
+- **Objective:** Use PHP classes and OOP concepts. Write PHP classes that demonstrate constructors, destructors, inheritance, and polymorphism. Implement basic object-oriented principles.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG15)
+
+---
+
+### 16. Demonstration of PHP and MySQL Integration
+- **Objective:** Connect PHP with MySQL and perform database operations. Create a PHP script that connects to a MySQL database, performs CRUD operations (Create, Read, Update, Delete), and handles file uploads and sessions.
+[View Code](https://github.com/smartbooty69/MCA-2024-2026/tree/main/Semester%20I/Web-PHP/PROG16)
+
+---
+
