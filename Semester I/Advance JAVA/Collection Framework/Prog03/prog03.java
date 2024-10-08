@@ -7,6 +7,7 @@ public class HashSetExample {
 
     public static void main(String[] args) {
         HashSet<Integer> studentIds = new HashSet<>();
+        
         studentIds.add(101);
         studentIds.add(102);
         studentIds.add(103);
@@ -17,6 +18,7 @@ public class HashSetExample {
         System.out.println("Student IDs after addition: " + studentIds);
         
         System.out.println("Is set empty? " + studentIds.isEmpty());
+        
         System.out.println("Size of set: " + studentIds.size());
         
         System.out.println("Does the set contain ID 105? " + studentIds.contains(105));

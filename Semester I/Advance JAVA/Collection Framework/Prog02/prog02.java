@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public class LinkedListExample {
 
     public static void main(String[] args) {
+        
         LinkedList<String> linkedList = new LinkedList<>();
         
         linkedList.addFirst("Nevil");
@@ -33,7 +34,6 @@ public class LinkedListExample {
         int indexOfFrank = linkedList.indexOf("Frank");
         System.out.println("Index of 'Frank': " + indexOfFrank);
   
-        
         System.out.println("Iterating over LinkedList:");
         for (String element : linkedList) {
             System.out.println(element);

@@ -3,17 +3,13 @@ package com.mca_demo;
 public class MVCPatternDemo {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//fetch student record based on his roll no from the database
         Course model  = retriveCourseFromDatabase();
 
-        //Create a view : to write course details on console
         CourseView view = new CourseView();
  
         CourseController controller = new CourseController(model, view);
         controller.updateView();
 
-        //update model data
         controller.setCourseName("Python");
         System.out.println("\nAfter updating, Course Details are as follows");
 
