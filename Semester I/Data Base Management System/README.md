@@ -1,13 +1,61 @@
-Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matches the syntax you provided earlier. Each practical has a linked resource for easy access. 
+# DBMS LAB (SQL & PL/SQL)
+
+## Master of Computer Applications (MCA)
 
 ---
 
-# DEPARTMENT OF COMPUTER SCIENCE AND APPLICATIONS (MCA)
+### Getting Started
 
-## COURSE CODE: CA 7P2  
-## COURSE TITLE: DBMS LAB (SQL & PL/SQL)
+Welcome to the Database Management System Lab for the Master of Computer Applications program at St. Joseph’s University. This repository contains a series of SQL and PL/SQL exercises and projects designed to enhance your understanding of Oracle Database concepts, query writing, and procedural programming. Follow the instructions below to set up your environment and begin working on the lab assignments.
 
-### LIST OF PRACTICALS - SQL & PL/SQL
+#### Prerequisites
+
+Before you start, ensure you have the following installed on your system:
+
+- **Oracle Database:** Download and install [Oracle Database Express Edition (XE)](https://www.oracle.com/database/technologies/appdev/xe.html) for your operating system. This free version provides essential features for learning SQL and PL/SQL.
+
+- **Oracle SQL Developer:** Install [Oracle SQL Developer](https://www.oracle.com/database/sqldeveloper/) to connect to your Oracle Database, execute SQL queries, and manage your database schema easily.
+
+- **Basic Knowledge of SQL and PL/SQL:** Familiarity with SQL commands, PL/SQL syntax, and database concepts will be beneficial for completing the assignments.
+
+#### Cloning the Repository
+
+To get started with the DBMS lab projects, clone the repository to your local machine. Open your terminal or command prompt and run:
+
+```bash
+git clone https://github.com/smartbooty69/MCA-2024-2026.git
+```
+
+#### Project Structure
+
+The projects are organized into directories based on their topics. Navigate to the **Database Management System** folder to access the individual SQL and PL/SQL assignments. Each project is named sequentially (e.g., `Prog01.sql`, `Prog02.sql`, etc.) and contains the necessary SQL and PL/SQL code to complete the tasks.
+
+#### Running the Projects
+
+1. **Open Oracle SQL Developer:**
+   - Launch Oracle SQL Developer from your applications.
+
+2. **Create a New Connection:**
+   - Click on the green "+" icon to create a new connection.
+   - Enter the connection name, username (default is `SYSTEM` or as per your setup), and password.
+   - Select your database from the connection type and test the connection to ensure it works.
+
+3. **Execute the SQL/PLSQL Scripts:**
+   - Open the SQL script file (e.g., `Prog01.sql`) in SQL Developer.
+   - Highlight the code you wish to execute or select the entire script.
+   - Click the "Run Script" button (the one with a sheet of paper icon) or press `F5` to execute the script.
+
+4. **Verify Results:**
+   - Use `SELECT` statements to verify that your queries executed correctly and to check the results in your database.
+   - View the data in the “Connections” panel under your schema or use the SQL Worksheet to run queries.
+
+#### Contributing
+
+Contributions to this repository are welcome. If you have enhancements or additional assignments, feel free to fork the repository and submit pull requests. Ensure to follow best coding practices and comment your SQL code for clarity.
+
+#### License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
 ---
 
@@ -19,7 +67,7 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - **(ii)** DATE FUNCTIONS
   - **(iii)** COUNT FUNCTIONS
   - **(iv)** CHARACTER FUNCTIONS
-- **View Code** [Prog01.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog01.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog01.sql)
 
 ### 2. Student Enrollment-Book Adoption Database Management
 - **Objective:** Manage a database of students' enrollment in courses and books adopted for each course.
@@ -35,7 +83,7 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - (iii) Demonstrate adding a new textbook to the database.
   - (iv) List textbooks for courses in the 'Computer Science' department that use more than two books, sorted alphabetically.
   - (v) List departments with all adopted books published by a specific publisher.
-- **View Code** [Prog02.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog02.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog02.sql)
 
 ### 3. Book Dealer Database Management
 - **Objective:** Manage a database maintained by a book dealer.
@@ -51,7 +99,7 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - (iii) Get details of authors with 2 or more books in the catalog and whose book prices are above average and published after 2010.
   - (iv) Find the author of the book with maximum sales.
   - (v) Increase the price of books published by a specific publisher by 10%.
-- **View Code** [Prog03.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog03.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog03.sql)
 
 ### 4. Bank Database Management
 - **Objective:** Manage a database for a bank.
@@ -68,7 +116,7 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - (iii) Find customers with at least two accounts at the main branch.
   - (iv) Find customers with accounts at all branches located in a specific city.
   - (v) Delete all account tuples at branches in a specific city.
-- **View Code** [Prog04.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog04.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog04.sql)
 
 ### 5. Order Processing Database Management
 - **Objective:** Manage a database for order processing.
@@ -85,7 +133,7 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - (iii) List order numbers and shipping dates for all orders shipped from a particular warehouse.
   - (iv) Produce a list of customer details with their name, number of orders, and average order amount.
   - (v) List orders not shipped within 30 days from the date of ordering.
-- **View Code** [Prog05.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog05.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog05.sql)
 
 ### 6. Insurance Database Management
 - **Objective:** Manage an insurance database.
@@ -102,7 +150,7 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - (iv) Add a new accident to the database.
   - (v) Find total people owning cars involved in accidents in 2022.
   - (vi) Find the number of accidents involving a specific model.
-- **View Code** [Prog06.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog06.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog06.sql)
 
 ---
 
@@ -116,13 +164,13 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - **Student** (Rno: string, Name: string (not null), Sub1: number, Sub2: number, Sub3: number, Sub4: number, Sub5: number, Average: number, Result: string, Grade: string)
   - **StudentPass** (Similar structure as Student)
   - **StudentFail** (Similar structure as Student)
-- **View Code** [Prog07.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog07.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog07.sql)
 
 ### 8. Menu Driven PL/SQL Program to Compute Factorial and Generate Fibonacci Series
 - **Objective:** Create a menu-driven PL/SQL program using recursive functions to:
   - (i) Compute factorial of a given number.
   - (ii) Generate Fibonacci series for a specified number of terms.
-- **View Code** [Prog08.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog08.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog08.sql)
 
 ### 9. Menu Driven PL/SQL Program to Get Employee Details and Salary Information
 - **Objective:** Create a menu-driven PL/SQL program to:
@@ -130,25 +178,21 @@ Here's a structured format for your **DBMS Lab (SQL & PL/SQL)** course that matc
   - (ii) Find details
 
  of employees with a salary above a specific amount.
-- **View Code** [Prog09.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog09.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog09.sql)
 
 ### 10. PL/SQL Program to Generate Prime Numbers within a Range
 - **Objective:** Write a PL/SQL program to:
   - (i) Generate prime numbers between a specified range using a loop and conditional statements.
-- **View Code** [Prog10.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog10.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog10.sql)
 
 ### 11. PL/SQL Program to Create an Employee Database
 - **Objective:** Write a PL/SQL program to create and manage an employee database with CRUD operations.
-- **View Code** [Prog11.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog11.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog11.sql)
 
 ### 12. PL/SQL Program for String Manipulation
 - **Objective:** Write a PL/SQL program that demonstrates various string manipulation techniques.
-- **View Code** [Prog12.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog12.sql)
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog12.sql)
 
 ### 13. PL/SQL Program to Find the Maximum and Minimum Values in an Array
 - **Objective:** Write a PL/SQL program that finds the maximum and minimum values in a numeric array.
-- **View Code** [Prog13.sql](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog13.sql)
-
----
-
-This format includes uniform linking and structured objectives for each practical task. Adjust any section as necessary for completeness or clarity!
+-  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog13.sql)
