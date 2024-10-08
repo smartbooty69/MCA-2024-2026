@@ -112,7 +112,7 @@
 
 24. Write a program in C to sort a list of numbers using quick sort technique.  
     [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-09/Prog24.c)
-    
+
 #### MCA LAB EXS-10
 
 25. Write a program in C to search for a data item in a BST. Indicate whether it is a LEAF NODE.  
@@ -131,3 +131,38 @@
 
 29. Write a program in C to represent a GRAPH using a) ADJACENCY MATRIX and b) ADJACENCY LIST.  
     [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-11/Prog29.c)
+
+---
+
+### Getting Started
+
+1. **Prerequisites**: 
+   - C Compiler (e.g., GCC, Clang)
+   - IDE or Text Editor (e.g., Code::Blocks, Visual Studio Code, Eclipse CDT, etc.)
+
+2. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/smartbooty69/MCA-2024-2026.git
+   cd MCA-2024-2026
+   ```
+
+3. **Navigate to the Relevant Directory**:
+   - All C programs are located under the `Semester I/Data Structures using C/LAB LIST/` directory.
+   - You can find specific exercises in their respective folders (EXS-01, EXS-02, etc.).
+
+4. **Compile and Run a Program**:
+   - To compile a specific program (e.g., `Prog01.c`), run:
+     ```bash
+     gcc Semester\ I/Data\ Structures\ using\ C/LAB\ LIST/EXS-01/Prog01.c -o Prog01
+     ```
+   - To execute the compiled program, use:
+     ```bash
+     ./Prog01
+     ```
+
+5. **Explore the Programs**:
+   - Each program is designed to demonstrate specific concepts in data structures, such as sorting algorithms, searching algorithms, tree operations, graph algorithms, and more.
+   - You can open each `.c` file in your preferred text editor to view and understand the implementation.
+
+6. **Contributions**:
+   - If you wish to contribute, feel free to fork the repository and submit a pull request with your enhancements or bug fixes.
