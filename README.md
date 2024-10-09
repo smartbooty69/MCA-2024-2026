@@ -108,9 +108,9 @@ Feel free to contribute to this repository by forking it and submitting a pull r
 
 If you have any questions or would like to discuss projects, feel free to reach out via:
 
-- **Email**: [clancymendonca@gmail.com](mailto:clancymendonca@gmail.com)
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/your-linkedin-profile/)
-- **GitHub**: [Your GitHub Profile](https://github.com/smartbooty69)
+<p align="left">
+<a href="https://linkedin.com/in/clancymendonca" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="clancymendonca" height="30" width="40" /></a>
+</p>
 
 ---
 
