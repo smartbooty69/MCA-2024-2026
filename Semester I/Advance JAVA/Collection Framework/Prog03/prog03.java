@@ -1,9 +1,7 @@
-package hashSet;
-
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class HashSetExample {
+public class prog03 {
 
     public static void main(String[] args) {
         HashSet<Integer> studentIds = new HashSet<>();
@@ -25,9 +23,7 @@ public class HashSetExample {
         
         studentIds.remove(102);
         System.out.println("Student IDs after removing 102: " + studentIds);
-        
-        studentIds.remove(200);
-        
+            
         System.out.println("Iterating over student IDs:");
         Iterator<Integer> iterator = studentIds.iterator();
         while (iterator.hasNext()) {

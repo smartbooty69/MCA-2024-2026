@@ -1,41 +1,37 @@
-package com.mca_demo;
-
 public class CourseController {
 	private Course model;
-    private CourseView view;
+   private CourseView view;
 
-    public CourseController(Course model, CourseView view){
-       this.model = model;
-       this.view = view;
-    }
+   public CourseController(Course model, CourseView view){
+      this.model = model;
+      this.view = view;
+   }
 
-    public void setCourseName(String name){
-       model.setName(name);      
-    }
+   public void setCourseName(String name){
+      model.setName(name);      
+   }
 
-    public String getCourseName(){
-       return model.getName();       
-    }
+   public String getCourseName(){
+      return model.getName();       
+   }
 
-    public void setCourseId(String id){
-       model.setId(id);      
-    }
+   public void setCourseId(String id){
+      model.setId(id);      
+   }
 
-    public String getCourseId(){
-       return model.getId();     
-    }
+   public String getCourseId(){
+      return model.getId();     
+   }
 
-    public void setCourseCategory(String category){
-           model.setCategory(category);      
-    }
+   public void setCourseCategory(String category){
+      model.setCategory(category);      
+   }
 
-        public String getCourseCategory(){
-           return model.getCategory();       
-    }
-    public void updateView(){                
-     
-    	view.printCourseDetails(model.getName(), model.getId(), model.getCategory());
-    }    
-    
-    
+   public String getCourseCategory(){
+      return model.getCategory();       
+   }
+   
+   public void updateView(){                
+      view.printCourseDetails(model.getName(), model.getId(), model.getCategory());
+   }        
 }

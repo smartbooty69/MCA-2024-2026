@@ -40,7 +40,7 @@ class Course {
     }
 }
 
-public class Prog04 {
+public class prog04 {
     public static Course retrieveCourseFromDatabase() {
         return new Course("Introduction to Java", "CS101", "Programming");
     }

@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class LinkedListExample {
+public class prog02 {
 
     public static void main(String[] args) {
         

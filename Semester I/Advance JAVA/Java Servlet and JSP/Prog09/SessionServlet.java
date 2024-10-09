@@ -1,12 +1,6 @@
-package clan;
-
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 public class SessionServlet extends HttpServlet {
 

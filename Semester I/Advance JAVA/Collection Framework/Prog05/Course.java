@@ -1,5 +1,3 @@
-package com.mca_demo;
-
 public class Course {
 	private String CourseName;
    private String CourseId;
