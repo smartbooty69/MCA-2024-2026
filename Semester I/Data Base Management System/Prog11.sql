@@ -42,11 +42,12 @@ BEGIN
 END employee_trig_del;
 /
 
--- INSERT INTO employee VALUES ('E101', 'RAMA L', 67898.98);
+INSERT INTO employee VALUES ('E001', 'Anil Kumar', 15000.50);
+INSERT INTO employee VALUES ('E002', 'Sneha Rao', 8500.00);
+INSERT INTO employee VALUES ('E003', 'Vikram Singh', 12000.75);
+INSERT INTO employee VALUES ('E004', 'Neha Gupta', 9000.25);
+INSERT INTO employee VALUES ('E005', 'Priya Desai', 18000.90);
 
--- INSERT INTO employee VALUES ('E103', 'THANGAM S', 12456.78);
-
--- INSERT INTO employee VALUES ('E102', 'BALU D', 3545.56);
 
 SELECT * FROM employee;
 SELECT * FROM employee10000;

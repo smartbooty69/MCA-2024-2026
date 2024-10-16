@@ -1,6 +1,6 @@
 SET SERVEROUTPUT ON;
 
-CREATE TABLE Student (
+CREATE TABLE Student2 (
     Rno VARCHAR2(10),
     Name VARCHAR2(50) NOT NULL,
     Sub1 NUMBER(3),
@@ -42,24 +42,24 @@ CREATE TABLE StudentFail (
     CONSTRAINT PK_StudentFail PRIMARY KEY (Rno)
 );
 
-INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 VALUES (&rno1, '&name1', &sub1_1, &sub2_1, &sub3_1, &sub4_1, &sub5_1);
 
-INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 VALUES (&rno2, '&name2', &sub1_2, &sub2_2, &sub3_2, &sub4_2, &sub5_2);
 
-INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 VALUES (&rno3, '&name3', &sub1_3, &sub2_3, &sub3_3, &sub4_3, &sub5_3);
 
-INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 VALUES (&rno4, '&name4', &sub1_4, &sub2_4, &sub3_4, &sub4_4, &sub5_4);
 
-INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 VALUES (&rno5, '&name5', &sub1_5, &sub2_5, &sub3_5, &sub4_5, &sub5_5);
 
 DECLARE
     CURSOR student_cur IS
-        SELECT * FROM Student;
+        SELECT * FROM Student2;
     v_avg NUMBER(5,2);
     v_grade VARCHAR2(2);
     v_result VARCHAR2(10);
@@ -87,7 +87,7 @@ BEGIN
             VALUES (stu.Rno, stu.Name, stu.Sub1, stu.Sub2, stu.Sub3, stu.Sub4, stu.Sub5, v_avg, v_result, v_grade);
         END IF;
         
-        UPDATE Student
+        UPDATE Student2
         SET Average = v_avg, Result = v_result, Grade = v_grade
         WHERE Rno = stu.Rno;
     END LOOP;
@@ -100,29 +100,30 @@ BEGIN
 END;
 /
 
-SELECT * FROM Student;
+SELECT * FROM Student2;
 
 SELECT * FROM StudentPass;
 
 SELECT * FROM StudentFail;
 
 
--- INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+-- INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 -- VALUES (1, 'Rahul', 80, 75, 88, 92, 85);
 
--- INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+-- INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 -- VALUES (2, 'Anjali', 85, 78, 90, 86, 88);
 
--- INSERT INTO Student (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+-- INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
 -- VALUES (3, 'Deepak', 79, 84, 76, 89, 91);
 
--- INSERT INTO StudentFail (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
--- VALUES (6, 'John', 30, 25, 40, 35, 50);
+-- INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+-- VALUES (4, 'Priya', 08, 10, 12, 37, 25);
 
--- INSERT INTO StudentFail (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
--- VALUES (7, 'Meera', 20, 18, 33, 40, 45);
+-- INSERT INTO Student2 (Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+-- VALUES (5, 'Kiran', 18, 80, 35, 03, 28);
 
 
--- DROP TABLE Student CASCADE CONSTRAINTS;
+
+-- DROP TABLE Student2 CASCADE CONSTRAINTS;
 -- DROP TABLE StudentPass CASCADE CONSTRAINTS;
 -- DROP TABLE StudentFail CASCADE CONSTRAINTS;

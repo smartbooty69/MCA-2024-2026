@@ -108,17 +108,8 @@ GROUP BY
 -- INSERT INTO PARTICIPATED VALUES ('D005', 'C005', 15, 30000);
 
 
--- -- Dropping PARTICIPATED table first due to its foreign key dependencies
 -- DROP TABLE PARTICIPATED;
-
--- -- Dropping OWNS table next due to its foreign key dependencies
 -- DROP TABLE OWNS;
-
--- -- Dropping ACCIDENT table next
 -- DROP TABLE ACCIDENT;
-
--- -- Dropping CAR table next
 -- DROP TABLE CAR;
-
--- -- Finally, dropping PERSON table
 -- DROP TABLE PERSON;

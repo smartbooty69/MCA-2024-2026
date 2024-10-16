@@ -1,0 +1,1 @@
+[2024-10-16 19:40:11] ERROR: Custom error on line 20 in C:\xampp\htdocs\Prog14\prog14.php: Division by zero is not allowed.

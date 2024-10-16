@@ -1,11 +1,11 @@
 import java.sql.*;
 import java.util.Scanner;
 
-public class EmployeeManager {
+public class prog01 {
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int choice;
+        Scanner sc = new Scanner(System.in);
+        int ch;
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql:","root", "clan1234")) {
             System.out.println("Connected to the database.");
@@ -16,12 +16,12 @@ public class EmployeeManager {
                 System.out.println("2. View All Employees");
                 System.out.println("3. Exit");
                 System.out.print("Enter your choice: ");
-                choice = scanner.nextInt();
-                scanner.nextLine(); 
+                ch = sc.nextInt();
+                sc.nextLine(); 
 
-                switch (choice) {
+                switch (ch) {
                     case 1:
-                        insertEmployee(conn, scanner);
+                        insertEmployee(conn, sc);
                         break;
                     case 2:
                         retrieveEmployees(conn);
@@ -30,24 +30,24 @@ public class EmployeeManager {
                         System.out.println("Exiting...");
                         break;
                     default:
-                        System.out.println("Invalid choice. Try again.");
+                        System.out.println("Invalid choice.");
                 }
-            } while (choice != 3);
+            } while (ch != 3);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void insertEmployee(Connection conn, Scanner scanner) {
+    public static void insertEmployee(Connection conn, Scanner sc) {
         try {
             System.out.print("Enter employee name: ");
-            String name = scanner.nextLine();
+            String name = sc.nextLine();
             System.out.print("Enter employee position: ");
-            String position = scanner.nextLine();
+            String position = sc.nextLine();
             System.out.print("Enter employee salary: ");
-            double salary = scanner.nextDouble();
-            scanner.nextLine(); 
+            double salary = sc.nextDouble();
+            sc.nextLine(); 
 
             String sql = "{CALL InsertEmployee(?, ?, ?)}";
             CallableStatement stmt = conn.prepareCall(sql);
@@ -66,21 +66,16 @@ public class EmployeeManager {
         try {
             String sql = "{CALL GetEmployees()}";
             CallableStatement stmt = conn.prepareCall(sql);
-
             ResultSet rs = stmt.executeQuery();
 
             System.out.println("\nList of Employees:");
-            System.out.println("------------------------------------------------");
-            System.out.printf("%-10s %-20s %-20s %-10s\n", "Emp ID", "Name", "Position", "Salary");
-            System.out.println("------------------------------------------------");
-
             while (rs.next()) {
                 int empId = rs.getInt("emp_id");
                 String name = rs.getString("name");
                 String position = rs.getString("position");
                 double salary = rs.getDouble("salary");
 
-                System.out.printf("%-10d %-20s %-20s %-10.2f\n", empId, name, position, salary);
+                System.out.printf("\nEmp ID: "+empId+"\nName: "+name+"\nPosition: "+position+"\nSalary: "+salary);
             }
         } catch (SQLException e) {
             e.printStackTrace();

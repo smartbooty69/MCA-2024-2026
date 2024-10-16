@@ -28,7 +28,6 @@ public class SessionServlet extends HttpServlet {
             out.println("<h2>Welcome back, " + username + "!</h2>");
             out.println("<p>Your email: " + email + "</p>");
         } else {
-            
             out.println("<h2>Enter Your Details</h2>");
             out.println("<form action='SessionServlet' method='post'>");
             out.println("Name: <input type='text' name='username'><br>");

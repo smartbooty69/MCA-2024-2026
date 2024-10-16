@@ -6,7 +6,7 @@ function Student(name, age, grade) {
 
 let students = [
     new Student('Aarav', 20, 85),
-    new Student('Vivaan', 22, 92),
+    new Student('Vivaan', 22, 2),
     new Student('Aditya', 19, 78),
     new Student('Diya', 21, 65),
     new Student('Sneha', 23, 90)
@@ -17,7 +17,7 @@ function sortStudentsByGrade(students) {
 }
 
 function filterPassingStudents(students) {
-    return students.filter(student => student.grade >= 75);
+    return students.filter(student => student.grade >= 45);
 }
 
 function displayStudents(students) {

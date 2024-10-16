@@ -1,45 +1,46 @@
-CREATE TABLE BRANCH (
-    ifsc VARCHAR(11) PRIMARY KEY,
-    branch_name VARCHAR(100),
-    branch_city VARCHAR(50),
-    assets REAL
-);
+-- CREATE TABLE BRANCH (
+--     ifsc VARCHAR(11) PRIMARY KEY,
+--     branch_name VARCHAR(100),
+--     branch_city VARCHAR(50),
+--     assets REAL
+-- );
 
-CREATE TABLE ACCOUNT (
-    accno INT PRIMARY KEY,
-    ifsc VARCHAR(11),  
-    balance REAL,
-    FOREIGN KEY (ifsc) REFERENCES BRANCH(ifsc)
-);
+-- CREATE TABLE ACCOUNT (
+--     accno INT PRIMARY KEY,
+--     ifsc VARCHAR(11),  
+--     balance REAL,
+--     FOREIGN KEY (ifsc) REFERENCES BRANCH(ifsc)
+-- );
 
-CREATE TABLE DEPOSITOR (
-    accno INT,
-    customer_name VARCHAR(100),
-    PRIMARY KEY (accno, customer_name),
-    FOREIGN KEY (accno) REFERENCES ACCOUNT(accno)
-);
+-- CREATE TABLE DEPOSITOR (
+--     accno INT,
+--     customer_name VARCHAR(100),
+--     PRIMARY KEY (accno, customer_name),
+--     FOREIGN KEY (accno) REFERENCES ACCOUNT(accno) ON DELETE CASCADE
+-- );
 
-CREATE TABLE CUSTOMER (
-    accno INT PRIMARY KEY,
-    customer_name VARCHAR(100),
-    customer_street VARCHAR(100),
-    customer_city VARCHAR(50),
-    FOREIGN KEY (accno) REFERENCES ACCOUNT(accno)
-);
+-- CREATE TABLE CUSTOMER (
+--     accno INT PRIMARY KEY,
+--     customer_name VARCHAR(100),
+--     customer_street VARCHAR(100),
+--     customer_city VARCHAR(50),
+--     FOREIGN KEY (accno) REFERENCES ACCOUNT(accno) ON DELETE CASCADE
+-- );
 
-CREATE TABLE LOAN (
-    loan_no INT PRIMARY KEY,
-    ifsc VARCHAR(11),  
-    amount REAL,
-    FOREIGN KEY (ifsc) REFERENCES BRANCH(ifsc) 
-);
 
-CREATE TABLE BORROWER (
-    loan_no INT,
-    customer_name VARCHAR(100),
-    PRIMARY KEY (loan_no, customer_name),
-    FOREIGN KEY (loan_no) REFERENCES LOAN(loan_no) 
-);
+-- CREATE TABLE LOAN (
+--     loan_no INT PRIMARY KEY,
+--     ifsc VARCHAR(11),  
+--     amount REAL,
+--     FOREIGN KEY (ifsc) REFERENCES BRANCH(ifsc) 
+-- );
+
+-- CREATE TABLE BORROWER (
+--     loan_no INT,
+--     customer_name VARCHAR(100),
+--     PRIMARY KEY (loan_no, customer_name),
+--     FOREIGN KEY (loan_no) REFERENCES LOAN(loan_no) 
+-- );
 
 INSERT INTO BRANCH (ifsc, branch_name, branch_city, assets)
 VALUES (:ifsc, :branch_name, :branch_city, :assets);

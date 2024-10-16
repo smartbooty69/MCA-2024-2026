@@ -1,25 +1,13 @@
-package clan;
-
 import java.sql.*;
 import java.util.Scanner;
 
 public class BookManager {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         int choice;
 
         try (Connection conn = DriverManager.getConnection("jdbc:mysql:","root", "clan1234")) {
-            System.out.println("Connected to the database.");
-
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS books (" +
-                                    "book_id INT PRIMARY KEY AUTO_INCREMENT, " +
-                                    "title TEXT NOT NULL, " +
-                                    "author TEXT NOT NULL, " +
-                                    "published_year INT NOT NULL)";
-            stmt.executeUpdate(createTableSQL);
-            System.out.println("Table 'students' is ready.");
-
             do {
                 System.out.println("\nBook Management System:");
                 System.out.println("1. Insert Book");
@@ -28,27 +16,27 @@ public class BookManager {
                 System.out.println("4. Delete Book");
                 System.out.println("5. Exit");
                 System.out.print("Enter your choice: ");
-                choice = scanner.nextInt();
-                scanner.nextLine(); 
+                choice = sc.nextInt();
+                sc.nextLine(); 
 
                 switch (choice) {
                     case 1:
-                        insertBook(conn, scanner);
+                        insertBook(conn, sc);
                         break;
                     case 2:
                         retrieveBooks(conn);
                         break;
                     case 3:
-                        updateBook(conn, scanner);
+                        updateBook(conn, sc);
                         break;
                     case 4:
-                        deleteBook(conn, scanner);
+                        deleteBook(conn, sc);
                         break;
                     case 5:
                         System.out.println("Exiting...");
                         break;
                     default:
-                        System.out.println("Invalid choice. Try again.");
+                        System.out.println("Invalid choice.");
                 }
             } while (choice != 5);
 
@@ -57,26 +45,23 @@ public class BookManager {
         }
     }
 
-    public static void insertBook(Connection conn, Scanner scanner) {
+    public static void insertBook(Connection conn, Scanner sc) {
         try {
             System.out.print("Enter book title: ");
-            String title = scanner.nextLine();
+            String title = sc.nextLine();
             System.out.print("Enter author name: ");
-            String author = scanner.nextLine();
+            String author = sc.nextLine();
             System.out.print("Enter published year: ");
-            int publishedYear = scanner.nextInt();
-            scanner.nextLine(); 
+            int publishedYear = sc.nextInt();
+            sc.nextLine(); 
 
             String sql = "INSERT INTO books (title, author, published_year) VALUES (?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, title);
             stmt.setString(2, author);
             stmt.setInt(3, publishedYear);
+            stmt.executeUpdate();
 
-            int rowsInserted = stmt.executeUpdate();
-            if (rowsInserted > 0) {
-                System.out.println("Book inserted successfully!");
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -89,36 +74,32 @@ public class BookManager {
             ResultSet rs = stmt.executeQuery();
 
             System.out.println("\nList of Books:");
-            System.out.println("------------------------------------------------");
-            System.out.printf("%-10s %-30s %-20s %-15s\n", "Book ID", "Title", "Author", "Published Year");
-            System.out.println("------------------------------------------------");
-
             while (rs.next()) {
                 int bookId = rs.getInt("book_id");
                 String title = rs.getString("title");
                 String author = rs.getString("author");
                 int year = rs.getInt("published_year");
 
-                System.out.printf("%-10d %-30s %-20s %-15d\n", bookId, title, author, year);
+                System.out.printf("\nBook ID: "+bookId+"\nTitle: "+title+"\nAuthor: "+author+"\nPublished Year: "+year);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
     
-    public static void updateBook(Connection conn, Scanner scanner) {
+    public static void updateBook(Connection conn, Scanner sc) {
         try {
             System.out.print("Enter the Book ID to update: ");
-            int bookId = scanner.nextInt();
-            scanner.nextLine(); 
+            int bookId = sc.nextInt();
+            sc.nextLine(); 
 
             System.out.print("Enter new title: ");
-            String newTitle = scanner.nextLine();
+            String newTitle = sc.nextLine();
             System.out.print("Enter new author: ");
-            String newAuthor = scanner.nextLine();
+            String newAuthor = sc.nextLine();
             System.out.print("Enter new published year: ");
-            int newYear = scanner.nextInt();
-            scanner.nextLine(); 
+            int newYear = sc.nextInt();
+            sc.nextLine(); 
 
             String sql = "UPDATE books SET title = ?, author = ?, published_year = ? WHERE book_id = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -126,23 +107,17 @@ public class BookManager {
             stmt.setString(2, newAuthor);
             stmt.setInt(3, newYear);
             stmt.setInt(4, bookId);
-
-            int rowsUpdated = stmt.executeUpdate();
-            if (rowsUpdated > 0) {
-                System.out.println("Book details updated successfully!");
-            } else {
-                System.out.println("No book found with the given ID.");
-            }
+            stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void deleteBook(Connection conn, Scanner scanner) {
+    public static void deleteBook(Connection conn, Scanner sc) {
         try {
             System.out.print("Enter the Book ID to delete: ");
-            int bookId = scanner.nextInt();
-            scanner.nextLine(); 
+            int bookId = sc.nextInt();
+            sc.nextLine(); 
 
             String sql = "DELETE FROM books WHERE book_id = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);

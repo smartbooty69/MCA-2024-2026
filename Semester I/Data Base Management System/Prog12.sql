@@ -134,16 +134,30 @@ BEGIN
 END STUDENT_TRIG_DEL;
 /
 
--- -- Insert a student record (prompting for input values)
--- insert into student2(Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
--- values ('&Rno', '&Name', &Sub1, &Sub2, &Sub3, &Sub4, &Sub5);
+insert into student2(Rno, Name, Sub1, Sub2, Sub3, Sub4, Sub5)
+values ('&Rno', '&Name', &Sub1, &Sub2, &Sub3, &Sub4, &Sub5);
 
--- -- View the student2 table
--- set linesize 180;
--- select * from student2;
+set linesize 180;
+select * from student2;
 
--- -- View the student2pass table (students who passed)
--- select * from student2pass;
+select * from student2pass;
 
--- -- View the student2fail table (students who failed)
--- select * from student2fail;
+select * from student2fail;
+
+INSERT INTO STUDENT2 (RNO, NAME, SUB1, SUB2, SUB3, SUB4, SUB5)
+VALUES ('101', 'Rajesh Kumar', 85, 78, 92, 88, 90);
+INSERT INTO STUDENT2 (RNO, NAME, SUB1, SUB2, SUB3, SUB4, SUB5)
+VALUES ('102', 'Sneha Patil', 45, 67, 72, 85, 60);
+INSERT INTO STUDENT2 (RNO, NAME, SUB1, SUB2, SUB3, SUB4, SUB5)
+VALUES ('103', 'Amit Verma', 95, 88, 82, 91, 87);
+INSERT INTO STUDENT2 (RNO, NAME, SUB1, SUB2, SUB3, SUB4, SUB5)
+VALUES ('104', 'Priya Sharma', 65, 70, 55, 60, 58);
+INSERT INTO STUDENT2 (RNO, NAME, SUB1, SUB2, SUB3, SUB4, SUB5)
+VALUES ('105', 'Vikram Singh', 40, 42, 38, 35, 48);
+
+-- DROP TABLE STUDENT2PASS CASCADE CONSTRAINTS;
+-- DROP TABLE STUDENT2FAIL CASCADE CONSTRAINTS;
+-- DROP TABLE STUDENT2 CASCADE CONSTRAINTS;
+-- DROP TRIGGER STUDENT_TRIG;
+-- DROP TRIGGER STUDENT_TRIG_DEL;
+
