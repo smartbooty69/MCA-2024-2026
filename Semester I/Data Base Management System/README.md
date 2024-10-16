@@ -175,9 +175,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ### 9. Menu Driven PL/SQL Program to Get Employee Details and Salary Information
 - **Objective:** Create a menu-driven PL/SQL program to:
   - (i) Get employee details by EID.
-  - (ii) Find details
-
- of employees with a salary above a specific amount.
+  - (ii) Find details of employees with a salary above a specific amount.
 -  [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Base%20Management%20System/Prog09.sql)
 
 ### 10. PL/SQL Program to Generate Prime Numbers within a Range
