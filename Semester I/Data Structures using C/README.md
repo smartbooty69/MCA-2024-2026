@@ -69,6 +69,124 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
+## STACK
+1. Write a menu-driven program to show the working of a **STACK**.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-06/Prog13.c)
+
+2. Write a program in C using a **STACK** to evaluate a **POSTFIX** expression.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-07/Prog15.c)
+
+3. Write a program in C using a **STACK** to generate the **FACTORIAL** of a given number.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-07/Prog16.c)
+
+4. Write a program in C using a **STACK** to generate **N Fibonacci** numbers.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-07/Prog17.c)
+
+5. Write a program in C using a **STACK** to check whether a list of parentheses ( ), {}, [] are properly balanced.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-08/Prog18.c)
+
+6. Write a program in C using a **STACK** to convert a decimal number into its **BINARY EQUIVALENT**.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-08/Prog19.c)
+
+7. Write a program in C using a **STACK** to check whether a given string is a **PALINDROME**.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-08/Prog20.c)
+
+8. Write a program in C using a **STACK** to **REVERSE** a string.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-08/Prog21.c)
+
+---
+
+## LINKED LIST
+1. Write a menu-driven program in C to show the working of a **LINKED LIST** having nodes containing a character string (array)/or INTEGER/FLOAT DATA ITEMS as the data item and a link to the next node.  
+   **Choices:**
+   - Insert a data item (into an ordered list)
+   - Display the contents of the list
+   - Remove the first node
+   - Search for a given string in the list
+   - Remove the last node  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-02/Prog05.c)
+
+---
+
+## QUEUE
+1. Write a menu-driven program in C to show the working of a **QUEUE** with options:  
+   - a) Enter a data item (ENQUEUE)
+   - b) Display the Queue
+   - c) Remove a data item (DEQUEUE)  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-03/Prog06.c)
+
+2. Write a menu-driven program in C to show the working of a **CIRCULAR QUEUE** with options:  
+   - a) Enter a data item (ENQUEUE)
+   - b) Display the Queue
+   - c) Remove a data item (DEQUEUE)  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-03/Prog07.c)
+
+3. Write a menu-driven program to show the working of a **DOUBLY LINKED LIST** with options:  
+   - a) Insert a number
+   - b) Display the list
+   - c) Delete a given number
+   - d) Traverse the list using arrows, forward or backward.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-04/Prog09.c)
+
+---
+
+## BINARY SEARCH TREE
+1. Write a menu-driven program to show the working of a **BINARY SEARCH TREE** with options:  
+   - a) Insert a number
+   - b) Display using **INORDER** traversal
+   - c) Display using **PREORDER** traversal
+   - d) Display using **POSTORDER** traversal
+   - e) Search for a given data item in the BST
+   - f) List all the leaf nodes in a BST.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-04/Prog08.c)
+
+---
+
+## SORTING
+1. Write a program in C to input some strings into a character matrix and sort them using **BUBBLE SORT**.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-05/Prog10.c)
+
+2. Write a program in C to input some numbers into an array and sort them using **SELECTION SORT**.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-05/Prog11.c)
+
+3. Write a program in C to input some numbers into an array and sort them using **INSERTION SORT**.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-05/Prog12.c)
+
+4. Write a program in C to sort a list of numbers using **HEAP SORT** technique.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-09/Prog22.c)
+
+5. Write a program in C to sort a list of numbers using **MERGE SORT** technique.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-09/Prog23.c)
+
+6. Write a program in C to sort a list of numbers using **QUICK SORT** technique.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-09/Prog24.c)
+
+---
+
+## MISCELLANEOUS FUNCTION SUBPROGRAMS
+1. Write a function subprogram to return the **STANDARD DEVIATION** of some numbers in an array. Use it in the main program to find and display the standard deviation of N numbers in an array. (Use any one of the formulae)  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-01/Prog03.c)
+
+2. Write function subprograms in C to (pointer/non-pointer versions)  
+   - A) Return the length of a string.  
+   - B) Make a duplicate of a string.  
+   - C) Join two strings.
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-01/Prog04.c)
+
+
+4. Program with function subprograms to:  
+   - a) Find the sum of two matrices.  
+   - b) Find the product of two matrices.
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/Class%20Work/matrix_add%26mult.c)
+
+
+5. Write a program in C using function subprograms to search for a given data item in an array:  
+   - a) Using **LINEAR SEARCH** method.
+   - b) Using **BINARY SEARCH METHOD** method.  
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-01/Prog03.c)
+
+---
+
 #### MCA LAB EXS-1
 
 1. Write function subprograms in C to input some numbers into an array, print the content of the array, and sort them using the Bubble Sort technique.  
