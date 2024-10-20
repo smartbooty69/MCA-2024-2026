@@ -1,5 +1,5 @@
 /*------------------------------------------------------------------
-Write a program in C to sort an Aay using merge sort with separate 
+Write a program in C to sort an Array using merge sort with separate 
 functions for input, output, and sorting.
 ------------------------------------------------------------------
 Clancy Mendonca
