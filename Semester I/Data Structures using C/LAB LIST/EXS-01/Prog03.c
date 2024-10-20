@@ -17,8 +17,6 @@ int main() {
     int N, X[20], i;
     float Stddev;
 
-    printf("Function sub program to return the standard deviation of some numbers in an array\n");
-
     printf("Enter the number of elements:\n");
     scanf("%d", &N);
 

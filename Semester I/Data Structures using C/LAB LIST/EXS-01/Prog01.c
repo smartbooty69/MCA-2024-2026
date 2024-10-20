@@ -64,5 +64,4 @@ void BubbleSort(int N, int A[20])
            }
         }
     }
-    
 }

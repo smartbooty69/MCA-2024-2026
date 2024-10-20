@@ -29,8 +29,6 @@ int main(void) {
     char InFix[30], PostFix[30];
 
     InitStack();
-    printf("PROGRAM TO CONVERT INFIX EXPRESSION INTO POSTFIX EXPRESSION\n");
-
     printf("\nEnter an INFIX expression:\n");
     gets(InFix);
 

@@ -1,9 +1,9 @@
 /*------------------------------------------------------------------
-Write a program in C using a stack to check whether a list of parenthesis ( ), {}, [] are properly balanced.
+Write a program in C using a stack to check whether a list of parentheses ( ), {}, [] are properly balanced.
 ------------------------------------------------------------------
 Clancy Mendonca
 25-09-24
------------------------------------------------------------------*/
+------------------------------------------------------------------*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -22,18 +22,27 @@ void Push(char ch);
 char Pop();
 int IsStackEmpty();
 int IsMatchingPair(char open, char close);
+int IsBalanced(char BracketStr[]);
 
 int main() {
     char BracketStr[size];
-    int i;
-    char Ch;
     
     printf("Enter the string of brackets: ");
     scanf("%s", BracketStr);
 
+    if(IsBalanced(BracketStr)) {
+        printf("Brackets are properly aligned.\n");
+    } else {
+        printf("Improper bracket alignment.\n");
+    }
+
+    return 0;
+}
+
+int IsBalanced(char BracketStr[]) {
     InitStack();
 
-    for(i = 0; i < strlen(BracketStr); i++) {
+    for(int i = 0; i < strlen(BracketStr); i++) {
         char Brkt = BracketStr[i];
 
         if(Brkt == '(' || Brkt == '{' || Brkt == '[') {
@@ -41,23 +50,16 @@ int main() {
         } 
         else if(Brkt == ')' || Brkt == '}' || Brkt == ']') {
             if(IsStackEmpty()) {
-                printf("Improper bracket alignment.\n");
-                return 0;  
+                return 0; 
             }
-            Ch = Pop();  
+            char Ch = Pop();  
             if(!IsMatchingPair(Ch, Brkt)) {
-                printf("Improper bracket alignment.\n");
                 return 0;  
             }
         }
     }
 
-    if(IsStackEmpty()) {
-        printf("Brackets are properly aligned.\n");
-        printf("Improper alignment of brackets.\n");
-    }
-
-    return 0;
+    return IsStackEmpty();  
 }
 
 void InitStack() {
@@ -93,4 +95,3 @@ int IsMatchingPair(char open, char close) {
     if(open == '[' && close == ']') return 1;
     return 0;
 }
-

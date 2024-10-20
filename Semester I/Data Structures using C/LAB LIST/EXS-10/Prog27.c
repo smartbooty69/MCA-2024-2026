@@ -11,10 +11,10 @@
 void inputArray(int N, int A[]);
 void outputArray(int N, int A[]);
 void sortArray(int N, int A[]);
-int binarySearch(int N, int A[], int key);
+int binarySearch(int N, int A[], int search);
 
 int main() {
-    int N, key, index;
+    int N, search, index;
     int A[20];
 
     printf("Enter size of array: ");
@@ -32,14 +32,14 @@ int main() {
     outputArray(N, A);
 
     printf("\nEnter the element to search: ");
-    scanf("%d", &key);
+    scanf("%d", &search);
 
-    index = binarySearch(N, A, key);
+    index = binarySearch(N, A, search);
 
     if (index != -1) {
-        printf("\nElement %d found at position: %d\n", key, index + 1);
+        printf("\nElement %d found at position: %d\n", search, index + 1);
     } else {
-        printf("\nElement %d not found in the array.\n", key);
+        printf("\nElement %d not found in the array.\n", search);
     }
 
     return 0;
@@ -76,13 +76,13 @@ void sortArray(int N, int A[]) {
     }
 }
 
-int binarySearch(int N, int A[], int key) {
+int binarySearch(int N, int A[], int search) {
     int left = 0, right = N - 1, mid;
     while (left <= right) {
         mid = (left + right) / 2;
-        if (A[mid] == key) {
+        if (A[mid] == search) {
             return mid; 
-        } else if (A[mid] < key) {
+        } else if (A[mid] < search) {
             left = mid + 1;
         } else {
             right = mid - 1;

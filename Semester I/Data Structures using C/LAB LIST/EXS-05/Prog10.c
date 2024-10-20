@@ -2,7 +2,7 @@
    Write program in C to input some strings into a character matrix and sort them using BUBBLE SORT
 ---------------------------------------------------------------------------
    Clancy
-   22-07-24
+   22-07-2024
   -------------------------------------------------------------------------*/
 
 #include <stdio.h>

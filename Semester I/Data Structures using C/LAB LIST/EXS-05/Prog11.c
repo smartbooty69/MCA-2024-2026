@@ -1,6 +1,5 @@
 /*--------------------------------------------------------------------------------
-   Write program in C to input some strings into a character matrix and sort them using BUBBLE SORT
----------------------------------------------------------------------------
+Write a program in C to input some numbers into an array and sort them using SELECTION SORT. ---------------------------------------------------------------------------
    Clancy
    23-07-24
   -------------------------------------------------------------------------*/
@@ -14,7 +13,6 @@ void selectionSort(int N,int A[20]);
 
 void main()
 {
-
     int N,A[20];
 
     printf("Enter size of array: ");
@@ -66,7 +64,5 @@ void selectionSort(int N,int A[30])
             A[i]=temp;
         // }
     }
-
     output(N,A);
-
 }

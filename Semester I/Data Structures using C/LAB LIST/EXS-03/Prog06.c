@@ -95,23 +95,18 @@ void PrintQueue()
 void DeQueue()
 {
     QUEUENODE *CURR;
-
     if(FRONT == NULL)
     {
         printf("Queue is empty\n");
         return;
     }
-
     CURR = FRONT;
     FRONT = FRONT->NEXT;
-
     if(FRONT == NULL)
     {
         REAR = NULL;
     }
-
     printf("Dequeued element: %d\n", CURR->NUM);
     free(CURR);
-    
 }
  
