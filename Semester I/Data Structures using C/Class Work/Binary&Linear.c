@@ -11,13 +11,8 @@ int main() {
     int N, key, search, index;
     int A[20];
 
-    printf("Enter size of array (max 20): ");
+    printf("Enter size of array: ");
     scanf("%d", &N);
-
-    if (N <= 0 || N > 20) {
-        printf("Invalid size. Please enter a number between 1 and 20. Exiting.\n");
-        return 1;
-    }
 
     printf("\nEnter %d elements of the array:\n", N);
     inputArray(N, A);

@@ -1,76 +1,69 @@
 /*------------------------------------------------------------------
-Write a program in C using a stack to reverse a string in a separate function.
+Write a program in C using a stack to convert a decimal number into its binary equivalent.
 ------------------------------------------------------------------
 Clancy Mendonca
 18-10-2024
 ------------------------------------------------------------------*/
 
 #include<stdio.h>
-#include<string.h>
 
 #define size 100
 
 typedef struct StackType {
-    char A[size];
+    int A[size];
     int Top;
 } STACK;
 STACK S;
 
 void InitStack();
-void Push(char ch);
-char Pop();
-void ReverseStringUsingStack(char Str[], char ReversedStr[]);
+void Push(int num);
+int Pop();
 int IsStackEmpty();
 
 int main() {
-    char Str[size], ReversedStr[size];
+    int decimal, remainder;
+    
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
 
-    printf("Enter a string: ");
-    scanf("%s", Str);
-
-    ReverseStringUsingStack(Str, ReversedStr);
-
-    printf("Reversed string: %s\n", ReversedStr);
-
-    return 0;
-}
-
-void ReverseStringUsingStack(char Str[], char ReversedStr[]) {
-    int len = strlen(Str);
     InitStack();
 
-    for (int i = 0; i < len; i++) {
-        Push(Str[i]);
+    while(decimal > 0) {
+        remainder = decimal % 2;  
+        Push(remainder);          
+        decimal = decimal / 2;    
     }
 
-    for (int i = 0; i < len; i++) {
-        ReversedStr[i] = Pop();
+    printf("Binary equivalent: ");
+    while(!IsStackEmpty()) {
+        printf("%d", Pop());  
     }
+    printf("\n");
 
-    ReversedStr[len] = '\0';  
+    return 0;
 }
 
 void InitStack() {
     S.Top = -1;  
 }
 
-void Push(char ch) {
-    if (S.Top == size - 1) {
+void Push(int num) {
+    if(S.Top == size - 1) {
         printf("Stack overflow\n");
         return;
     }
     S.Top++;
-    S.A[S.Top] = ch;
+    S.A[S.Top] = num;
 }
 
-char Pop() {
-    if (S.Top == -1) {
+int Pop() {
+    if(S.Top == -1) {
         printf("Stack underflow\n");
         return -1;
     }
-    char ch = S.A[S.Top];
+    int num = S.A[S.Top];
     S.Top--;
-    return ch;
+    return num;
 }
 
 int IsStackEmpty() {

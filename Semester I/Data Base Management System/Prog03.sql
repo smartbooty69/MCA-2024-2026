@@ -84,78 +84,78 @@ WHERE publisher_id = (
 -- DROP TABLE PUBLISHER CASCADE CONSTRAINTS;
 -- DROP TABLE CATEGORY CASCADE CONSTRAINTS;
 
+-- -- INSERT INTO AUTHOR (author_id, name, city, country)
 -- INSERT INTO AUTHOR (author_id, name, city, country)
-INSERT INTO AUTHOR (author_id, name, city, country)
-VALUES (1, 'Arundhati Roy', 'Shillong', 'India');
-INSERT INTO AUTHOR (author_id, name, city, country)
-VALUES (2, 'Chinua Achebe', 'Ogidi', 'Nigeria');
-INSERT INTO AUTHOR (author_id, name, city, country)
-VALUES (3, 'Gabriel Garcia Marquez', 'Aracataca', 'Colombia');
-INSERT INTO AUTHOR (author_id, name, city, country)
-VALUES (4, 'J.K. Rowling', 'Yate', 'United Kingdom');
-INSERT INTO AUTHOR (author_id, name, city, country)
-VALUES (5, 'Haruki Murakami', 'Kyoto', 'Japan');
+-- VALUES (1, 'Arundhati Roy', 'Shillong', 'India');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (2, 'Chinua Achebe', 'Ogidi', 'Nigeria');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (3, 'Gabriel Garcia Marquez', 'Aracataca', 'Colombia');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (4, 'J.K. Rowling', 'Yate', 'United Kingdom');
+-- INSERT INTO AUTHOR (author_id, name, city, country)
+-- VALUES (5, 'Haruki Murakami', 'Kyoto', 'Japan');
 
+-- -- INSERT INTO PUBLISHER (publisher_id, name, city, country)
 -- INSERT INTO PUBLISHER (publisher_id, name, city, country)
-INSERT INTO PUBLISHER (publisher_id, name, city, country)
-VALUES (1, 'Penguin Random House', 'New York', 'USA');
-INSERT INTO PUBLISHER (publisher_id, name, city, country)
-VALUES (2, 'HarperCollins', 'London', 'United Kingdom');
-INSERT INTO PUBLISHER (publisher_id, name, city, country)
-VALUES (3, 'Bloomsbury', 'London', 'United Kingdom');
-INSERT INTO PUBLISHER (publisher_id, name, city, country)
-VALUES (4, 'Vintage Books', 'New York', 'USA');
-INSERT INTO PUBLISHER (publisher_id, name, city, country)
-VALUES (5, 'Kodansha', 'Tokyo', 'Japan');
+-- VALUES (1, 'Penguin Random House', 'New York', 'USA');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (2, 'HarperCollins', 'London', 'United Kingdom');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (3, 'Bloomsbury', 'London', 'United Kingdom');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (4, 'Vintage Books', 'New York', 'USA');
+-- INSERT INTO PUBLISHER (publisher_id, name, city, country)
+-- VALUES (5, 'Kodansha', 'Tokyo', 'Japan');
 
+-- -- INSERT INTO CATEGORY (category_id, description)
 -- INSERT INTO CATEGORY (category_id, description)
-INSERT INTO CATEGORY (category_id, description)
-VALUES (1, 'Fiction');
-INSERT INTO CATEGORY (category_id, description)
-VALUES (2, 'Non-fiction');
-INSERT INTO CATEGORY (category_id, description)
-VALUES (3, 'Science Fiction');
-INSERT INTO CATEGORY (category_id, description)
-VALUES (4, 'Historical');
-INSERT INTO CATEGORY (category_id, description)
-VALUES (5, 'Fantasy');
+-- VALUES (1, 'Fiction');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (2, 'Non-fiction');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (3, 'Science Fiction');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (4, 'Historical');
+-- INSERT INTO CATEGORY (category_id, description)
+-- VALUES (5, 'Fantasy');
+
+-- -- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- -- Added a second book for authors after 2010 with higher prices to meet the HAVING condition.
 
 -- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
--- Added a second book for authors after 2010 with higher prices to meet the HAVING condition.
+-- VALUES (1, 'The Ministry of Utmost Happiness', 1, 1, 1, 2017, 600);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (6, 'Broken Republic', 1, 1, 2, 2011, 550); -- Added second book for Arundhati Roy
 
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (1, 'The Ministry of Utmost Happiness', 1, 1, 1, 2017, 600);
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (6, 'Broken Republic', 1, 1, 2, 2011, 550); -- Added second book for Arundhati Roy
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (2, 'No Longer at Ease', 2, 2, 4, 2011, 500);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (7, 'The African Trilogy', 2, 2, 4, 2012, 520); -- Added second book for Chinua Achebe
 
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (2, 'No Longer at Ease', 2, 2, 4, 2011, 500);
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (7, 'The African Trilogy', 2, 2, 4, 2012, 520); -- Added second book for Chinua Achebe
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (3, 'The Magic of Reality', 3, 4, 2, 2012, 450);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (8, 'Living to Tell the Tale', 3, 4, 1, 2015, 470); -- Added second book for Gabriel Garcia Marquez
 
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (3, 'The Magic of Reality', 3, 4, 2, 2012, 450);
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (8, 'Living to Tell the Tale', 3, 4, 1, 2015, 470); -- Added second book for Gabriel Garcia Marquez
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (4, 'Harry Potter and the Cursed Child', 4, 3, 5, 2016, 700);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (9, 'Fantastic Beasts', 4, 3, 5, 2018, 720); -- Added second book for J.K. Rowling
 
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (4, 'Harry Potter and the Cursed Child', 4, 3, 5, 2016, 700);
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (9, 'Fantastic Beasts', 4, 3, 5, 2018, 720); -- Added second book for J.K. Rowling
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (5, 'Killing Commendatore', 5, 5, 1, 2017, 650);
+-- INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
+-- VALUES (10, 'Colorless Tsukuru Tazaki', 5, 5, 1, 2013, 670); -- Added second book for Haruki Murakami
 
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (5, 'Killing Commendatore', 5, 5, 1, 2017, 650);
-INSERT INTO BOOK_CATALOG (book_id, title, author_id, publisher_id, category_id, year, price)
-VALUES (10, 'Colorless Tsukuru Tazaki', 5, 5, 1, 2013, 670); -- Added second book for Haruki Murakami
-
+-- -- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
 -- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
-INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
-VALUES (1, 1, 10);
-INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
-VALUES (2, 2, 5);
-INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
-VALUES (3, 3, 15);
-INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
-VALUES (4, 4, 20);
-INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
-VALUES (5, 5, 7);
+-- VALUES (1, 1, 10);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (2, 2, 5);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (3, 3, 15);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (4, 4, 20);
+-- INSERT INTO ORDER_DETAILS (order_no, book_id, quantity)
+-- VALUES (5, 5, 7);

@@ -22,7 +22,7 @@ int Pop(void);
 void InitStack(void);
 int EvaluatePostfix(char Postfix[]);
 
-int main(void) {
+int main() {
     char Postfix[30];
     int result;
 
@@ -39,7 +39,7 @@ int main(void) {
 }
 
 //-----------------------------------
-void InitStack(void) {
+void InitStack() {
     S.Top = -1;
 }
 

@@ -48,6 +48,7 @@ void output(int N, char A[20][100]) {
     }
 }
 
+
 //-----------------------------------
 void bubblesort(int N, char A[20][100]) {
     int i, j;
