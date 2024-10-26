@@ -183,7 +183,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 5. Write a program in C using function subprograms to search for a given data item in an array:  
    - a) Using **LINEAR SEARCH** method.
    - b) Using **BINARY SEARCH METHOD** method.  
-   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/LAB%20LIST/EXS-01/Prog03.c)
+   [View Code](https://github.com/smartbooty69/MCA-2024-2026/blob/main/Semester%20I/Data%20Structures%20using%20C/Class%20Work/Binary%26Linear.c)
 
 ---
 
