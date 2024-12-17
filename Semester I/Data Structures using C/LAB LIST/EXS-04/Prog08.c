@@ -42,13 +42,9 @@ int main()
 
         switch (choice) {
             case 1:
-                printf("Enter the number of nodes: ");
-                scanf("%d", &n);
-                for (i = 1; i <= n; i++) {
-                    printf("Enter %d element: ", i);
+                    printf("Enter element: ");
                     scanf("%d", &NUM);
                     InsertTreeNode(NUM);
-                }
                 break;
             case 2:
                 printf("\nInorder Traversal: ");

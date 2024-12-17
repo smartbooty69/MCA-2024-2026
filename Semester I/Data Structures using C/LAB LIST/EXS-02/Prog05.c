@@ -86,7 +86,7 @@ int main() {
 }
 
 void InitList() {
-    Head = NULL;
+    Head = NULL;    
 }
 
 //-----------------------------------

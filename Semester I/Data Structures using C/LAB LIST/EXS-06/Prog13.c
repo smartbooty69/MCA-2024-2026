@@ -110,7 +110,7 @@ void InitStack() {
 //-----------------------------------
 void displayStack() {
     int i;
-    if (S.Top == -1) {
+    if (stackEmpty() == 1) {
         printf("Stack is Empty\n");
     } else {
         printf("Top of the Stack ->\n");
