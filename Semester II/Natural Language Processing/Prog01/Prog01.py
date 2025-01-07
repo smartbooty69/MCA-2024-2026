@@ -1,58 +1,30 @@
-from gtts import gTTS
-import speech_recognition as sr
-import os
+import re
+import nltk
+nltk.download('punkt')  
 
-def text_to_speech(text, language='en', output_file='output.wav'):
-    tts = gTTS(text=text, lang=language, slow=False)
-    tts.save(output_file)
-    print(f"Speech saved as {output_file}")
-    os.system(f"start {output_file}" if os.name == 'nt' else f"xdg-open {output_file}")
-    return True
+text = """"It doesn't take much to touch someone's heart," Daisy said with a smile on her face. "It's often just the little things you do that can change a person's day for the better." Daisy truly believed this to be the way the world worked, but she didn't understand that she was merely a robot that had been programmed to believe this.
+She considered the birds to be her friends. She'd put out food for them each morning and then she'd watch as they came to the feeders to gorge themselves for the day. She wondered what they would do if something ever happened to her. Would they miss the meals she provided if she failed to put out the food one morning?
+Indescribable oppression, which seemed to generate in some unfamiliar part of her consciousness, filled her whole being with a vague anguish. It was like a shadow, like a mist passing across her soul's summer day. It was strange and unfamiliar; it was a mood. She did not sit there inwardly upbraiding her husband, lamenting at Fate, which had directed her footsteps to the path which they had taken. She was just having a good cry all to herself. The mosquitoes made merry over her, biting her firm, round arms and nipping at her bare insteps.
+All he wanted was a candy bar. It didn't seem like a difficult request to comprehend, but the clerk remained frozen and didn't seem to want to honor the request. It might have had something to do with the gun pointed at his face."""
 
-def audio_to_text(file_path):
-    recognizer = sr.Recognizer()
-    with sr.AudioFile(file_path) as source:
-        print("Loading audio file...")
-        audio_data = recognizer.record(source)
-        print("Recognizing speech...")
-        text = recognizer.recognize_google(audio_data)
-        return text
+paragraphs = [p.strip() for p in text.split("\n") if p.strip()]
 
-def display_menu():
-    print("\n=== Speech Processing Menu ===")
-    print("1. Convert Text to Speech")
-    print("2. Convert Speech to Text")
-    print("3. Exit")
-    print("===========================")
+sentences = nltk.tokenize.sent_tokenize(text)
 
-def main():
-    while True: 
-        display_menu()
-        choice = input("Enter your choice (1-3): ")
+word_pattern = r"[A-Za-z0-9']+"
+words = re.findall(word_pattern, text)
 
-        if choice == '1':
-            text = input("Enter the text to convert to speech: ")
-            output_file = input("Enter output file name (press Enter for default 'output.wav'): ")
-            if not output_file:
-                output_file = 'output.wav'
-            text_to_speech(text, output_file=output_file)
+print("Paragraphs:")
+for i, para in enumerate(paragraphs, 1):
+    print(f"{i}: {para}\n")
 
-        elif choice == '2':
-            file_path = input("Enter the audio file path (.wav format): ")
-            if os.path.exists(file_path):
-                result = audio_to_text(file_path)
-                if result:
-                    print("\nTranscribed Text:")
-                    print(result)
-            else:
-                print("Error: File does not exist!")
+print("\nSentences:")
+for i, sent in enumerate(sentences, 1):
+    print(f"{i}: {sent}\n")
 
-        elif choice == '3':
-            print("Thank you for using the Speech Processing Program!")
-            break
+print("\nWords:")
+print(words)
 
-        else:
-            print("Invalid choice!")
-
-if __name__ == "__main__":
-    main()
+print("\nNumber of paragraphs:", len(paragraphs))
+print("Number of sentences:", len(sentences))
+print("Number of words:", len(words))
