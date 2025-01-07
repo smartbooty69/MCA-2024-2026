@@ -1,0 +1,7 @@
+OrderID,Product,Quantity,Price,Location,Time
+101,Laptop,2,50000,Delhi,Q1
+102,Phone,5,15000,Mumbai,Q1
+103,Tablet,3,20000,Kolkata,Q2
+104,Monitor,4,12000,Delhi,Q3
+105,Keyboard,10,800,Chennai,Q4
+

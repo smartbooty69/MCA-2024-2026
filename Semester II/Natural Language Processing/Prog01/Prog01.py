@@ -26,7 +26,7 @@ def display_menu():
     print("===========================")
 
 def main():
-    while True:
+    while True: 
         display_menu()
         choice = input("Enter your choice (1-3): ")
 
@@ -52,7 +52,7 @@ def main():
             break
 
         else:
-            print("Invalid choice! Please select 1, 2, or 3.")
+            print("Invalid choice!")
 
 if __name__ == "__main__":
     main()
