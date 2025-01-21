@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def extract_data():
-    sales_data = pd.read_csv('sales.csv')
+    sales_data = pd.read_csv('Data Warehousing And Data Mining\Prog01\sales.csv')
     customer_data = pd.DataFrame({
         'CustomerID': [1, 2, 3],
         'Name': ['Alice', 'Bob', 'Charlie'],

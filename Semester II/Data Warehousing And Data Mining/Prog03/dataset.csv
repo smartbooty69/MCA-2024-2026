@@ -1,0 +1,24 @@
+age,income,experience,education,job_title,gender,location,salary_range
+25,45000,2,Bachelors,Software Engineer,Male,New York,45000-50000
+32,,8,Masters,Data Scientist,Female,California,60000-65000
+28,55000,,Bachelors,Developer,Male,Texas,55000-60000
+45,95000,15,PhD,Senior Manager,Female,Florida,90000-95000
+31,65000,6,Masters,Product Manager,Male,Illinois,65000-70000
+27,48000,3,,Software Engineer,Female,Washington,48000-50000
+35,75000,9,Masters,Data Scientist,Male,New York,75000-80000
+29,,4,Bachelors,Developer,Female,California,70000-75000
+42,88000,12,Masters,Senior Manager,Male,Texas,88000-90000
+30,58000,5,Bachelors,Product Manager,Female,Florida,58000-60000
+26,47000,,Bachelors,Software Engineer,Male,Illinois,47000-48000
+38,78000,11,PhD,Data Scientist,Female,Washington,78000-80000
+33,67000,7,Masters,Developer,Male,New York,67000-70000
+41,92000,14,Masters,Senior Manager,Female,California,92000-95000
+36,72000,10,Bachelors,Product Manager,Male,Texas,72000-75000
+28,51000,3,Bachelors,Software Engineer,Female,Florida,51000-52000
+34,69000,8,,Data Scientist,Male,Illinois,69000-70000
+39,82000,12,Masters,Developer,Female,Washington,82000-85000
+44,98000,16,PhD,Senior Manager,Male,New York,98000-100000
+29,54000,4,Bachelors,Product Manager,Female,California,54000-55000
+,,NaN,Masters,Data Scientist,Male,Texas,NaN
+50,abc,20,PhD,Senior Manager,Female,Florida,100000-110000
+,,5,Bachelors,Software Engineer,Male,New York,60000-65000
