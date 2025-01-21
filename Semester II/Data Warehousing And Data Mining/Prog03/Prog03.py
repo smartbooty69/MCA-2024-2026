@@ -27,10 +27,8 @@ def remove_outliers(df, column):
 
 for column in numeric_columns:
     df = remove_outliers(df, column)
-    
     print(f"\nData after removing outliers from {column}:")
     print(df)
-    
     plt.figure(figsize=(10, 6))
     sns.histplot(df[column], kde=True)
     plt.title(f'Data Distribution After Removing Outliers from {column}')
@@ -38,11 +36,8 @@ for column in numeric_columns:
 
 for column in numeric_columns:
     df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())
-    
     print(f"\nNormalization applied to {column}.")
-    
     print(df)
- 
     plt.figure(figsize=(10, 6))
     sns.histplot(df[column], kde=True)
     plt.title(f'Data Distribution After Normalization of {column}')

@@ -13,7 +13,6 @@ def extract_data():
 def transform_data(sales_data, customer_data):
     sales_data.fillna(0, inplace=True)
     customer_data.columns = ['customer_id', 'name', 'country']
-    # Add a Total Sales column
     sales_data['Total Sales'] = sales_data['Quantity'] * sales_data['Price']
     return sales_data, customer_data
 
@@ -28,10 +27,7 @@ if __name__ == "__main__":
     sales_data, customer_data = transform_data(sales_data, customer_data)
     load_data(sales_data, customer_data)
 
-    # Check the columns of sales_data
     print("Sales Data Columns:", sales_data.columns)
-
-    # Create a pivot table with the new 'Total Sales' column
     pivot_data = sales_data.pivot_table(
         index='Location', columns='Time', values='Total Sales', aggfunc='sum'
     )
