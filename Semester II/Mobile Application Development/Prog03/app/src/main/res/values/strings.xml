@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PostFixEvaluation</string>
+    <string name="tvTitle">Evaluation of Postfix Expression</string>
+    <string name="tvPostFix">Enter Postfix Expression \n (Leave a blankspac
+e between tokens)</string>
+    <string name="txtPostFix">""</string>
+    <string name="btnEvaluate">Evaluate the PostFix Expression</string>
+</resources>
