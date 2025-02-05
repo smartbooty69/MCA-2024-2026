@@ -2,7 +2,6 @@ import pandas as pd
 import sqlite3
 
 def extract(file_path):
-   
     print("Extracting data from CSV...")
     data = pd.read_csv(file_path)
     print("Data extracted successfully!")
