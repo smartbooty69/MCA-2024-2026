@@ -4,11 +4,11 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 from sklearn.metrics import accuracy_score, classification_report
-from sklearn.datasets import load_iris
+from sklearn.datasets import load_wine
 
-iris = load_iris()
-df = pd.DataFrame(iris.data, columns=iris.feature_names)
-df['target'] = iris.target
+wine = load_wine()
+df = pd.DataFrame(wine.data, columns=wine.feature_names)
+df['target'] = wine.target
 
 X = df.drop(columns=['target'])
 y = df['target']
@@ -25,11 +25,11 @@ print("Classification Report:")
 print(classification_report(y_test, y_pred))
 
 plt.figure(figsize=(12, 8))
-plot_tree(clf, feature_names=iris.feature_names, class_names=iris.target_names, filled=True)
+plot_tree(clf, feature_names=wine.feature_names, class_names=wine.target_names, filled=True)
 plt.show()
 
 feature_importance = clf.feature_importances_
-feature_names = iris.feature_names
+feature_names = wine.feature_names
 
 plt.figure(figsize=(8, 6))
 plt.barh(feature_names, feature_importance, color='skyblue')
