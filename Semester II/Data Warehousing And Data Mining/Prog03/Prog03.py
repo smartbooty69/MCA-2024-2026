@@ -1,48 +1,37 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-df = pd.read_csv('Data Warehousing And Data Mining\Prog03\dataset.csv')
-print("Initial data shape:", df.shape)
+data = {
+    'Age': [22, 25, 47, 35, 46, 23, 34, 29, 50, 60],
+    'Income': [15000, 18000, 25000, 30000, 32000, 20000, 27000, 22000, 40000, 50000]
+}
 
-print("\nLoaded data sample:")
-print(df.head())
+df = pd.DataFrame(data)
 
-numeric_columns = df.select_dtypes(include=[np.number]).columns
-categorical_columns = df.select_dtypes(include=['object']).columns
-
-df[numeric_columns] = df[numeric_columns].fillna(df[numeric_columns].mean())
-df[categorical_columns] = df[categorical_columns].fillna('Unknown')
-
-print("\nData after handling missing values:")
-print(df)
-
-def remove_outliers(df, column):
-    Q1 = df[column].quantile(0.25)
-    Q3 = df[column].quantile(0.75)
-    IQR = Q3 - Q1
-    df = df[(df[column] >= Q1 - 1.5 * IQR) & (df[column] <= Q3 + 1.5 * IQR)]
+def discretize_data(df, column, bins, labels):
+    df[column + '_discretized'] = pd.cut(df[column], bins=bins, labels=labels)
     return df
 
-for column in numeric_columns:
-    df = remove_outliers(df, column)
-    print(f"\nData after removing outliers from {column}:")
-    print(df)
-    plt.figure(figsize=(10, 6))
-    sns.histplot(df[column], kde=True)
-    plt.title(f'Data Distribution After Removing Outliers from {column}')
-    plt.show()
+def generate_concept_hierarchy(df, column):
+    hierarchy = df[column].value_counts().reset_index()
+    hierarchy.columns = [column, 'Count']
+    return hierarchy
 
-for column in numeric_columns:
-    df[column] = (df[column] - df[column].min()) / (df[column].max() - df[column].min())
-    print(f"\nNormalization applied to {column}.")
-    print(df)
-    plt.figure(figsize=(10, 6))
-    sns.histplot(df[column], kde=True)
-    plt.title(f'Data Distribution After Normalization of {column}')
-    plt.show()
+age_bins = [0, 18, 35, 50, 100]
+age_labels = ['Child', 'Young Adult', 'Adult', 'Senior']
+df = discretize_data(df, 'Age', age_bins, age_labels)
 
-print("\nFinal data shape:", df.shape)
-print("\nSample of processed data:")
-print(df.head())
+income_bins = [0, 20000, 30000, 40000, 60000]
+income_labels = ['Low', 'Medium', 'High', 'Very High']
+df = discretize_data(df, 'Income', income_bins, income_labels)
+
+age_hierarchy = generate_concept_hierarchy(df, 'Age_discretized')
+
+income_hierarchy = generate_concept_hierarchy(df, 'Income_discretized')
+
+print("Original DataFrame:")
+print(df)
+print("\nAge Concept Hierarchy:")
+print(age_hierarchy)
+print("\nIncome Concept Hierarchy:")
+print(income_hierarchy)
