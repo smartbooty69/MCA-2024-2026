@@ -1,56 +1,45 @@
-from collections import defaultdict
+import pandas as pd
+import time
 
-def hash_apriori(transactions, min_support):
-    n_transactions = len(transactions)
-    min_support_count = (min_support / 10) * n_transactions
-    
-    item_counts = defaultdict(int)
-    for transaction in transactions:
-        for item in transaction:
-            item_counts[frozenset([item])] += 1
-    L1 = {k: v for k, v in item_counts.items() if v >= min_support_count}
-    
-    hash_size = 10
-    hash_table = [0] * hash_size
-    C2 = set()
-    
-    for transaction in transactions:
-        for i in range(len(transaction)):
-            for j in range(i + 1, len(transaction)):
-                hash_value = (hash(transaction[i]) + hash(transaction[j])) % hash_size
-                hash_table[hash_value] += 1
+from mlxtend.frequent_patterns import apriori, fpgrowth, association_rules
+from mlxtend.preprocessing import TransactionEncoder
 
-    for item1 in L1:
-        for item2 in L1:
-            if item1 != item2:
-                hash_value = (hash(list(item1)[0]) + hash(list(item2)[0])) % hash_size
-                if hash_table[hash_value] >= min_support_count:
-                    C2.add(item1.union(item2))
+dataset = [
+    ['Milk', 'Bread', 'Butter'],
+    ['Bread', 'Butter', 'Jam'],
+    ['Milk', 'Bread', 'Butter', 'Jam'],
+    ['Milk', 'Bread'],
+    ['Butter', 'Jam']
+]
 
-    C2_counts = defaultdict(int)
-    for transaction in transactions:
-        transaction_set = frozenset(transaction)
-        for candidate in C2:
-            if candidate.issubset(transaction_set):
-                C2_counts[candidate] += 1
+te = TransactionEncoder()
+te_data = te.fit(dataset).transform(dataset)
+df = pd.DataFrame(te_data, columns=te.columns_)
 
-    L2 = {k: v for k, v in C2_counts.items() if v >= min_support_count}
-    
-    return {**L1, **L2}
+fp_growth_result = fpgrowth(df, min_support=0.4, use_colnames=True)
+print("Frequent Itemsets using FP-Growth:")
+print(fp_growth_result)
 
-def main():
-    print("HASH-BASED APRIORI ALGORITHM")
-    
-    min_support = float(input("Enter minimum support (0-10): "))
-    
-    n_transactions = int(input("Enter number of transactions: "))
-    transactions = [input(f"Transaction {i+1}: ").strip().lower().split(',') for i in range(n_transactions)]
-    
-    frequent_itemsets = hash_apriori(transactions, min_support)
-    
-    print("Frequent Itemsets:")
-    for itemset, support in frequent_itemsets.items():
-        print(f"Itemset: {set(itemset)}, Support: {support}")
+apriori_result = apriori(df, min_support=0.4, use_colnames=True)
+print("\nFrequent Itemsets using Apriori:")
+print(apriori_result)
 
-if __name__ == "__main__":
-    main()
+start_fp = time.time()
+fpgrowth(df, min_support=0.4, use_colnames=True)
+end_fp = time.time()
+fp_time = end_fp - start_fp
+
+start_ap = time.time()
+apriori(df, min_support=0.4, use_colnames=True)
+end_ap = time.time()
+ap_time = end_ap - start_ap
+
+print(f"\nExecution Time:\nFP-Growth: {fp_time:.6f} sec\nApriori: {ap_time:.6f} sec")
+
+rules_fp = association_rules(fp_growth_result, metric="confidence", min_threshold=0.5)
+print("\nAssociation Rules using FP-Growth:")
+print(rules_fp)
+
+rules_ap = association_rules(apriori_result, metric="confidence", min_threshold=0.5)
+print("\nAssociation Rules using Apriori:")
+print(rules_ap)
