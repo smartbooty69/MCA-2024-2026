@@ -1,18 +1,20 @@
-import nltk
-from nltk.corpus import wordnet
-nltk.download('wordnet') 
+def morphological_parse(word):
+    rules = {
+        "ing": "Present participle", "ed": "Past tense", "s": "Plural/third-person", 
+        "er": "Comparative/Agent", "est": "Superlative", "ly": "Adverb", 
+        "ness": "State of being", "un": "Negation", "re": "Repetition"
+    }
+    
+    affixes, root = [], word  
+    for prefix in ["un", "re"]:
+        if root.startswith(prefix): 
+            affixes.append((prefix, rules[prefix])); root = root[len(prefix):]
+    
+    for suffix in sorted(rules, key=len, reverse=True):
+        if root.endswith(suffix) and suffix not in ["un", "re"]:
+            affixes.append((suffix, rules[suffix])); root = root[:-len(suffix)]
+    
+    return {"root": root, "affixes": affixes}
 
-synonyms = [] 
-antonyms = [] 
-
-word = input("Enter the word to find synonyms and antonyms: ")
-
-for syn in wordnet.synsets(word): 
-    for l in syn.lemmas(): 
-        synonyms.append(l.name()) 
-        if l.antonyms(): 
-            antonyms.append(l.antonyms()[0].name()) 
-  
-print("Synonyms of", word, ":", set(synonyms)) 
-print("\n")
-print("Antonyms of", word, ":", set(antonyms)) 
+for word in ["unhappy", "redoing", "walked", "teacher", "happily", "restart"]:
+    print(f"\n{word} -> {morphological_parse(word)}")

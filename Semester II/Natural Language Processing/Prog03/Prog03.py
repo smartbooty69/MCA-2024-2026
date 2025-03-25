@@ -1,43 +1,30 @@
 import nltk
-import spacy
+from nltk import CFG
 
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('punkt_tab')
-nltk.download('averaged_perceptron_tagger_eng')
-from nltk.tokenize import word_tokenize
-from nltk import pos_tag
+grammar = CFG.fromstring("""
+    S -> NP VP | S Conj S
+    NP -> Det N | Det Adj N | N
+    VP -> V NP | V NP PP | VP Adv | NP VP Adv
+    PP -> P NP
+    Det -> 'the' | 'a' | 'an'
+    N -> 'cat' | 'dog' | 'man' | 'woman' | 'telescope' | 'park' | 'child' | 'teacher' | 'city'
+    Adj -> 'big' | 'small' | 'angry' | 'happy' | 'tall' | 'short'
+    V -> 'saw' | 'walked' | 'ran' | 'chased' | 'likes' | 'hates'
+    P -> 'in' | 'on' | 'with' | 'to' | 'from'
+    Conj -> 'and' | 'or'
+    Adv -> 'quickly' | 'silently' | 'happily' | 'sadly'
+""")
 
-nlp = spacy.load("en_core_web_sm")
+parser = nltk.ChartParser(grammar)
 
-while True:
-    print("\nMenu:")
-    print("1. Use NLTK for PoS Tagging")
-    print("2. Use SpaCy for PoS Tagging")
-    print("3. Exit")
-    choice = input("Enter your choice: ")
+def check_sentence(sentence):
+    tokens = sentence.lower().split()
+    try:
+        parses = list(parser.parse(tokens))
+        print(f"{'✓' if parses else '✗'} {sentence}")
+        for tree in parses: tree.pretty_print()
+    except ValueError:
+        print(f"✗ Error parsing: {sentence}")
 
-    if choice == '1':
-        text = input("Enter the text to be analyzed: ")
-        words = word_tokenize(text)
-        pos_tags = pos_tag(words)
-        print("Original Text:")
-        print(text)
-        print("\nPoS Tagging Result:")
-        for word, pos in pos_tags:
-            print(f"{word}: {pos}")
-
-    elif choice == '2':
-        text = input("Enter the text to be analyzed: ")
-        doc = nlp(text)
-        print("Original Text: ", text)
-        print("PoS Tagging Result:")
-        for token in doc:
-            print(f"{token.text}: {token.pos_}")
-            
-    elif choice == '3':
-        print("Exiting the program.")
-        break
-    
-    else:
-        print("Invalid choice. Please try again.")
+while (s := input("\nEnter sentence ('exit' to quit): ").strip().lower()) != 'exit':
+    check_sentence(s)

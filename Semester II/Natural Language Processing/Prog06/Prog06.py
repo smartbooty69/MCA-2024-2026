@@ -1,40 +1,26 @@
-from collections import defaultdict
+import spacy, nltk
+from nltk.stem import WordNetLemmatizer
 
-class FiniteStateTransducer:
-    def __init__(self):
-        self.transitions = defaultdict(dict)
-        self.outputs = defaultdict(dict)
-        self.start_state = "q0"
-        self.final_states = set()
+nltk.download('wordnet'); nltk.download('omw-1.4')
 
-    def add_transition(self, state, input_symbol, next_state, output_symbol):
-        self.transitions[state][input_symbol] = next_state
-        self.outputs[state][input_symbol] = output_symbol
+nlp = spacy.load("en_core_web_sm")
+irregular_verbs = {"eat": "eaten", "write": "written", "break": "broken", "see": "seen", 
+    "take": "taken", "give": "given", "drive": "driven", "speak": "spoken", "choose": "chosen", 
+    "forget": "forgotten", "steal": "stolen", "freeze": "frozen", "ride": "ridden", "fall": "fallen", 
+    "do": "done", "go": "gone", "be": "been"}
 
-    def set_final_state(self, state):
-        self.final_states.add(state)
+def get_past_participle(verb):
+    return irregular_verbs.get((base := WordNetLemmatizer().lemmatize(verb, "v")), base + "ed")
 
-    def parse(self, word):
-        current_state = self.start_state
-        output = []
-        
-        for char in word:
-            if char in self.transitions[current_state]:
-                output.append(self.outputs[current_state][char])
-                current_state = self.transitions[current_state][char]
-            else:
-                return "Parsing failed"
+def active_to_passive(sentence):
+    doc = nlp(sentence)
+    subj, verb, obj = next((t for t in doc if t.dep_ == "nsubj"), None), \
+                      next((t for t in doc if t.dep_ == "ROOT"), None), \
+                      next((t for t in doc if t.dep_ == "dobj"), None)
 
-        return "".join(output) if current_state in self.final_states else "Not a valid form"
+    if subj and verb and obj:
+        obj_phrase = " ".join([c.text for c in obj.lefts if c.dep_ in ("det", "amod")] + [obj.text])
+        return f"{obj_phrase.capitalize()} was {get_past_participle(verb.text)} by {subj.text.lower()}."
+    return "Conversion not possible."
 
-fst = FiniteStateTransducer()
-fst.add_transition("q0", "w", "q1", "w")
-fst.add_transition("q1", "a", "q2", "a")
-fst.add_transition("q2", "l", "q3", "l")
-fst.add_transition("q3", "k", "q4", "k")
-fst.add_transition("q4", "e", "q5", "e")
-fst.add_transition("q5", "d", "q6", "d")
-
-fst.set_final_state("q6")
-
-print(fst.parse("walked"))  
+print("Passive Voice:", active_to_passive(input("Enter an active voice sentence: ")))

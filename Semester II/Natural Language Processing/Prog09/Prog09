@@ -1,53 +1,13 @@
-import nltk
-from nltk import CFG
+from deep_translator import GoogleTranslator
 
+codes = {"tamil": "ta", "hindi": "hi", "malayalam": "ml", "konkani": "gom", 
+         "spanish": "es", "german": "de", "japanese": "ja", "french": "fr"}
 
-grammar = CFG.fromstring("""
-  S -> NP VP
-  NP -> Det N | Det N PP
-  VP -> V NP | VP PP
-  PP -> P NP
-  Det -> 'a' | 'the'
-  N -> 'dog' | 'cat' | 'park'
-  V -> 'saw' | 'ate'
-  P -> 'in' | 'on' | 'by'
-""")
+def translate(text, lang):
+    try: return GoogleTranslator(source="auto", target=lang).translate(text)
+    except Exception as e: return f"Error: {e}"
 
-
-parser = nltk.ChartParser(grammar)
-
-def check_grammar(sentence):
-    
-    tokens = sentence.lower().split()
-    
-    
-    try:
-        parses = list(parser.parse(tokens))
-        if parses:
-            return True, parses
-        else:
-            return False, []
-    except Exception as e:
-        return False, []
-
-def suggest_corrections(sentence):
-    
-    
-    return "Please check the sentence structure."
-
-
-def grammar_checker(sentence):
-    is_correct, parses = check_grammar(sentence)
-    if is_correct:
-        print("The sentence is grammatically correct.")
-        for parse in parses:
-            print(parse)
-    else:
-        print("The sentence is grammatically incorrect.")
-        corrections = suggest_corrections(sentence)
-        print(corrections)
-
-
-if __name__ == "__main__":
-    test_sentence = "the dog saw a cat"
-    grammar_checker(test_sentence)
+print("Languages:", ", ".join(codes))
+lang = input("Target language: ").strip().lower()
+print(f"Translated ({lang}): {translate(input('Enter text: ').strip(), codes.get(lang, 'Invalid'))}" 
+      if lang in codes else "❌ Invalid language.")
