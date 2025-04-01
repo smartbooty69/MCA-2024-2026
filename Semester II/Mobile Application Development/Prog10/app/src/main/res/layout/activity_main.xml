@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Database Manipulation Using SQLite"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+        <TextView
+            android:id="@+id/tvStudentRNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="register_number"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/txtStudentRNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Register No"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/tvStudentRNo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="student_name"
+            app:layout_constraintTop_toBottomOf="@id/txtStudentRNo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/txtStudentName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:inputType="textPersonName"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txtStudentName"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/btnInsert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INSERT"/>
+
+            <Button
+                android:id="@+id/btnView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIEW"/>
+
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UPDATE"/>
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DELETE"/>
+        </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

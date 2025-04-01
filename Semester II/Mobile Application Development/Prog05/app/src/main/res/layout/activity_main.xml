@@ -1,57 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <?xml version="1.0" encoding="utf-8"?>
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginTop="105dp"
-            android:layout_marginEnd="66dp"
-            android:layout_marginBottom="581dp"
-            android:text="Find HCF and LCM"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
-        <TextView
-            android:id="@+id/tvA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="185dp"
-            android:layout_marginEnd="256dp"
-            android:layout_marginBottom="522dp"
-            android:text="Enter value for A"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
-        <TextView
-            android:id="@+id/tvB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="250dp"
-            android:layout_marginEnd="255dp"
-            android:layout_marginBottom="457dp"
-            android:text="Enter Value for B"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText,VisualLintOverlap" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="581dp"
+        android:text="Find HCF and LCM"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tvA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="185dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="522dp"
+        android:text="Enter value for A"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tvB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="255dp"
+        android:layout_marginBottom="457dp"
+        android:text="Enter Value for B"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,VisualLintOverlap" />
 
     <EditText
         android:id="@+id/txtA"
@@ -63,13 +66,12 @@
         android:layout_marginBottom="508dp"
         android:ems="10"
         android:inputType="text"
-        android:minHeight="48dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSize Check,VisualLintOverlap" />
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck,VisualLintOverlap" />
 
     <EditText
         android:id="@+id/txtB"
@@ -81,26 +83,27 @@
         android:layout_marginBottom="447dp"
         android:ems="10"
         android:inputType="text"
-        android:minHeight="48dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSize Check" />
-        <Button
-            android:id="@+id/btnShowPopupMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="89dp"
-            android:layout_marginTop="306dp"
-            android:layout_marginEnd="89dp"
-            android:layout_marginBottom="375dp"
-            android:text="Show Popup Menu"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btnShowPopupMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="306dp"
+        android:layout_marginEnd="89dp"
+        android:layout_marginBottom="375dp"
+        android:text="Show Popup Menu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

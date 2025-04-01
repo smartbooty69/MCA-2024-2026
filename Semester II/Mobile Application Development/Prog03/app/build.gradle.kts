@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "com.postfixexpression"
-    compileSdk = 34
+    namespace = "com.mad.prog03"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.postfixexpression"
-        minSdk = 31
+        applicationId = "com.mad.prog03"
+        minSdk = 34
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SimpleArithmetic</string>
+    <string name="tvTitle">Simple Arithmetic Operations</string>
+    <string name="tvA">Enter value for A</string>
+    <string name="txtA">""</string>
+    <string name="tvB">Enter value for B</string>
+    <string name="txtB">""</string>
+    <string name="tvRes">Result</string>
+    <string name="txtRes">""</string>
+    <string name="btnPlus">+</string>
+    <string name="btnMinus">-</string>
+    <string name="btnMultiply">*</string>
+    <string name="btnDivide">/</string>
+</resources>

@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    namespace = "com.prog05"
-    compileSdk = 34
+    namespace = "com.mad.prog05"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.prog05"
-        minSdk = 31
+        applicationId = "com.mad.prog05"
+        minSdk = 34
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

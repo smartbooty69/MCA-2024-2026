@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "postfix expression"
+rootProject.name = "Prog03"
 include(":app")
+ 

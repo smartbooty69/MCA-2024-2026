@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Prog05</string>
+    <string name="app_name">HCFLCM</string>
     <string name="mnuItem1">Find HCF</string>
     <string name="mnuItem2">Find LCM</string>
 </resources>

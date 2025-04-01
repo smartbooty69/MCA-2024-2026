@@ -1,0 +1,116 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvTitle"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvPrincipal"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <TextView android:id="@+id/tvPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvPrincipal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtPrincipal" />
+
+    <EditText android:id="@+id/txtPrincipal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="@string/txtPrincipal"
+        app:layout_constraintTop_toBottomOf="@+id/tvPrincipal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvPeriod" />
+
+    <TextView android:id="@+id/tvPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvPeriod"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrincipal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtPeriod" />
+
+    <EditText android:id="@+id/txtPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="@string/txtPeriod"
+        app:layout_constraintTop_toBottomOf="@+id/tvPeriod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvIntRate" />
+
+    <TextView android:id="@+id/tvIntRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvIntRate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeriod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtIntRate" />
+
+    <EditText android:id="@+id/txtIntRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="@string/txtIntRate"
+        app:layout_constraintTop_toBottomOf="@+id/tvIntRate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnSInt" />
+
+    <Button android:id="@+id/btnSInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSInt"
+        app:layout_constraintTop_toBottomOf="@+id/txtIntRate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCInt" />
+
+    <Button android:id="@+id/btnCInt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCInt"
+        app:layout_constraintTop_toBottomOf="@+id/btnSInt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnSIntP" />
+
+    <Button android:id="@+id/btnSIntP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSIntP"
+        app:layout_constraintTop_toBottomOf="@+id/btnCInt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCIntP" />
+
+    <Button android:id="@+id/btnCIntP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnCIntP"
+        app:layout_constraintTop_toBottomOf="@+id/btnSIntP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BigSmall3</string>
+    <string name="tvTitle">Biggest and Smallest among\n Three Numbers</string>
+    <string name="tvA">Enter value for A</string>
+    <string name="txtA">""</string>
+    <string name="tvB">Enter value for B</string>
+    <string name="txtB">""</string>
+    <string name="tvC">Enter value for C</string>
+    <string name="txtC">""</string>
+    <string name="btnFindBiggest">Find Biggest</string>
+    <string name="btnFindSmallest">Find Smallest</string>
+</resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SimpleCompoundInterest</string>
+    <string name="tvTitle">Simple and Compound Interest Calculator</string>
+    <string name="tvPrincipal">Enter principal amount</string>
+    <string name="txtPrincipal">""</string>
+    <string name="tvPeriod">Enter time period</string>
+    <string name="txtPeriod">""</string>
+    <string name="tvIntRate">Enter rate of Interest (%)</string>
+    <string name="txtIntRate">""</string>
+    <string name="btnSInt">Calculate Simple Interest</string>
+    <string name="btnCInt">Calculate Compound Interest</string>
+    <string name="btnSIntP">Calculate Simple Interest with Principal Amount</string>
+    <string name="btnCIntP">Calculate Compound Interest with Principal Amount</string>
+</resources>
