@@ -1,6 +1,6 @@
 # Experiment 8: Launching and Configuring an AWS EC2 Instance in AWS
 
-## Objective
+## 🎯 Objective
 To launch an EC2 instance in AWS and configure it for web traffic.
 
 ---
