@@ -23,16 +23,13 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         txtNumber = findViewById(R.id.txtNumber);
-        btnCalculate = findViewById(R.id.btnCalculate); // Reference to the button
-
-        // Set button click listener
+        btnCalculate = findViewById(R.id.btnCalculate); /
+        
         btnCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 long n = Long.parseLong(txtNumber.getText().toString());
 
-                // You can choose either factorial or fibonacci depending on user input
-                // For demonstration, let's compute both
                 String result = "Factorial: " + findFact(n) + "\nFibonacci: " + getFibonacciSeries(n);
                 Toast.makeText(MainActivity.this, result, Toast.LENGTH_LONG).show();
             }

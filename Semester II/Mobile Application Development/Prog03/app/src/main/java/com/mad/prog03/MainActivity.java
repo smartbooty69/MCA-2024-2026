@@ -8,26 +8,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity {
-    // UI Controls
+
     EditText postfix;
     Button evaluate;
     String exp;
     int result;
 
-    // Method to evaluate value of a postfix expression
     static int evaluatePostfix(String exp) {
-        // Create a stack to evaluate the expression
+        
         Stack<Integer> stack = new Stack<>();
-        String[] tokens = exp.split(" ");  // Split the expression by spaces
+        String[] tokens = exp.split(" ");  
 
         for (String token : tokens) {
-            if (token.isEmpty()) continue;  // Skip any empty tokens
+            if (token.isEmpty()) continue;  
 
             if (isNumeric(token)) {
-                // If the token is a number, push it to the stack
                 stack.push(Integer.parseInt(token));
             } else {
-                // Otherwise, it's an operator, pop two numbers and apply the operator
+                
                 int val1 = stack.pop();
                 int val2 = stack.pop();
 
@@ -45,17 +43,15 @@ public class MainActivity extends AppCompatActivity {
                         if (val1 != 0) {
                             stack.push(val2 / val1);
                         } else {
-                            // Handle division by zero
-                            return Integer.MIN_VALUE;  // Return an error value
+                            return Integer.MIN_VALUE;  
                         }
                         break;
                 }
             }
         }
-        return stack.pop();  // The result is the last element in the stack
+        return stack.pop();  
     }
 
-    // Helper method to check if a string is numeric
     static boolean isNumeric(String str) {
         try {
             Integer.parseInt(str);
@@ -69,23 +65,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Initialize UI Controls
+        
         postfix = findViewById(R.id.txtPostFix);
         evaluate = findViewById(R.id.btnEvaluate);
 
         evaluate.setOnClickListener(v -> {
-            // Get the input expression
+            
             exp = postfix.getText().toString().trim();
-
-            // Evaluate the postfix expression
             result = evaluatePostfix(exp);
 
             if (result == Integer.MIN_VALUE) {
-                // Show error if the expression is invalid or division by zero occurred
                 Toast.makeText(getApplicationContext(), "Error in expression (possibly division by zero)", Toast.LENGTH_SHORT).show();
             } else {
-                // Show the result
                 Toast.makeText(getApplicationContext(), "Evaluation of Postfix Expression: " + exp + " = " + result, Toast.LENGTH_SHORT).show();
             }
         });

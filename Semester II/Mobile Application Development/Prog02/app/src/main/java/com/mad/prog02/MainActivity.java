@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize UI controls
         principal = findViewById(R.id.txtPrincipal);
         rate = findViewById(R.id.txtIntRate);
         period = findViewById(R.id.txtPeriod);
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         sintp = findViewById(R.id.btnSIntP);
         cintp = findViewById(R.id.btnCIntP);
 
-        // Simple Interest Button Click
         sint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Simple Interest is " + si, Toast.LENGTH_SHORT).show();
             }
         });
-
-        // Compound Interest Button Click
+        
         cint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Simple Interest with Principal Button Click
         sintp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Compound Interest with Principal Button Click
         cintp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
