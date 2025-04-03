@@ -1,6 +1,6 @@
 # Experiment 4: Setting up a Lifecycle Rule for an Object in Amazon S3
 
-## Aim
+## 🎯 Aim
 To configure a lifecycle rule in Amazon S3 to automate the transition of objects between different storage classes over time, optimizing cost and efficiency.
 
 ## Part 1: Creating or Selecting an S3 Bucket
