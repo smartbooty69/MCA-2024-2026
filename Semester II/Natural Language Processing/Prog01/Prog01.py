@@ -9,12 +9,16 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 text = """Hello, welcome to NLP! Let's preprocess this text: 
-Visit http://www.example.com for details. Call 123-456-7890. 
+Visit http://www.example.com for details. Email help@nlp.com or call 123-456-7890. 
 Let’s remove stopwords, punctuation, and normalize words.""".lower()
 
-text = re.sub(r"http\S+|\d+|[^\w\s]", '', text)  
+text = re.sub(r'http\S+|www\.\S+|[\w\.-]+@[\w\.-]+|\d+|[^\w\s]', '', text)
+
 tokens = word_tokenize(text)
+
 stop_words = set(stopwords.words('english'))
-tokens = [WordNetLemmatizer().lemmatize(PorterStemmer().stem(w)) for w in tokens if w not in stop_words and len(w) > 1]
+lemmatizer = WordNetLemmatizer()
+stemmer = PorterStemmer()
+tokens = [lemmatizer.lemmatize(stemmer.stem(w)) for w in tokens if w not in stop_words and len(w) > 1]
 
 print("Final Cleaned Text:", ' '.join(tokens))

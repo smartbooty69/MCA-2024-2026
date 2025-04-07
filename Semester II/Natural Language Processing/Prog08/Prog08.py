@@ -11,3 +11,5 @@ def correct_tags(tags):
     return [(w, corrections.get(w.lower(), t)) for w, t in tags]
 
 print("POS Tags:", correct_tags(tagger.tag(input("Enter a sentence: ").split())))
+# He ate pizza yesterday
+# She waited for the bus today

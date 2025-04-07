@@ -1,26 +1,27 @@
-import spacy, nltk
+import spacy
 from nltk.stem import WordNetLemmatizer
-
-nltk.download('wordnet'); nltk.download('omw-1.4')
+import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')
 
 nlp = spacy.load("en_core_web_sm")
-irregular_verbs = {"eat": "eaten", "write": "written", "break": "broken", "see": "seen", 
-    "take": "taken", "give": "given", "drive": "driven", "speak": "spoken", "choose": "chosen", 
-    "forget": "forgotten", "steal": "stolen", "freeze": "frozen", "ride": "ridden", "fall": "fallen", 
-    "do": "done", "go": "gone", "be": "been"}
+irregular = {
+    "eat": "eaten", "write": "written", "break": "broken", "see": "seen", "take": "taken",
+    "give": "given", "drive": "driven", "speak": "spoken", "choose": "chosen", "forget": "forgotten",
+    "steal": "stolen", "freeze": "frozen", "ride": "ridden", "fall": "fallen", "do": "done",
+    "go": "gone", "be": "been"
+}
 
-def get_past_participle(verb):
-    return irregular_verbs.get((base := WordNetLemmatizer().lemmatize(verb, "v")), base + "ed")
+get_pp = lambda v: irregular.get((b := WordNetLemmatizer().lemmatize(v, "v")), b + "ed")
 
-def active_to_passive(sentence):
-    doc = nlp(sentence)
-    subj, verb, obj = next((t for t in doc if t.dep_ == "nsubj"), None), \
-                      next((t for t in doc if t.dep_ == "ROOT"), None), \
-                      next((t for t in doc if t.dep_ == "dobj"), None)
-
+def active_to_passive(sent):
+    doc = nlp(sent)
+    subj = next((t for t in doc if t.dep_ == "nsubj"), None)
+    verb = next((t for t in doc if t.dep_ == "ROOT"), None)
+    obj = next((t for t in doc if t.dep_ == "dobj"), None)
     if subj and verb and obj:
-        obj_phrase = " ".join([c.text for c in obj.lefts if c.dep_ in ("det", "amod")] + [obj.text])
-        return f"{obj_phrase.capitalize()} was {get_past_participle(verb.text)} by {subj.text.lower()}."
+        obj_txt = " ".join([c.text for c in obj.lefts if c.dep_ in ("det", "amod")] + [obj.text])
+        return f"{obj_txt.capitalize()} was {get_pp(verb.text)} by {subj.text.lower()}."
     return "Conversion not possible."
 
-print("Passive Voice:", active_to_passive(input("Enter an active voice sentence: ")))
+sent = input("Enter active sentence: ")
+print("\nActive Voice:  ", sent)
+print("Passive Voice: ", active_to_passive(sent))

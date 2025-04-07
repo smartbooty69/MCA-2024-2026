@@ -1,18 +1,19 @@
 def morphological_parse(word):
     rules = {
-        "ing": "Present participle", "ed": "Past tense", "s": "Plural/third-person", 
-        "er": "Comparative/Agent", "est": "Superlative", "ly": "Adverb", 
-        "ness": "State of being", "un": "Negation", "re": "Repetition"
+        "ing": "Participle", "ed": "Past", "s": "Plural/3rd", "er": "Comp/Agent",
+        "est": "Superlative", "ly": "Adverb", "ness": "State", "un": "Negation", "re": "Repeat"
     }
     
     affixes, root = [], word  
     for prefix in ["un", "re"]:
         if root.startswith(prefix): 
-            affixes.append((prefix, rules[prefix])); root = root[len(prefix):]
+            affixes.append((prefix, rules[prefix])); 
+            root = root[len(prefix):]
     
     for suffix in sorted(rules, key=len, reverse=True):
         if root.endswith(suffix) and suffix not in ["un", "re"]:
-            affixes.append((suffix, rules[suffix])); root = root[:-len(suffix)]
+            affixes.append((suffix, rules[suffix])); 
+            root = root[:-len(suffix)]
     
     return {"root": root, "affixes": affixes}
 

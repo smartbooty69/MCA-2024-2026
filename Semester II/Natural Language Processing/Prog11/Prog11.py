@@ -9,18 +9,17 @@ grammar = CFG.fromstring("""
     NP -> Det N | Det N PP | N
     PP -> P NP
     Det -> 'a' | 'the'
-    N -> 'man' | 'dog' | 'cat' | 'telescope' | 'park' | 'monkey'
+    N -> 'man' | 'dog' | 'cat' | 'park' 
     V -> 'saw' | 'ate' | 'walked'
     P -> 'in' | 'on' | 'by' | 'with'
 """)
 
 parser = ChartParser(grammar)
 
-def grammar_checker(sentence):
-    try:
-        trees = list(parser.parse(word_tokenize(sentence)))
-        return "Grammar is correct\n" + "\n".join(t.pretty_print() or "" for t in trees) if trees else "Grammar is incorrect."
-    except Exception as e:
-        return "Grammar is incorrect: " + str(e)
-
-print(grammar_checker(input("Enter a sentence: ")))
+sentence = input("Enter a sentence: ").lower()
+try:
+    trees = list(parser.parse(word_tokenize(sentence)))
+    print("Grammar correct\n" + "".join(t.pretty_print() or "" for t in trees) if trees else "Grammar incorrect.")
+except Exception as e:
+    print("Error:", e)
+# the man saw a dog
