@@ -1,34 +1,16 @@
 import pandas as pd
-from sqlalchemy import create_engine
+import sqlite3
 
-def extract_data():
-    sales_data = pd.read_csv('Data Warehousing And Data Mining\Prog01\sales.csv')
-    customer_data = pd.DataFrame({
-        'CustomerID': [1, 2, 3],
-        'Name': ['Alice', 'Bob', 'Charlie'],
-        'Country': ['USA', 'UK', 'Canada']
-    })
-    return sales_data, customer_data
+csv = pd.read_csv('Prog01/data.csv')
+json = pd.read_json('Prog01/data.json')
+db = pd.read_sql("SELECT * FROM users", sqlite3.connect('Prog01/data.db'))
 
-def transform_data(sales_data, customer_data):
-    sales_data.fillna(0, inplace=True)
-    customer_data.columns = ['customer_id', 'name', 'country']
-    sales_data['Total Sales'] = sales_data['Quantity'] * sales_data['Price']
-    return sales_data, customer_data
+def clean(df):
+    df = df.dropna()
+    df = df.apply(lambda x: x.str.strip().str.lower() if x.dtype == "object" else x)
+    return df.reset_index(drop=True)
 
-def load_data(sales_data, customer_data):
-    engine = create_engine('sqlite:///data_warehouse.db')
-    sales_data.to_sql('sales', engine, if_exists='replace', index=False)
-    customer_data.to_sql('customers', engine, if_exists='replace', index=False)
-    print("Data successfully loaded into the warehouse.")
+csv, json, db = clean(csv), clean(json), clean(db)
 
-if __name__ == "__main__":
-    sales_data, customer_data = extract_data()
-    sales_data, customer_data = transform_data(sales_data, customer_data)
-    load_data(sales_data, customer_data)
-
-    print("Sales Data Columns:", sales_data.columns)
-    pivot_data = sales_data.pivot_table(
-        index='Location', columns='Time', values='Total Sales', aggfunc='sum'
-    )
-    print(pivot_data)
+pd.concat([csv, json, db]).to_csv('Prog01/data_warehouse.csv', index=False)
+print("ETL done. Data saved to data_warehouse.csv")
