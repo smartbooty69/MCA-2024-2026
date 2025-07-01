@@ -1,23 +1,31 @@
 import pandas as pd
 from mlxtend.frequent_patterns import apriori, fpgrowth, association_rules
+from mlxtend.preprocessing import TransactionEncoder
 import time
 
-df = pd.DataFrame({
-    "Milk":   [1, 0, 1, 1, 0],
-    "Bread":  [1, 1, 0, 1, 1],
-    "Butter": [0, 1, 1, 1, 0]
-}, dtype=bool)
+dataset = [
+    ['milk', 'bread', 'nuts', 'apple'],
+    ['milk', 'bread', 'nuts'],
+    ['milk', 'bread'],
+    ['milk', 'apple'],
+    ['bread', 'nuts', 'apple'],
+    ['milk', 'bread', 'apple'],
+    ['bread', 'nuts'],
+]
+
+te = TransactionEncoder()
+df = pd.DataFrame(te.fit(dataset).transform(dataset), columns=te.columns_)
 
 start = time.time()
-ap_items = apriori(df, min_support=0.1, use_colnames=True)
-ap_rules = association_rules(ap_items, metric="confidence", min_threshold=0.6)
-print("\nApriori Itemsets:\n", ap_items)
-print("\nApriori Rules:\n", ap_rules[['antecedents', 'consequents', 'lift']])
+apitems = apriori(df, min_support=0.1, use_colnames=True)
+aprules = association_rules(apitems, metric="confidence", min_threshold=0.6)
+print("\nApriori Itemsets:\n", apitems)
+print("\nApriori Rules:\n", aprules)
 print(f"Apriori Time: {time.time() - start:.4f} sec")
 
 start = time.time()
-fp_items = fpgrowth(df, min_support=0.1, use_colnames=True)
-fp_rules = association_rules(fp_items, metric="confidence", min_threshold=0.6)
-print("\nFP-Growth Itemsets:\n", fp_items)
-print("\nFP-Growth Rules:\n", fp_rules[['antecedents', 'consequents', 'lift']])
+fpitems = fpgrowth(df, min_support=0.1, use_colnames=True)
+fprules = association_rules(fpitems, metric="confidence", min_threshold=0.6)
+print("\nFP-Growth Itemsets:\n", fpitems)
+print("\nFP-Growth Rules:\n", fprules)
 print(f"FP-Growth Time: {time.time() - start:.4f} sec")

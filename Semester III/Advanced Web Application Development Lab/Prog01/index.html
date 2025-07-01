@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic List Manipulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Create a list dynamically, manipulate it, and view the number of elements in it dynamically. Create a button dynamically, and make it handle an event dynamically.</h1>
+    <ul id="myList">
+        <li>Coffee</li>
+        <li>Tea</li>
+    </ul>
+    <p>Click "Append" to append an item to the end of the list:</p>
+    <p>Click "Remove" to remove the last item from the list:</p>
+    <p>Click "Remove All" to remove all items from the list:</p>
+    <p>Click "Element Count" to get the number of elements in the list:</p>
+    <button onclick="addElement()">Append</button>
+    <button onclick="removeElement()">Remove</button>
+    <button onclick="removeAllElement()">Remove All</button>
+    <button onclick="elementCount()">Element Count</button>
+    <button onclick="addButton()">Create a New Button to handle an Event</button>
+    <div id="message"></div>
+    <script src="script.js"></script>
+</body>
+</html> 

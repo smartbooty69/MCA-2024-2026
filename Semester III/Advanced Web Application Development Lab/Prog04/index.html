@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Number System Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="root">
+        <h1 class="title">Number System Calculator</h1>
+        <section>
+            <div class="option">
+                <span>
+                    <label>Convert from:</label>
+                    <select id="typeFrom" onchange="update()">
+                        <option value="10">Decimal</option>
+                        <option value="2">Binary</option>
+                        <option value="8">Octal</option>
+                        <option value="16">HexaDecimal</option>
+                    </select>
+                </span>
+                <span>
+                    <label>Convert to:</label>
+                    <select id="typeTo" onchange="update()">
+                        <option value="10">Decimal</option>
+                        <option value="2">Binary</option>
+                        <option value="8">Octal</option>
+                        <option value="16">HexaDecimal</option>
+                    </select>
+                </span>
+                <br />
+                <br/>
+                <span>
+                    <label id="inputType">Enter Decimal:</label>
+                    <input type="text" min="0" value="0" id="input" onkeyup="update()" />
+                </span>
+                <span>
+                    <label id="resultType">Result Binary:</label>
+                    <input id="res" type="text" min="0" value="0" onkeyup="reverse()" />
+                </span>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

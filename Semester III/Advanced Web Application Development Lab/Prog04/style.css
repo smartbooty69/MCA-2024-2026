@@ -1,0 +1,49 @@
+body {
+    text-align: center;
+    margin: auto;
+}
+.title {
+    font-size: 2.5rem;
+    color: rgba(35, 95, 180, 0.72);
+    text-decoration: underline dashed 3px rgb(23, 50, 92);
+}
+.root {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    max-width: 30rem;
+    margin: auto;
+    box-shadow: 0 4px 10px rgb(46, 63, 57);
+    background-color: rgb(122, 199, 173);
+    border-radius: 0 10px;
+    padding: 3%;
+}
+section {
+    font-size: x-large;
+    padding: 2%;
+    margin: auto;
+    text-align: left;
+}
+span > label {
+    width: 80%;
+}
+.option {
+    display: flex;
+    flex-direction: column;
+}
+.option > span {
+    display: flex;
+    padding: 2%;
+    align-items: center;
+}
+select {
+    width: 33%;
+    font-size: medium;
+    outline: none;
+    margin-left: 10px;
+}
+input[type="text"] {
+    width: 30%;
+    font-size: large;
+    margin-left: 10px;
+} 

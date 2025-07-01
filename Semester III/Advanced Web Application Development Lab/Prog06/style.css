@@ -1,0 +1,42 @@
+#userList {
+    width: 600px;
+    margin: 40px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background 0.2s;
+}
+button:hover {
+    background-color: #a71d2a;
+}
+form {
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="email"] {
+    padding: 6px;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+} 

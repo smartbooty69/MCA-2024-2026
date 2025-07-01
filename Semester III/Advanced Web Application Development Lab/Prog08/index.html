@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+    <title>AngularJS Student Details</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="studentCtrl" id="studentDetails">
+        <div id="inputForm">
+            <h2>Enter Student Details</h2>
+            <form ng-submit="enterStudentDetails()">
+                <label for="studentName">Name:</label>
+                <input type="text" id="studentName" ng-model="newStudent.name" required>
+                <label for="studentSemester">Semester:</label>
+                <input type="text" id="studentSemester" ng-model="newStudent.semester" required>
+                <label for="subject1">Subject 1:</label>
+                <input type="number" id="subject1" ng-model="newStudent.marks.subject1" required>
+                <label for="subject2">Subject 2:</label>
+                <input type="number" id="subject2" ng-model="newStudent.marks.subject2" required>
+                <label for="subject3">Subject 3:</label>
+                <input type="number" id="subject3" ng-model="newStudent.marks.subject3" required>
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+        <div id="displayDetails">
+            <h2>Student Details</h2>
+            <p ng-show="students.length > 0">Total Students: {{ students.length }}</p>
+            <table ng-show="students.length > 0">
+                <tr>
+                    <th>Name</th>
+                    <th>Semester</th>
+                    <th>Subject 1</th>
+                    <th>Subject 2</th>
+                    <th>Subject 3</th>
+                    <th>CGPA</th>
+                </tr>
+                <tr ng-repeat="student in students">
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.semester }}</td>
+                    <td>{{ student.marks.subject1 }}</td>
+                    <td>{{ student.marks.subject2 }}</td>
+                    <td>{{ student.marks.subject3 }}</td>
+                    <td>{{ calculateCGPA(student.marks) }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

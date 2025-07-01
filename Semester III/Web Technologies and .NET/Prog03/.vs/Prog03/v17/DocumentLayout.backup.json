@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Prog03\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{12E9A1A2-CFD9-445D-8B08-8422A3E644A5}|Prog03\\Prog03.csproj|c:\\users\\clanc\\mca 2024-2026\\semester iii\\prog03\\prog03\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12E9A1A2-CFD9-445D-8B08-8422A3E644A5}|Prog03\\Prog03.csproj|solutionrelative:prog03\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Prog03\\Prog03\\Program.cs",
+              "RelativeDocumentMoniker": "Prog03\\Program.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Prog03\\Prog03\\Program.cs",
+              "RelativeToolTip": "Prog03\\Program.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-01T09:33:40.916Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

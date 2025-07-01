@@ -1,0 +1,7 @@
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\bin\Debug\Prog01.exe.config
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\bin\Debug\Prog01.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\bin\Debug\Prog01.pdb
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\obj\Debug\Prog01.csproj.AssemblyReference.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\obj\Debug\Prog01.csproj.CoreCompileInputs.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\obj\Debug\Prog01.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog01\Prog01\obj\Debug\Prog01.pdb

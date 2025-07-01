@@ -1,0 +1,61 @@
+#studentDetails {
+    display: flex;
+    width: 800px;
+    margin: 40px auto;
+}
+#inputForm {
+    width: 33.33%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background: #f9f9f9;
+    margin-right: 10px;
+}
+#displayDetails {
+    width: 66.66%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
+}
+input, select {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th:nth-child(3), th:nth-child(4), th:nth-child(5) {
+    white-space: nowrap;
+}
+td:last-child {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+button:hover {
+    background-color: #0056b3;
+} 

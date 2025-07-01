@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="calculatorApp">
+<head>
+    <title>AngularJS Calculator App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+    <div ng-controller="calculatorCtrl" id="calculator">
+        <h2>Simple Calculator</h2>
+        <input type="text" ng-model="display" disabled>
+        <div class="row">
+            <button ng-click="appendToDisplay('1')">1</button>
+            <button ng-click="appendToDisplay('2')">2</button>
+            <button ng-click="appendToDisplay('3')">3</button>
+            <button ng-click="performOperation('+')">+</button>
+        </div>
+        <div class="row">
+            <button ng-click="appendToDisplay('4')">4</button>
+            <button ng-click="appendToDisplay('5')">5</button>
+            <button ng-click="appendToDisplay('6')">6</button>
+            <button ng-click="performOperation('-')">-</button>
+        </div>
+        <div class="row">
+            <button ng-click="appendToDisplay('7')">7</button>
+            <button ng-click="appendToDisplay('8')">8</button>
+            <button ng-click="appendToDisplay('9')">9</button>
+            <button ng-click="performOperation('*')">*</button>
+        </div>
+        <div class="row">
+            <button ng-click="appendToDisplay('0')">0</button>
+            <button ng-click="clearDisplay()">C</button>
+            <button ng-click="calculateResult()">=</button>
+            <button ng-click="performOperation('/')">/</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

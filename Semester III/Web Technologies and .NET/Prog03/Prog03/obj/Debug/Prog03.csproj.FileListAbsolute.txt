@@ -1,0 +1,8 @@
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\obj\Debug\Prog03.csproj.AssemblyReference.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\obj\Debug\Prog03.csproj.CoreCompileInputs.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\bin\Debug\Prog03.exe.config
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\bin\Debug\Prog03.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\bin\Debug\Prog03.pdb
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\obj\Debug\Prog03.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\obj\Debug\Prog03.pdb
+C:\Users\clanc\MCA 2024-2026\Semester III\Prog03\Prog03\obj\Debug\Prog03.exe.config
