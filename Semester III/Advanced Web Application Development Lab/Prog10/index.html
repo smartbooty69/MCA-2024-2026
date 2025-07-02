@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record Access</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; }
+        center { margin-top: 40px; }
+        form { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: 400px; margin: 0 auto; }
+        h1 { color: #333; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; }
+        input[type="text"] { width: 95%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; }
+        input[type="submit"] { margin: 5px 2px; padding: 10px 18px; border: none; border-radius: 4px; background: #007bff; color: #fff; font-size: 16px; cursor: pointer; }
+        input[type="submit"]:hover { background: #0056b3; }
+        select { width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Student Information Entry Form</h1>
+        <form name="f1" method="POST" action="/submit">
+            <table border="1">
+                <tr bgcolor="Green"><td>ROLL NO</td><td><input type="text" name="rno" id="rno" value="" size="30"></td></tr>
+                <tr bgcolor="Green"><td>NAME</td><td><input type="text" name="na" id="na" value="" size="30"></td></tr>
+                <tr bgcolor="Green"><td>MARK 1</td><td><input type="text" name="m1" id="m1" value="" size="30"></td></tr>
+                <tr bgcolor="Green"><td>MARK 2</td><td><input type="text" name="m2" id="m2" value="" size="30"></td></tr>
+                <tr bgcolor="Green">
+                    <td colspan="2" style="text-align:center;">
+                        <select name="DBAccess" required>
+                            <option value="View All Records">View All Records</option>
+                            <option value="View a Specific Record">View a Specific Record</option>
+                            <option value="Insert Record">Insert Record</option>
+                        </select>
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+</body>
+</html> 

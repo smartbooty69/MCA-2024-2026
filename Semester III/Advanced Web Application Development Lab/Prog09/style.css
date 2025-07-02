@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; background: #f4f4f4; }
+form { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.08); width: 350px; margin: 40px auto; }
+h1 { color: #333; }
+label { display: block; margin-top: 10px; }
+input[type="text"] { width: 100%; padding: 8px; margin-top: 4px; margin-bottom: 10px; border-radius: 4px; border: 1px solid #ccc; }
+button { margin: 5px 2px; padding: 10px 18px; border: none; border-radius: 4px; background: #007bff; color: #fff; font-size: 16px; cursor: pointer; }
+button:hover { background: #0056b3; }
+hr { margin: 20px 0; }
