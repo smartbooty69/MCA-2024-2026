@@ -1,0 +1,7 @@
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\bin\Debug\Prog07.exe.config
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\bin\Debug\Prog07.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\bin\Debug\Prog07.pdb
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\obj\Debug\Prog07.csproj.AssemblyReference.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\obj\Debug\Prog07.csproj.CoreCompileInputs.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\obj\Debug\Prog07.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog07\Prog07\obj\Debug\Prog07.pdb

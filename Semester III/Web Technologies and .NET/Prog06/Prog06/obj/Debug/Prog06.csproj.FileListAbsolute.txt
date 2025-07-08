@@ -1,0 +1,8 @@
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\bin\Debug\Prog06.exe.config
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\bin\Debug\Prog06.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\bin\Debug\Prog06.pdb
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\obj\Debug\Prog06.csproj.AssemblyReference.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\obj\Debug\Prog06.csproj.CoreCompileInputs.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\obj\Debug\Prog06.exe
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\obj\Debug\Prog06.pdb
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog06\Prog06\obj\Debug\Prog06.exe.config
