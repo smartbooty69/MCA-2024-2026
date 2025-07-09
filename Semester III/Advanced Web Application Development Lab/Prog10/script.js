@@ -1,90 +1,50 @@
-/*
-create database student default character set=utf8;
-use student;
-create table stud(rno varchar(10) primary key,
-name varchar(30),
-m1 numeric(3),
-m2 numeric(3),
-result varchar(10));
-*/
-const express = require("express");
-const path = require("path");
-const bodyParser = require("body-parser");
-const mysql = require('mysql');
-const app = express();
-const port = 8080;
+angular.module('studentApp', [])
+.controller('studentCtrl', ['$scope', function($scope) {
+    $scope.student = {};
+    $scope.action = 'View All Records';
+    $scope.records = [];
+    $scope.message = '';
+    // Simulated database
+    $scope.db = [
+        { rno: '1', na: 'Alice', m1: 80, m2: 90, result: 'Pass' },
+        { rno: '2', na: 'Bob', m1: 60, m2: 30, result: 'Fail' }
+    ];
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-var conn = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: '',
-    database: 'student'
-});
-
-conn.connect(function(err) {
-    if (err) throw err;
-    console.log('Connected!');
-});
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.post('/submit', (req, res) => {
-    const rno = req.body.rno;
-    const na = req.body.na;
-    const m1 = Number(req.body.m1);
-    const m2 = Number(req.body.m2);
-    const btn = req.body.DBAccess;
-    if (btn === 'View All Records') {
-        var sql = 'SELECT * FROM stud';
-        conn.query(sql, function(err, result, fields) {
-            if (err) throw err;
-            res.write("<h1>Student Marks Details</h1>");
-            res.write("<table border=1 cellpadding=3><tr><td>RNO</td><td>NAME</td><td>MARK 1</td><td>MARK 2</td><td>RESULT</td></tr>");
-            result.forEach((row) => {
-                res.write(`<tr><td>${row['rno']}</td><td>${row['name']}</td><td>${row['m1']}</td><td>${row['m2']}</td><td>${row['result']}</td></tr>`);
+    $scope.handleAction = function() {
+        $scope.message = '';
+        $scope.records = [];
+        if ($scope.action === 'View All Records') {
+            $scope.records = angular.copy($scope.db);
+        } else if ($scope.action === 'View a Specific Record') {
+            var found = $scope.db.filter(function(rec) {
+                return rec.rno === $scope.student.rno;
             });
-            res.write("</table>");
-            res.end();
-        });
-    } else if (btn === 'View a Specific Record') {
-        var sql = 'SELECT * FROM stud WHERE rno=?';
-        conn.query(sql, [rno], function(err, result, fields) {
-            if (err) throw err;
-            res.write("<h1>Student Marks Details</h1>");
-            res.write("<table border=1 cellpadding=3><tr><td>RNO</td><td>NAME</td><td>MARK 1</td><td>MARK 2</td><td>RESULT</td></tr>");
-            result.forEach((row) => {
-                res.write(`<tr><td>${row['rno']}</td><td>${row['name']}</td><td>${row['m1']}</td><td>${row['m2']}</td><td>${row['result']}</td></tr>`);
-            });
-            res.write("</table>");
-            res.end();
-        });
-    } else if (btn === 'Insert Record') {
-        if (!rno || !na || isNaN(m1) || isNaN(m2)) {
-            res.send('<h1>All fields are required for insertion.</h1>');
-            return;
-        }
-        let resultValue = (m1 >= 35 && m2 >= 35) ? 'Pass' : 'Fail';
-        var sql = 'INSERT INTO stud (rno, name, m1, m2, result) VALUES (?, ?, ?, ?, ?)';
-        conn.query(sql, [rno, na, m1, m2, resultValue], function(err, result) {
-            if (err) {
-                if (err.code === 'ER_DUP_ENTRY') {
-                    res.send('<h1>Error: Duplicate Roll Number. Record already exists.</h1>');
-                } else {
-                    res.send('<h1>Error inserting record: ' + err.message + '</h1>');
-                }
+            if (found.length) {
+                $scope.records = found;
+            } else {
+                $scope.message = 'No record found for Roll No: ' + $scope.student.rno;
+            }
+        } else if ($scope.action === 'Insert Record') {
+            if (!$scope.student.rno || !$scope.student.na || isNaN(Number($scope.student.m1)) || isNaN(Number($scope.student.m2))) {
+                $scope.message = 'All fields are required for insertion.';
                 return;
             }
-            res.send('<h1>Record Inserted Successfully</h1>');
-        });
-    } else {
-        res.send('<h1>Invalid Operation</h1>');
-    }
-});
-
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-}); 
+            // Check for duplicate
+            var exists = $scope.db.some(function(rec) { return rec.rno === $scope.student.rno; });
+            if (exists) {
+                $scope.message = 'Error: Duplicate Roll Number. Record already exists.';
+                return;
+            }
+            var resultValue = (Number($scope.student.m1) >= 35 && Number($scope.student.m2) >= 35) ? 'Pass' : 'Fail';
+            $scope.db.push({
+                rno: $scope.student.rno,
+                na: $scope.student.na,
+                m1: Number($scope.student.m1),
+                m2: Number($scope.student.m2),
+                result: resultValue
+            });
+            $scope.message = 'Record Inserted Successfully';
+            $scope.student = {};
+        }
+    };
+}]); 

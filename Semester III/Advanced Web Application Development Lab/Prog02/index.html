@@ -3,11 +3,15 @@
 <head>
     <title>Dynamic Factorial Calculator</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
-    <div onclick="createText()" style="cursor:pointer; color:blue; text-decoration:underline;">Click here to create a New Text to get input</div><br>
-    <div onclick="createButton()" style="cursor:pointer; color:blue; text-decoration:underline;">Click here to create a New Button to handle an Event</div><br>
-    <div onclick="createParagraph()" style="cursor:pointer; color:blue; text-decoration:underline;">Click here to create a New Paragraph to display result</div><br>
+<body ng-app="myApp" ng-controller="MainController">
+    <div ng-click="createText()" style="cursor:pointer; color:blue; text-decoration:underline;">Click here to create a New Text to get input</div><br>
+    <div ng-click="createButton()" style="cursor:pointer; color:blue; text-decoration:underline;">Click here to create a New Button to handle an Event</div><br>
+    <div ng-click="createParagraph()" style="cursor:pointer; color:blue; text-decoration:underline;">Click here to create a New Paragraph to display result</div><br>
+    <input type="text" id="number" class="text" ng-show="showInput" ng-model="number" placeholder="Enter a number" />
+    <input type="button" class="button" id="factBtn" value="Factorial Value Computation" ng-show="showButton" ng-click="findFactVal()" />
+    <p id="result" class="mystyle" ng-show="showResult">{{resultMessage}}</p>
     <script src="script.js"></script>
 </body>
 </html>

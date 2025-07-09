@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="arithmeticApp">
 <head>
-    <title>Arithmetic Operations Using Node JS</title>
+    <title>Arithmetic Operations Using AngularJS</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
-    <form action="/submit" method="post">
-        <h1>Arithmetic Operations Using Node JS</h1>
-        <label for="a">Enter value for a:</label>
-        <input type="text" id="a" name="a" required>
-        <label for="b">Enter value for b:</label>
-        <input type="text" id="b" name="b" required>
-        <hr>
-        <button type="submit" value="add" name="operation">Addition</button>
-        <button type="submit" value="sub" name="operation">Subtraction</button>
-        <button type="submit" value="mul" name="operation">Multiplication</button>
-        <button type="submit" value="div" name="operation">Division</button>
-    </form>
+<body ng-controller="arithmeticCtrl">
+    <h1>Arithmetic Operations Using AngularJS</h1>
+    <label for="a">Enter value for a:</label>
+    <input type="number" id="a" ng-model="a" required>
+    <label for="b">Enter value for b:</label>
+    <input type="number" id="b" ng-model="b" required>
+    <hr>
+    <button ng-click="calculate('add')">Addition</button>
+    <button ng-click="calculate('sub')">Subtraction</button>
+    <button ng-click="calculate('mul')">Multiplication</button>
+    <button ng-click="calculate('div')">Division</button>
+    <h2 ng-if="result !== undefined">Result: {{ result }}</h2>
+    <script src="script.js"></script>
 </body>
 </html> 

@@ -1,41 +1,35 @@
-function addElement() {
-    const item = prompt("Enter an item to be added into the list:");
-    if (item) {
-        const node = document.createElement("li");
-        const textnode = document.createTextNode(item);
-        node.appendChild(textnode);
-        document.getElementById("myList").appendChild(node);
-    }
-}
+angular.module('myApp', [])
+.controller('MainController', ['$scope', function($scope) {
+    $scope.items = ['Coffee', 'Tea'];
+    $scope.message = '';
+    $scope.showNewButton = false;
 
-function removeElement() {
-    const list = document.getElementById("myList");
-    if (list.lastElementChild) {
-        list.removeChild(list.lastElementChild);
-    }
-}
+    $scope.addElement = function() {
+        var item = prompt("Enter an item to be added into the list:");
+        if (item) {
+            $scope.items.push(item);
+        }
+    };
 
-function removeAllElement() {
-    const list = document.getElementById("myList");
-    while (list.firstChild) {
-        list.removeChild(list.firstChild);
-    }
-}
+    $scope.removeElement = function() {
+        if ($scope.items.length > 0) {
+            $scope.items.pop();
+        }
+    };
 
-function elementCount() {
-    const list = document.getElementById("myList");
-    const messageDiv = document.getElementById("message");
-    messageDiv.innerHTML = "<span class='count-message'>Number of Elements in the List is " + list.children.length + "</span>";
-}
+    $scope.removeAllElement = function() {
+        $scope.items = [];
+    };
 
-function addButton() {
-    var x = document.createElement("input");
-    x.setAttribute("type", "button");
-    x.setAttribute("value", "Click me");
-    x.onclick = hello;
-    document.body.appendChild(x);
-}
+    $scope.elementCount = function() {
+        $scope.message = 'Number of Elements in the List is ' + $scope.items.length;
+    };
 
-function hello() {
-    alert("Welcome to JavaScript Programming using Document Object Model!");
-} 
+    $scope.addButton = function() {
+        $scope.showNewButton = true;
+    };
+
+    $scope.hello = function() {
+        alert("Welcome to JavaScript Programming using AngularJS!");
+    };
+}]); 

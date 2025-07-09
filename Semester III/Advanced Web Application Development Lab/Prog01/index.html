@@ -3,23 +3,26 @@
 <head>
     <title>Dynamic List Manipulation</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="MainController">
     <h1>Create a list dynamically, manipulate it, and view the number of elements in it dynamically. Create a button dynamically, and make it handle an event dynamically.</h1>
     <ul id="myList">
-        <li>Coffee</li>
-        <li>Tea</li>
+        <li ng-repeat="item in items">{{item}}</li>
     </ul>
     <p>Click "Append" to append an item to the end of the list:</p>
     <p>Click "Remove" to remove the last item from the list:</p>
     <p>Click "Remove All" to remove all items from the list:</p>
     <p>Click "Element Count" to get the number of elements in the list:</p>
-    <button onclick="addElement()">Append</button>
-    <button onclick="removeElement()">Remove</button>
-    <button onclick="removeAllElement()">Remove All</button>
-    <button onclick="elementCount()">Element Count</button>
-    <button onclick="addButton()">Create a New Button to handle an Event</button>
-    <div id="message"></div>
+    <button ng-click="addElement()">Append</button>
+    <button ng-click="removeElement()">Remove</button>
+    <button ng-click="removeAllElement()">Remove All</button>
+    <button ng-click="elementCount()">Element Count</button>
+    <button ng-click="addButton()">Create a New Button to handle an Event</button>
+    <div id="message">{{message}}</div>
+    <div ng-if="showNewButton">
+        <input type="button" value="Click me" ng-click="hello()" />
+    </div>
     <script src="script.js"></script>
 </body>
 </html> 

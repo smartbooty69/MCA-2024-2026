@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="studentApp">
 <head>
-    <title>Student Record Access</title>
+    <title>Student Record Access (AngularJS)</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f4f4f4; }
         center { margin-top: 40px; }
@@ -10,32 +10,50 @@
         table { width: 100%; border-collapse: collapse; }
         td { padding: 8px; }
         input[type="text"] { width: 95%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; }
-        input[type="submit"] { margin: 5px 2px; padding: 10px 18px; border: none; border-radius: 4px; background: #007bff; color: #fff; font-size: 16px; cursor: pointer; }
-        input[type="submit"]:hover { background: #0056b3; }
+        input[type="submit"], button { margin: 5px 2px; padding: 10px 18px; border: none; border-radius: 4px; background: #007bff; color: #fff; font-size: 16px; cursor: pointer; }
+        input[type="submit"]:hover, button:hover { background: #0056b3; }
         select { width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #ccc; margin-bottom: 10px; }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="studentCtrl">
     <center>
-        <h1>Student Information Entry Form</h1>
-        <form name="f1" method="POST" action="/submit">
+        <h1>Student Information Entry Form (AngularJS)</h1>
+        <form name="f1" ng-submit="handleAction()" novalidate>
             <table border="1">
-                <tr bgcolor="Green"><td>ROLL NO</td><td><input type="text" name="rno" id="rno" value="" size="30"></td></tr>
-                <tr bgcolor="Green"><td>NAME</td><td><input type="text" name="na" id="na" value="" size="30"></td></tr>
-                <tr bgcolor="Green"><td>MARK 1</td><td><input type="text" name="m1" id="m1" value="" size="30"></td></tr>
-                <tr bgcolor="Green"><td>MARK 2</td><td><input type="text" name="m2" id="m2" value="" size="30"></td></tr>
+                <tr bgcolor="Green"><td>ROLL NO</td><td><input type="text" ng-model="student.rno" size="30"></td></tr>
+                <tr bgcolor="Green"><td>NAME</td><td><input type="text" ng-model="student.na" size="30"></td></tr>
+                <tr bgcolor="Green"><td>MARK 1</td><td><input type="text" ng-model="student.m1" size="30"></td></tr>
+                <tr bgcolor="Green"><td>MARK 2</td><td><input type="text" ng-model="student.m2" size="30"></td></tr>
                 <tr bgcolor="Green">
                     <td colspan="2" style="text-align:center;">
-                        <select name="DBAccess" required>
+                        <select ng-model="action" required>
                             <option value="View All Records">View All Records</option>
                             <option value="View a Specific Record">View a Specific Record</option>
                             <option value="Insert Record">Insert Record</option>
                         </select>
-                        <input type="submit" value="Submit">
+                        <button type="submit">Submit</button>
                     </td>
                 </tr>
             </table>
         </form>
+        <div ng-if="message">
+            <h2>{{ message }}</h2>
+        </div>
+        <div ng-if="records && records.length">
+            <h2>Student Marks Details</h2>
+            <table border="1" cellpadding="3">
+                <tr><td>RNO</td><td>NAME</td><td>MARK 1</td><td>MARK 2</td><td>RESULT</td></tr>
+                <tr ng-repeat="rec in records">
+                    <td>{{ rec.rno }}</td>
+                    <td>{{ rec.na }}</td>
+                    <td>{{ rec.m1 }}</td>
+                    <td>{{ rec.m2 }}</td>
+                    <td>{{ rec.result }}</td>
+                </tr>
+            </table>
+        </div>
     </center>
+    <script src="script.js"></script>
 </body>
 </html> 

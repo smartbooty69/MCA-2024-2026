@@ -3,25 +3,26 @@
 <head>
     <title>Age Calculator</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="MainController">
     <div class="card">
         <header>
             <h1>AGE CALCULATOR</h1>
         </header>
         <div>
             <label>Enter your Date of Birth</label><br>
-            <input id="dob" type="date" value="2000-01-01" />
+            <input id="dob" type="date" ng-model="dob" />
         </div>
         <br/>
         <div>
             <label>Current Date</label><br>
-            <input id="cdate" type="date" />
+            <input id="cdate" type="date" ng-model="cdate" />
         </div>
         <br/>
-        <button type="button" onclick="getDOB()">Calculate</button>
+        <button type="button" ng-click="getDOB()">Calculate</button>
         <br/>
-        <div id="currentAge"></div>
+        <div id="currentAge">{{currentAge}}</div>
     </div>
     <script src="script.js"></script>
 </body>

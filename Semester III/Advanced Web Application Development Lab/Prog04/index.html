@@ -5,15 +5,16 @@
     <title>Number System Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 </head>
-<body>
+<body ng-app="myApp" ng-controller="MainController">
     <div class="root">
         <h1 class="title">Number System Calculator</h1>
         <section>
             <div class="option">
                 <span>
                     <label>Convert from:</label>
-                    <select id="typeFrom" onchange="update()">
+                    <select ng-model="typeFrom" ng-change="update()">
                         <option value="10">Decimal</option>
                         <option value="2">Binary</option>
                         <option value="8">Octal</option>
@@ -22,7 +23,7 @@
                 </span>
                 <span>
                     <label>Convert to:</label>
-                    <select id="typeTo" onchange="update()">
+                    <select ng-model="typeTo" ng-change="update()">
                         <option value="10">Decimal</option>
                         <option value="2">Binary</option>
                         <option value="8">Octal</option>
@@ -32,12 +33,12 @@
                 <br />
                 <br/>
                 <span>
-                    <label id="inputType">Enter Decimal:</label>
-                    <input type="text" min="0" value="0" id="input" onkeyup="update()" />
+                    <label id="inputType">Enter {{tags[typeFrom]}}</label>
+                    <input type="text" min="0" ng-model="inputValue" ng-change="update()" />
                 </span>
                 <span>
-                    <label id="resultType">Result Binary:</label>
-                    <input id="res" type="text" min="0" value="0" onkeyup="reverse()" />
+                    <label id="resultType">Result {{tags[typeTo]}}</label>
+                    <input type="text" min="0" ng-model="resultValue" ng-change="reverse()" />
                 </span>
             </div>
         </section>
