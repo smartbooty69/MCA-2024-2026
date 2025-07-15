@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Observation\\Prog09\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9F9A885-62B5-43EB-B2CC-7BA66A1C4882}|Prog09\\Prog09.csproj|c:\\users\\clanc\\mca 2024-2026\\semester iii\\web technologies and .net\\observation\\prog09\\prog09\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9F9A885-62B5-43EB-B2CC-7BA66A1C4882}|Prog09\\Prog09.csproj|solutionrelative:prog09\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Observation\\Prog09\\Prog09\\Program.cs",
+              "RelativeDocumentMoniker": "Prog09\\Program.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Observation\\Prog09\\Prog09\\Program.cs",
+              "RelativeToolTip": "Prog09\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T09:11:34.941Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

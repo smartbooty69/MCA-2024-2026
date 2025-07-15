@@ -1,8 +1,0 @@
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\bin\Debug\Prog02.exe.config
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\bin\Debug\Prog02.exe
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\bin\Debug\Prog02.pdb
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\obj\Debug\Prog02.csproj.AssemblyReference.cache
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\obj\Debug\Prog02.csproj.CoreCompileInputs.cache
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\obj\Debug\Prog02.exe
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\obj\Debug\Prog02.pdb
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog02\Prog02\obj\Debug\Prog02.exe.config

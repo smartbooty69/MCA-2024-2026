@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|c:\\users\\clanc\\mca 2024-2026\\semester iii\\web technologies and .net\\clancymendonca\\clancymendonca\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|solutionrelative:clancymendonca\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|solutionrelative:clancymendonca\\home.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\task4.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|solutionrelative:clancymendonca\\task4.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|solutionrelative:clancymendonca\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|solutionrelative:clancymendonca\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{17B05A7C-5C56-42AA-8C60-CD566D77D091}|clancymendonca\\clancymendonca.csproj|solutionrelative:clancymendonca\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "task4.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\task4.aspx.cs",
+              "RelativeDocumentMoniker": "clancymendonca\\task4.aspx.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\task4.aspx.cs",
+              "RelativeToolTip": "clancymendonca\\task4.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T05:35:48.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\Global.asax.cs",
+              "RelativeDocumentMoniker": "clancymendonca\\Global.asax.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\Global.asax.cs",
+              "RelativeToolTip": "clancymendonca\\Global.asax.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T13:15:45.203Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "home.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\home.aspx.cs",
+              "RelativeDocumentMoniker": "clancymendonca\\home.aspx.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\home.aspx.cs",
+              "RelativeToolTip": "clancymendonca\\home.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T11:43:20.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\content\\site.css",
+              "RelativeDocumentMoniker": "clancymendonca\\content\\site.css",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\content\\site.css",
+              "RelativeToolTip": "clancymendonca\\content\\site.css",
+              "ViewState": "AgIAAG8DAAAAAAAAAAAIwJIDAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-07-14T11:39:33.253Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "site.master",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\site.master",
+              "RelativeDocumentMoniker": "clancymendonca\\site.master",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\site.master",
+              "RelativeToolTip": "clancymendonca\\site.master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-14T11:37:57.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "home.aspx",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\home.aspx",
+              "RelativeDocumentMoniker": "clancymendonca\\home.aspx",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\clancymendonca\\clancymendonca\\home.aspx",
+              "RelativeToolTip": "clancymendonca\\home.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-07-14T11:37:16.614Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

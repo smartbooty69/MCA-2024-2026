@@ -1,8 +1,0 @@
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\bin\Debug\Prog05.exe.config
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\bin\Debug\Prog05.exe
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\bin\Debug\Prog05.pdb
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\obj\Debug\Prog05.csproj.AssemblyReference.cache
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\obj\Debug\Prog05.csproj.CoreCompileInputs.cache
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\obj\Debug\Prog05.exe
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\obj\Debug\Prog05.pdb
-C:\Users\clanc\MCA 2024-2026\Semester III\Prog05\Prog05\obj\Debug\Prog05.exe.config
