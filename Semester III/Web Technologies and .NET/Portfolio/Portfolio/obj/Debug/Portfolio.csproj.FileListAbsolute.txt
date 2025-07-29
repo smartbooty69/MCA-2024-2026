@@ -1,2 +1,0 @@
-C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.AssemblyReference.cache
-C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Portfolio\Portfolio\obj\Debug\Portfolio.csproj.CoreCompileInputs.cache
