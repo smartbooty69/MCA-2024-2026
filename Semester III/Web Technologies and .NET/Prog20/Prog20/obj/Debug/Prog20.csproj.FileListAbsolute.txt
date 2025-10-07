@@ -1,0 +1,2 @@
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog20\Prog20\obj\Debug\Prog20.csproj.AssemblyReference.cache
+C:\Users\clanc\MCA 2024-2026\Semester III\Web Technologies and .NET\Prog20\Prog20\obj\Debug\Prog20.csproj.CoreCompileInputs.cache

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8AD1C1-AE34-4CDB-B54E-5B94296B426C}|Prog20\\Prog20.csproj|c:\\users\\clanc\\mca 2024-2026\\semester iii\\web technologies and .net\\prog20\\prog20\\hospitalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D8AD1C1-AE34-4CDB-B54E-5B94296B426C}|Prog20\\Prog20.csproj|solutionrelative:prog20\\hospitalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8AD1C1-AE34-4CDB-B54E-5B94296B426C}|Prog20\\Prog20.csproj|c:\\users\\clanc\\mca 2024-2026\\semester iii\\web technologies and .net\\prog20\\prog20\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D8AD1C1-AE34-4CDB-B54E-5B94296B426C}|Prog20\\Prog20.csproj|solutionrelative:prog20\\patient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D8AD1C1-AE34-4CDB-B54E-5B94296B426C}|Prog20\\Prog20.csproj|c:\\users\\clanc\\mca 2024-2026\\semester iii\\web technologies and .net\\prog20\\prog20\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D8AD1C1-AE34-4CDB-B54E-5B94296B426C}|Prog20\\Prog20.csproj|solutionrelative:prog20\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HospitalContext.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\Prog20\\HospitalContext.cs",
+              "RelativeDocumentMoniker": "Prog20\\HospitalContext.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\Prog20\\HospitalContext.cs",
+              "RelativeToolTip": "Prog20\\HospitalContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:35:46.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\Prog20\\Patient.cs",
+              "RelativeDocumentMoniker": "Prog20\\Patient.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\Prog20\\Patient.cs",
+              "RelativeToolTip": "Prog20\\Patient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:30:10.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\Prog20\\Program.cs",
+              "RelativeDocumentMoniker": "Prog20\\Program.cs",
+              "ToolTip": "C:\\Users\\clanc\\MCA 2024-2026\\Semester III\\Web Technologies and .NET\\Prog20\\Prog20\\Program.cs",
+              "RelativeToolTip": "Prog20\\Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAIAwwDUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-02T08:23:16.426Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
