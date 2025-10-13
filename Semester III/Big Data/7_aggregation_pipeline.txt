@@ -6,6 +6,7 @@ db.restaurants.insertMany([
   { name: "Curry Palace", cuisine: "Indian", location: "Jayanagar", reviews: [ { user: "Gaurav", rating: 4, comment: "Spicy and tasty!" }, { user: "Harini", rating: 5, comment: "Best curry in town!" } ] },
   { name: "Taco Stand", cuisine: "Mexican", location: "Jayanagar", reviews: [ { user: "Ishaan", rating: 5, comment: "Fantastic tacos!" }, { user: "Jaya", rating: 4, comment: "Very authentic" } ] }
 ])
+
 db.restaurants.aggregate([
   { $match: { location: "Jayanagar" } },
   { $unwind: "$reviews" },

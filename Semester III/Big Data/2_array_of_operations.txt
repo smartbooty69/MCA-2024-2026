@@ -2,11 +2,6 @@
 use ProgrammingBooks
 db.createCollection("BookDetails")
 
-// a. Illustration of WHERE, AND, OR operations in MongoDB
-db.BookDetails.find({ year: 2008 }).pretty()
-db.BookDetails.find({ $and: [ { category: "Software Development" }, { year: 2008 } ] }).pretty()
-db.BookDetails.find({ $or: [ { category: "JavaScript" }, { year: 2015 } ] }).pretty()
-
 // Inserts
 db.BookDetails.insertMany([
   { _id: 1, title: "Clean Code", author: "Robert C. Martin", category: "Software Development", year: 2008 },
@@ -15,6 +10,11 @@ db.BookDetails.insertMany([
   { _id: 4, title: "Introduction to Algorithms", author: "Thomas H. Cormen", category: "Algorithms", year: 1990 },
   { _id: 5, title: "Python Crash Course", author: "Eric Matthes", category: "Python", year: 2015 }
 ])
+
+// a. Illustration of WHERE, AND, OR operations in MongoDB
+db.BookDetails.find({ year: 2008 }).pretty()
+db.BookDetails.find({ $and: [ { category: "Software Development" }, { year: 2008 } ] }).pretty()
+db.BookDetails.find({ $or: [ { category: "JavaScript" }, { year: 2015 } ] }).pretty()
 
 // Queries
 db.BookDetails.find().pretty()

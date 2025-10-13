@@ -3,12 +3,14 @@
 1) Open terminal
 - Start a new terminal window in your Cloudera VM.
 
-2) Check and disable Safe Mode
-- Check: `hdfs dfsadmin -safemode get`
+2) Check HDFS status and Safe Mode
+- Check HDFS status: `hdfs dfsadmin -report`
+- Check Safe Mode: `hdfs dfsadmin -safemode get`
 - If ON, disable: `hdfs dfsadmin -safemode leave`
+- Check NameNode status: `hdfs dfsadmin -printTopology`
 
 3) Create a local sample file
-- Create file: `echo "Hello Hadoop!" > sample.txt`
+- Create file: `echo 'Hello Hadoop!' > sample.txt`
 - Append:
   - `echo "This is the second line." >> sample.txt`
   - `echo "This is the third line." >> sample.txt`
@@ -17,7 +19,9 @@
 
 4) Create HDFS directory and upload
 - Make dir: `hdfs dfs -mkdir /HDFS-Folder`
-- Upload: `hdfs dfs -put sample.txt /HDFS-Folder/`
+- Check if directory exists: `hdfs dfs -ls /`
+- Upload with retry: `hdfs dfs -put sample.txt /HDFS-Folder/`
+- If upload fails, try: `hdfs dfs -put sample.txt /HDFS-Folder/sample.txt`
 - List: `hdfs dfs -ls /HDFS-Folder/`
 
 5) View the file from HDFS
@@ -33,5 +37,13 @@
 7) Download back to local
 - Download: `hdfs dfs -get /Test/samplecopy.txt`
 - Verify locally: `ls`
+
+8) Troubleshooting InterruptedException
+- If you get InterruptedException, try these steps:
+  - Check HDFS services: `sudo service hadoop-hdfs-namenode status`
+  - Restart HDFS if needed: `sudo service hadoop-hdfs-namenode restart`
+  - Check disk space: `df -h`
+  - Check HDFS logs: `tail -f /var/log/hadoop-hdfs/hadoop-hdfs-namenode-*.log`
+  - Try smaller file: `echo "test" > small.txt && hdfs dfs -put small.txt /HDFS-Folder/`
 
 
